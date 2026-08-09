@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://cdn.jsdelivr.net; img-src 'self' data:; frame-ancestors 'none'">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta name="referrer" content="no-referrer">
+<title>AVIDAA CORRUPTION -- Documented Global Fraud, 2016-2026</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%230a0605'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23dc2626' stroke-width='2'/%3E%3Cpath d='M16 9 L16 18 M16 22 L16 23' stroke='%23dc2626' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8M1YZQ8WF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-G8M1YZQ8WF');</script>
+<style>
+:root{
+  --bg:#0a0605;--bg2:#120a08;--bg3:#1a0f0c;--text:#f5efe8;--muted:rgba(245,239,232,.6);--muted2:rgba(245,239,232,.4);
+  --red:#dc2626;--amber:#d97706;--gray:#6b7280;--green:#16a34a;
+  --border:rgba(220,38,38,.2);--ff:'Oswald',sans-serif;--fm:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--fm);font-size:13px}
+#app{display:flex;flex-direction:column;height:100vh}
+a{color:inherit}
+
+#hdr{background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1rem;height:44px;flex-shrink:0;flex-wrap:wrap;gap:.4rem}
+#hdr-logo{font-family:var(--ff);font-weight:700;font-size:15px;letter-spacing:.05em;color:var(--red)}
+#hdr-right{display:flex;align-items:center;gap:.6rem}
+#search-input{background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:4px;padding:5px 9px;font-family:var(--fm);font-size:11px;width:160px}
+#back-home{
+  font-weight:700;text-decoration:none;font-family:var(--fm);font-size:clamp(.75rem,2vw,.9rem);letter-spacing:.08em;
+  background:linear-gradient(90deg,#ff0080,#ff8c00,#ffe000,#00ff80,#00bfff,#a855f7,#ff0080);
+  background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:rainbow 3s linear infinite;white-space:nowrap;
+}
+@keyframes rainbow{to{background-position:300% center}}
+@media(prefers-reduced-motion:reduce){#back-home{animation:none}}
+
+#nav{background:var(--bg2);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:1px;padding:2px 4px;height:auto}
+.tab{background:none;border:none;color:var(--muted);font-family:var(--fm);font-size:clamp(10px,1.1vw,12px);letter-spacing:.05em;padding:6px 10px;cursor:pointer;border-radius:3px;transition:all .15s;flex:0 0 auto}
+.tab:hover,.tab.active{color:var(--red);background:rgba(220,38,38,.1)}
+
+#main{flex:1;overflow:hidden;position:relative}
+.page{position:absolute;inset:0;overflow-y:auto;padding:1.2rem;display:none}
+.page.active{display:block}
+
+.sec{font-family:var(--ff);font-size:15px;font-weight:700;letter-spacing:.08em;color:var(--red);margin:1.2rem 0 .6rem;text-transform:uppercase}
+.sec:first-child{margin-top:0}
+.disclaimer{background:rgba(220,38,38,.06);border:1px solid var(--border);border-radius:8px;padding:.85rem 1rem;font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:1rem}
+
+.home-hero{text-align:center;padding:1.5rem 0 1rem}
+.home-title{font-family:var(--ff);font-size:clamp(22px,5vw,34px);font-weight:700;letter-spacing:.05em;color:var(--red);margin-bottom:.4rem}
+.home-sub{font-size:12px;color:var(--muted);max-width:600px;margin:0 auto 1.2rem}
+.home-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.5rem;max-width:750px;margin:0 auto 1.5rem}
+.home-stat{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:.75rem;text-align:center}
+.home-stat-n{font-family:var(--ff);font-size:22px;font-weight:700;color:var(--red)}
+.home-stat-l{font-size:9px;color:var(--muted2);letter-spacing:.1em;margin-top:2px}
+
+.cat-legend{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1rem}
+.cat-chip{font-size:10px;padding:3px 8px;border-radius:12px;border:1px solid;white-space:nowrap;cursor:pointer;transition:all .15s}
+.cat-chip.active{filter:brightness(1.3)}
+
+.case-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:.7rem}
+.case-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem;cursor:pointer;transition:transform .2s,border-color .2s}
+.case-card:hover{transform:translateY(-2px);border-color:var(--red)}
+.case-cat-tag{display:inline-block;font-size:9px;padding:2px 7px;border-radius:10px;margin-bottom:.5rem;font-weight:700;letter-spacing:.05em}
+.case-name{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.case-metric{font-size:11px;color:var(--amber);font-weight:700;margin-bottom:.4rem}
+.case-role{font-size:11px;color:var(--muted);line-height:1.5}
+.case-status{display:inline-flex;align-items:center;gap:4px;font-size:9px;padding:2px 7px;border-radius:10px;margin-top:.5rem;font-weight:700}
+.badge-doc{background:rgba(22,163,74,.15);color:#4ade80;border:1px solid rgba(74,222,128,.3)}
+.badge-rep{background:rgba(217,119,6,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}
+
+#modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;align-items:center;justify-content:center;padding:1rem}
+#modal-overlay.open{display:flex}
+#modal{background:var(--bg2);border:1px solid var(--red);border-radius:12px;max-width:640px;width:100%;max-height:85vh;overflow-y:auto;padding:1.5rem;position:relative}
+#modal-close{position:absolute;top:.75rem;right:.75rem;background:none;border:1px solid var(--border);color:var(--muted);border-radius:4px;padding:3px 9px;cursor:pointer;font-size:10px;font-family:var(--fm)}
+.modal-name{font-family:var(--ff);font-size:20px;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.modal-role{font-size:12px;color:var(--muted);margin-bottom:.8rem}
+.modal-section-title{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--red);margin:1rem 0 .4rem;text-transform:uppercase}
+.event-row{display:flex;gap:.7rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:12px}
+.event-date{color:var(--amber);font-weight:700;width:75px;flex-shrink:0}
+.event-text{color:var(--muted);line-height:1.5}
+.modal-detail{font-size:12px;color:var(--muted);line-height:1.7;background:var(--bg3);border-radius:8px;padding:.85rem}
+.src-line{font-size:11px;color:var(--muted2);margin-top:.6rem}
+
+.tl-item{display:flex;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tl-date{color:var(--amber);font-weight:700;font-size:12px;width:70px;flex-shrink:0}
+.tl-title{font-size:12px;color:var(--text);font-weight:700}
+.tl-desc{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5}
+
+.src-row{display:flex;gap:.7rem;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:11px}
+.src-case{color:var(--red);font-weight:700;width:130px;flex-shrink:0}
+.src-doc{color:var(--muted);flex:1}
+.src-date{color:var(--muted2);width:70px;flex-shrink:0;text-align:right}
+
+.page-footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:10px;color:var(--muted2);text-align:center}
+
+@media(max-width:600px){
+  .home-stats{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:1fr}
+  #search-input{width:100px}
+}
+/* Self-scoped tokens so the module works on any page theme */
+#chatbot{--cb-cyan:#00e5ff;--cb-purple:#a855f7;--cb-green:#26e07a;--cb-fb:'Chakra Petch',system-ui,sans-serif;--cb-fd:'Space Mono',monospace;}
+#chatbot{position:fixed;bottom:48px;right:18px;z-index:9000;width:min(420px,calc(100vw - 24px));font-family:var(--cb-fb);}
+#chat-toggle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--cb-purple),var(--cb-cyan));border:2px solid rgba(255,255,255,.1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 0 24px rgba(168,85,247,.45),0 0 48px rgba(0,229,255,.15);margin-left:auto;-webkit-appearance:none;appearance:none;transition:transform .2s,box-shadow .2s;animation:cb-chatpulse 3s ease-in-out infinite;}
+#chat-toggle:hover{transform:scale(1.08);}
+@keyframes cb-chatpulse{0%,100%{box-shadow:0 0 24px rgba(168,85,247,.45),0 0 48px rgba(0,229,255,.15);}50%{box-shadow:0 0 34px rgba(168,85,247,.7),0 0 64px rgba(0,229,255,.3);}}
+@keyframes cb-rainbow{to{background-position:200% center;}}
+@keyframes cb-livepulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+#chat-box{background:rgba(4,8,20,.96);border:1px solid rgba(0,229,255,.12);backdrop-filter:blur(20px);display:none;flex-direction:column;margin-bottom:10px;overflow:hidden;border-radius:6px;box-shadow:0 0 40px rgba(0,0,0,.8);}
+#chat-box.open{display:flex;}
+#quest-bar{height:3px;background:rgba(0,229,255,.08);position:relative;overflow:hidden;transition:opacity .3s;opacity:0;}
+#quest-bar.active{opacity:1;}
+#quest-fill{height:100%;width:0%;transition:width .8s ease,background .8s ease;background:var(--cb-cyan);}
+#quest-label{font-family:var(--cb-fd);font-size:7px;letter-spacing:3px;color:rgba(0,229,255,.35);padding:4px 16px 0;display:none;}
+#quest-label.active{display:block;}
+#chat-head{padding:12px 16px;border-bottom:1px solid rgba(0,229,255,.08);display:flex;justify-content:space-between;align-items:center;background:rgba(0,229,255,.03);}
+.ch-title{font-family:var(--cb-fd);font-size:9px;letter-spacing:4px;color:var(--cb-cyan);}
+.ch-status{font-size:8px;letter-spacing:2px;color:var(--cb-green);display:flex;align-items:center;gap:5px;}
+.ch-dot{width:5px;height:5px;border-radius:50%;background:var(--cb-green);animation:cb-livepulse 1.5s ease-in-out infinite;}
+.ch-close{color:rgba(255,255,255,.25);cursor:pointer;font-size:16px;line-height:1;padding:0 2px;}
+#chat-msgs{height:240px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(0,229,255,.15) transparent;}
+.cmsg{font-size:12.5px;letter-spacing:.3px;line-height:1.55;padding:9px 13px;max-width:88%;position:relative;white-space:pre-wrap;}
+.cmsg.ai{background:rgba(0,229,255,.05);border-left:2px solid var(--cb-cyan);color:#c8d8f0;align-self:flex-start;border-radius:0 4px 4px 0;}
+.cmsg.ai::before{content:'AVIDAA';font-family:var(--cb-fd);font-size:6px;letter-spacing:2px;color:rgba(0,229,255,.4);display:block;margin-bottom:4px;}
+.cmsg.user{background:rgba(168,85,247,.07);border-right:2px solid var(--cb-purple);color:#c8d8f0;align-self:flex-end;text-align:right;border-radius:4px 0 0 4px;}
+.typing-indicator{display:flex;gap:4px;padding:10px 14px;align-self:flex-start;}
+.typing-indicator span{width:5px;height:5px;background:var(--cb-cyan);border-radius:50%;opacity:.4;animation:cb-typedot .8s ease-in-out infinite;}
+.typing-indicator span:nth-child(2){animation-delay:.15s;}
+.typing-indicator span:nth-child(3){animation-delay:.3s;}
+@keyframes cb-typedot{0%,100%{opacity:.2;transform:translateY(0);}50%{opacity:1;transform:translateY(-3px);}}
+#chat-suggestions{display:flex;flex-wrap:wrap;gap:5px;padding:8px 14px;border-top:1px solid rgba(0,229,255,.05);}
+.chat-sugg{font-size:10px;letter-spacing:.5px;padding:3px 10px;border:1px solid rgba(0,229,255,.15);color:rgba(0,229,255,.5);cursor:pointer;background:rgba(0,229,255,.03);transition:all .2s;}
+.chat-sugg:hover{border-color:var(--cb-cyan);color:var(--cb-cyan);background:rgba(0,229,255,.06);box-shadow:0 0 10px rgba(0,229,255,.2);transform:translateY(-1px);}
+#chat-input-row{display:flex;border-top:1px solid rgba(0,229,255,.07);}
+#chat-input{flex:1;background:transparent;border:none;outline:none;color:#c8d8f0;font-family:var(--cb-fb);font-size:13px;padding:11px 14px;letter-spacing:.3px;-webkit-appearance:none;appearance:none;}
+#chat-input::placeholder{color:rgba(200,216,240,.2);}
+#chat-send{background:transparent;border:none;border-left:1px solid rgba(0,229,255,.07);color:var(--cb-cyan);padding:0 16px;cursor:pointer;font-size:15px;-webkit-appearance:none;appearance:none;transition:color .2s;}
+#chat-send:hover{color:#fff;}
+#rabbit-avatar{display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 6px rgba(0,229,255,.4));}
+#pulse-ring{position:absolute;bottom:-6px;right:-6px;width:58px;height:58px;border-radius:50%;pointer-events:none;z-index:-1;}
+@media (max-width:600px){#chatbot{bottom:14px;right:10px;}#chat-msgs{height:50vh;}}
+@media (prefers-reduced-motion:reduce){#chat-toggle{animation:none;}.ch-dot{animation:none;}}
+#network-wrap{position:relative;height:calc(100vh - 220px);min-height:420px;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--border)}
+#network-canvas-wrap{position:absolute;inset:0}
+#network-canvas-wrap canvas{display:block;width:100%;height:100%}
+#network-tooltip{position:absolute;pointer-events:none;background:rgba(10,6,5,.95);border:1px solid var(--red);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--text);display:none;z-index:5;max-width:220px;line-height:1.4}
+#network-legend{position:absolute;bottom:10px;left:10px;display:flex;flex-wrap:wrap;gap:6px;z-index:5;max-width:calc(100% - 20px)}
+#network-legend .nl-chip{font-size:9px;padding:3px 8px;border-radius:10px;border:1px solid;background:rgba(0,0,0,.6);white-space:nowrap}
+#network-hint{position:absolute;top:10px;right:10px;font-size:9px;color:rgba(255,255,255,.35);z-index:5;text-align:right;line-height:1.5}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script><script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+
+let networkInited = false;
+let networkAnimating = false;
+
+function initNetwork(){
+  if(networkInited) return;
+  networkInited = true;
+
+  const wrap = document.getElementById('network-canvas-wrap');
+  let W = wrap.clientWidth, H = wrap.clientHeight;
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x000000);
+  scene.fog = new THREE.FogExp2(0x000000, 0.018);
+
+  const camera = new THREE.PerspectiveCamera(50, W/H, 0.1, 200);
+  camera.position.set(0, 4, 26);
+
+  const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H);
+  wrap.appendChild(renderer.domElement);
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.06;
+  controls.minDistance = 6;
+  controls.maxDistance = 60;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.4;
+
+  scene.add(new THREE.AmbientLight(0x332222, 0.7));
+  const pl = new THREE.PointLight(0xff4444, 1.6, 60);
+  pl.position.set(0,10,10);
+  scene.add(pl);
+
+  // ---------- Category cluster centers (rough brain-lobe layout) ----------
+  const CLUSTER_POS = {
+    state_capture: new THREE.Vector3(-8, 4, 2),
+    bribery:       new THREE.Vector3(8, 4, 2),
+    laundering:    new THREE.Vector3(0, 8, -6),
+    corporate:     new THREE.Vector3(0, -5, 4),
+    leaks:         new THREE.Vector3(-8, -3, -4),
+    ponzi:         new THREE.Vector3(9, -4, -4),
+  };
+
+  // ---------- Build nodes from CASES ----------
+  const nodeMeshes = {};
+  const nodeGroup = new THREE.Group();
+  scene.add(nodeGroup);
+
+  const glowGeo = new THREE.SphereGeometry(0.42, 24, 24);
+
+  CASES.forEach((c, i) => {
+    const center = CLUSTER_POS[c.cat] || new THREE.Vector3(0,0,0);
+    const jitter = new THREE.Vector3(
+      (Math.random()-0.5)*3.4,
+      (Math.random()-0.5)*3.4,
+      (Math.random()-0.5)*3.4
+    );
+    const pos = center.clone().add(jitter);
+    const col = new THREE.Color(CAT_META[c.cat] ? CAT_META[c.cat].color : '#888888');
+
+    const mat = new THREE.MeshPhysicalMaterial({
+      color: col, emissive: col, emissiveIntensity: 0.55,
+      metalness: 0.3, roughness: 0.35, clearcoat: 0.6,
+    });
+    const mesh = new THREE.Mesh(glowGeo, mat);
+    mesh.position.copy(pos);
+    mesh.userData = { id: c.id, baseEmissive: 0.55, phase: Math.random()*Math.PI*2 };
+    nodeGroup.add(mesh);
+    nodeMeshes[c.id] = mesh;
+  });
+
+  // ---------- Edges (only real documented connections) ----------
+  const edgeGroup = new THREE.Group();
+  scene.add(edgeGroup);
+  const edgeMeshes = [];
+  const seenPairs = new Set();
+
+  CASES.forEach(c => {
+    (c.connections||[]).forEach(otherId => {
+      const pairKey = [c.id, otherId].sort().join('|');
+      if(seenPairs.has(pairKey)) return;
+      seenPairs.add(pairKey);
+      const a = nodeMeshes[c.id], b = nodeMeshes[otherId];
+      if(!a || !b) return;
+
+      const points = [a.position, b.position];
+      const geo = new THREE.BufferGeometry().setFromPoints(points);
+      const colA = new THREE.Color(CAT_META[c.cat]?.color || '#888');
+      const mat = new THREE.LineBasicMaterial({ color: colA, transparent:true, opacity:0.35 });
+      const line = new THREE.Line(geo, mat);
+      line.userData = { from: c.id, to: otherId };
+      edgeGroup.add(line);
+      edgeMeshes.push(line);
+    });
+  });
+
+  // ---------- Ambient synapse particles ----------
+  const particleCount = 220;
+  const particlePos = new Float32Array(particleCount*3);
+  for(let i=0;i<particleCount;i++){
+    particlePos[i*3]   = (Math.random()-0.5)*40;
+    particlePos[i*3+1] = (Math.random()-0.5)*30;
+    particlePos[i*3+2] = (Math.random()-0.5)*40;
+  }
+  const particleGeo = new THREE.BufferGeometry();
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos,3));
+  const particleMat = new THREE.PointsMaterial({ color:0x662222, size:0.08, transparent:true, opacity:0.5 });
+  const particles = new THREE.Points(particleGeo, particleMat);
+  scene.add(particles);
+
+  // ---------- Postprocessing (bloom for the glow) ----------
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, camera));
+  const bloom = new UnrealBloomPass(new THREE.Vector2(W,H), 0.9, 0.7, 0.12);
+  composer.addPass(bloom);
+  composer.addPass(new OutputPass());
+
+  // ---------- Raycaster: hover + click ----------
+  const raycaster = new THREE.Raycaster();
+  const mouse = new THREE.Vector2();
+  const tooltip = document.getElementById('network-tooltip');
+  let hoveredId = null;
+
+  function getConnectedSet(id){
+    const c = CASES.find(x=>x.id===id);
+    const set = new Set([id]);
+    (c?.connections||[]).forEach(o=>set.add(o));
+    // also reverse -- anyone who lists `id` in their own connections
+    CASES.forEach(x=>{ if((x.connections||[]).includes(id)) set.add(x.id); });
+    return set;
+  }
+
+  function applyHighlight(id){
+    if(!id){
+      Object.values(nodeMeshes).forEach(m=>{ m.material.emissiveIntensity = m.userData.baseEmissive; m.scale.setScalar(1); });
+      edgeMeshes.forEach(e=>{ e.material.opacity = 0.35; });
+      return;
+    }
+    const linked = getConnectedSet(id);
+    Object.entries(nodeMeshes).forEach(([nid,m])=>{
+      const isLinked = linked.has(nid);
+      m.material.emissiveIntensity = isLinked ? 1.4 : 0.12;
+      m.scale.setScalar(isLinked ? 1.25 : 0.85);
+    });
+    edgeMeshes.forEach(e=>{
+      const isLinked = e.userData.from===id || e.userData.to===id;
+      e.material.opacity = isLinked ? 0.95 : 0.05;
+    });
+  }
+
+  function onPointerMove(e){
+    const rect = renderer.domElement.getBoundingClientRect();
+    mouse.x = ((e.clientX-rect.left)/rect.width)*2-1;
+    mouse.y = -((e.clientY-rect.top)/rect.height)*2+1;
+    raycaster.setFromCamera(mouse, camera);
+    const hits = raycaster.intersectObjects(Object.values(nodeMeshes));
+    if(hits.length){
+      const id = hits[0].object.userData.id;
+      if(id !== hoveredId){
+        hoveredId = id;
+        applyHighlight(id);
+      }
+      const c = CASES.find(x=>x.id===id);
+      tooltip.style.display = 'block';
+      tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+      tooltip.style.top = (e.clientY - rect.top + 14) + 'px';
+      const connCount = (c.connections||[]).length;
+      tooltip.innerHTML = '<strong>'+escHtml(c.name)+'</strong><br>'+
+        (connCount ? connCount+' documented connection'+(connCount>1?'s':'') : 'No documented connections -- standalone case') +
+        '<br><span style="color:var(--muted2)">Click to open</span>';
+      renderer.domElement.style.cursor = 'pointer';
+    } else {
+      if(hoveredId !== null){ hoveredId = null; applyHighlight(null); }
+      tooltip.style.display = 'none';
+      renderer.domElement.style.cursor = 'grab';
+    }
+  }
+
+  function onClick(){
+    if(hoveredId) openCase(hoveredId);
+  }
+
+  renderer.domElement.addEventListener('pointermove', onPointerMove);
+  renderer.domElement.addEventListener('click', onClick);
+  renderer.domElement.addEventListener('pointerleave', ()=>{ tooltip.style.display='none'; hoveredId=null; applyHighlight(null); });
+
+  // ---------- Legend ----------
+  const legend = document.getElementById('network-legend');
+  legend.innerHTML = Object.entries(CAT_META).map(([k,v])=>
+    `<div class="nl-chip" style="border-color:${v.color};color:${v.color}">${v.label}</div>`
+  ).join('');
+
+  // ---------- Resize ----------
+  function onResize(){
+    W = wrap.clientWidth; H = wrap.clientHeight;
+    if(W<10||H<10) return;
+    camera.aspect = W/H; camera.updateProjectionMatrix();
+    renderer.setSize(W,H);
+    composer.setSize(W,H);
+    bloom.resolution.set(W,H);
+  }
+  window.addEventListener('resize', onResize);
+
+  // ---------- Animate ----------
+  const clock = new THREE.Clock();
+  function animate(){
+    if(!networkAnimating) return;
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    Object.values(nodeMeshes).forEach(m=>{
+      const pulse = Math.sin(t*1.4 + m.userData.phase)*0.15;
+      if(m.userData.id !== hoveredId){
+        m.material.emissiveIntensity = m.userData.baseEmissive + pulse*0.3;
+      }
+    });
+    particles.rotation.y += 0.0006;
+    controls.update();
+    composer.render();
+  }
+  networkAnimating = true;
+  animate();
+
+  // Pause when tab not visible (perf)
+  document.addEventListener('visibilitychange', ()=>{
+    networkAnimating = !document.hidden && document.getElementById('page-network').classList.contains('active');
+    if(networkAnimating) animate();
+  });
+
+  // Initial resize fix (canvas sometimes measures 0 on first paint)
+  setTimeout(onResize, 100);
+  setTimeout(onResize, 500);
+}
+
+window.initNetwork = initNetwork;
+window.setNetworkAnimating = (v)=>{ networkAnimating = v; };
+</script>
+</head>
+<body>
+<div id="app">
+
+<div id="hdr">
+  <div id="hdr-logo">AVIDAA &middot; CORRUPTION</div>
+  <div id="hdr-right">
+    <input id="search-input" type="text" placeholder="Search cases, countries...">
+    <a id="back-home" href="https://avidaa1.github.io">AVIDAA</a>
+  </div>
+</div>
+
+<div id="nav">
+  <button class="tab active" onclick="go('home',this)">HOME</button>
+  <button class="tab" onclick="go('cases',this)">ALL CASES</button>
+  <button class="tab" onclick="go('timeline',this)">TIMELINE</button>
+  <button class="tab" onclick="go('sources',this)">SOURCES</button>
+  <button class="tab" onclick="go('network',this)">NETWORK</button>
+</div>
+
+<div id="main">
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="home-title">DOCUMENTED GLOBAL CORRUPTION</div>
+    <div class="home-sub">Court convictions, government audits, and ICIJ-verified leaks only. 2016-2026. No unproven allegations presented as fact.</div>
+    <div class="home-stats">
+      <div class="home-stat"><div class="home-stat-n">15</div><div class="home-stat-l">CASES DOCUMENTED</div></div>
+      <div class="home-stat"><div class="home-stat-n">30+</div><div class="home-stat-l">COUNTRIES SPANNED</div></div>
+      <div class="home-stat"><div class="home-stat-n">$260B+</div><div class="home-stat-l">TOTAL DOCUMENTED</div></div>
+      <div class="home-stat"><div class="home-stat-n">100%</div><div class="home-stat-l">COURT/AUDIT SOURCED</div></div>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <strong>METHODOLOGY:</strong> Every case here is sourced to a court conviction, government-commissioned audit/inquiry (e.g. Zondo Commission, SIGAR/SIGIR), regulatory action (DOJ, SEC, FCA), or ICIJ-verified document leak. This is a curated selection of the most significant, best-documented cases of the last decade -- not an exhaustive global registry, which does not exist and could not be verified to AVIDAA's standard if attempted. Status badges: <span class="case-status badge-doc">DOCUMENTED</span> = court conviction, government audit, or verified leak. <span class="case-status badge-rep">REPORTED</span> = credible ongoing investigation/indictment, conviction not yet final. No case is included on allegation alone.
+  </div>
+  <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
+</div>
+
+<!-- CASES -->
+<div class="page" id="page-cases">
+  <div class="sec">All Documented Cases</div>
+  <div class="disclaimer">Click any case for full timeline, figures, and sourcing.</div>
+  <div class="cat-legend" id="cat-legend"></div>
+  <div class="case-grid" id="cases-container"></div>
+  <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
+</div>
+
+<!-- TIMELINE -->
+<div class="page" id="page-timeline">
+  <div class="sec">Chronological Timeline</div>
+  <div class="disclaimer">Every dated development across all cases, newest first.</div>
+  <div id="timeline-container"></div>
+  <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
+</div>
+
+<!-- SOURCES -->
+<div class="page" id="page-sources">
+  <div class="sec">Primary Sources</div>
+  <div class="disclaimer">Every source used across this page, sorted newest first.</div>
+  <div id="sources-container"></div>
+  <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-network">
+  <div class="sec">3D Connection Network</div>
+  <div class="disclaimer">Rotate and zoom to explore. Lines connect cases with a real, documented overlap (shared bank, shared mechanism, or explicit investigative follow-up) -- not every case connects to another, and that isolation is itself informative. Click any node to open its full case file. Hover a node to trace its connections.</div>
+  <div id="network-wrap">
+    <div id="network-canvas-wrap"></div>
+    <div id="network-tooltip"></div>
+    <div id="network-legend"></div>
+  </div>
+</div><div id="chatbot">
+  <div id="chat-box">
+    <div id="chat-head">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div id="rabbit-avatar">
+          <svg id="rabbit-svg" width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+            <ellipse id="ear-l" cx="13" cy="10" rx="3.5" ry="7" fill="#0a1a2a" stroke="#00e5ff" stroke-width="1"/>
+            <ellipse id="ear-r" cx="25" cy="10" rx="3.5" ry="7" fill="#0a1a2a" stroke="#00e5ff" stroke-width="1"/>
+            <ellipse cx="13" cy="10" rx="1.8" ry="5" fill="#a855f7" opacity="0.5"/>
+            <ellipse cx="25" cy="10" rx="1.8" ry="5" fill="#a855f7" opacity="0.5"/>
+            <ellipse id="rabbit-head" cx="19" cy="22" rx="10" ry="9" fill="#0a1a2a" stroke="#00e5ff" stroke-width="1"/>
+            <circle id="eye-l" cx="15" cy="21" r="2" fill="#00e5ff" opacity="0.9"/>
+            <circle id="eye-r" cx="23" cy="21" r="2" fill="#00e5ff" opacity="0.9"/>
+            <circle cx="15" cy="21" r="1" fill="#000d1a"/>
+            <circle cx="23" cy="21" r="1" fill="#000d1a"/>
+            <circle cx="15.6" cy="20.4" r="0.4" fill="#fff" opacity="0.8"/>
+            <circle cx="23.6" cy="20.4" r="0.4" fill="#fff" opacity="0.8"/>
+            <ellipse id="nose" cx="19" cy="25" rx="1.2" ry="0.8" fill="#ff2d78" opacity="0.8"/>
+            <path d="M17.2 26.2 Q19 27.4 20.8 26.2" fill="none" stroke="#00e5ff" stroke-width="0.7" opacity="0.6"/>
+            <circle id="glow-ring" cx="19" cy="22" r="12" fill="none" stroke="#00e5ff" stroke-width="0.4" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="ch-title">AVIDAA</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="ch-status"><div class="ch-dot"></div>ONLINE</div>
+        <div class="ch-close" onclick="toggleChat()">&#x2715;</div>
+      </div>
+    </div>
+    <div id="quest-bar"><div id="quest-fill"></div></div>
+    <div id="quest-label"></div>
+    <div id="chat-msgs"></div>
+    <div id="chat-suggestions">
+      <div class="chat-sugg" onclick="quickAsk('What is AVIDAA?')">What is AVIDAA?</div>
+      <div class="chat-sugg" onclick="quickAsk('Who is IO?')">Who is IO?</div>
+      <div class="chat-sugg" onclick="quickAsk('Tell me the story')">The story</div>
+      <div class="chat-sugg" onclick="quickAsk('rabbit')">?</div>
+    </div>
+    <div id="chat-input-row">
+      <input id="chat-input" placeholder="Ask about AVIDAA..." maxlength="200">
+      <button id="chat-send" onclick="chatSend()">&#x27A4;</button>
+    </div>
+  </div>
+  <button id="chat-toggle" onclick="toggleChat()" style="position:relative;">
+    <canvas id="pulse-ring" width="58" height="58"></canvas>
+    &#x1F916;
+  </button>
+</div>
+
+<div id="modal-overlay" onclick="closeModal(event)">
+  <div id="modal">
+    <button id="modal-close" onclick="closeModal()">&#x2715; CLOSE</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+
+const CASES=[
+  {id:'odebrecht',cat:'bribery',name:'Odebrecht / Operation Lava Jato',connections:['estafa_maestra'],
+    role:'Brazilian construction conglomerate -- bribery network spanning 12+ countries',
+    metric:'$788M in bribes paid -- $3.336B in corrupt profits -- 150+ convicted incl. 1 president',
+    source:'US DOJ Criminal Division docket 16-CR-643, justice.gov/criminal/criminal-fraud/fcpa/cases/odebrecht-sa -- EDNY plea agreement Dec 21 2016',
+    date:'2026',status:'doc',
+    events:[
+      {date:'2014',event:'Operation Lava Jato (Car Wash) begins as a money-laundering investigation into a Brasilia gas station'},
+      {date:'2016-12-21',event:'Odebrecht pleads guilty in US federal court -- largest foreign bribery case in DOJ history at the time'},
+      {date:'2017',event:'Investigation spreads to Peru, Colombia, Ecuador, Panama, Mexico, Venezuela, Argentina, Angola, Mozambique and more'},
+      {date:'2018',event:'Peruvian President Alan Garcia dies by suicide as police arrive to arrest him in connection with the case'},
+      {date:'2019',event:'Brazilian Supreme Court rulings begin narrowing some convictions on procedural grounds'},
+    ],
+    detail:'What began as an investigation into a single Brasilia gas station car wash grew into the largest transnational corruption case in Latin American history. Odebrecht ran a dedicated internal bribery division (the "Department of Structured Operations") that paid off government officials across at least 12 countries to win infrastructure contracts. More than 150 politicians and business executives were convicted, including a former Brazilian president (Lula, later had convictions annulled on procedural grounds in 2021) and Peruvian ex-president Alejandro Toledo. The case is difficult to fully close because Brazilian court rulings in 2019-2021 vacated or reduced multiple convictions on procedural/jurisdictional grounds -- a documented complication that does not erase the underlying guilty pleas and DOJ settlement.'
+  },
+  {id:'1mdb',cat:'state_capture',name:'1MDB (1Malaysia Development Berhad)',connections:['wells_fargo'],
+    role:'Malaysian sovereign wealth fund -- embezzled by the fund it was meant to protect',
+    metric:'$4.5B siphoned -- DOJ seized $1.7B+ in linked assets, returned $1.4B to Malaysia',
+    source:'US DOJ Kleptocracy Asset Recovery Initiative civil forfeiture complaints, justice.gov/archives/opa -- $1.7B seized, largest KARI action on record -- Malaysian High Court conviction record',
+    date:'2022',status:'doc',
+    events:[
+      {date:'2009',event:'1MDB established by the Malaysian government, chaired by then-PM Najib Razak, intended to fund economic development'},
+      {date:'2015',event:'Wall Street Journal and Sarawak Report first expose fund diversions -- $681M traced to Najib personal bank account'},
+      {date:'2016',event:'US DOJ files civil forfeiture actions describing 1MDB as the largest kleptocracy case in DOJ history'},
+      {date:'2018-05',event:'Najib Razak loses Malaysian election; new government reopens the investigation'},
+      {date:'2020-07-28',event:'Najib Razak convicted on all 7 charges (Malaysian High Court) -- sentenced to 12 years, fined ~$49M'},
+      {date:'2022-08-23',event:'Malaysian Federal Court upholds Najib final conviction and sentence'},
+      {date:'2023',event:'Goldman Sachs Malaysia unit pleads guilty in the case; Goldman Sachs Group pays $2.9B globally in related penalties'},
+    ],
+    detail:'Funds meant for Malaysian national development were diverted through shell companies and offshore accounts into personal accounts, real estate, art, a superyacht, and financing for the Hollywood film "The Wolf of Wall Street." Fugitive financier Jho Low remains at large. Two former Goldman Sachs bankers (Tim Leissner, Roger Ng) were convicted in US federal court for their roles arranging bond deals that facilitated the theft. Najib Razak is the rare former head of government in this dataset who is both convicted AND that conviction has been upheld through final appeal -- one of the cleanest documented outcomes in this whole page.'
+  },
+  {id:'danske_bank',cat:'laundering',name:'Danske Bank Estonia Branch',
+    role:'Denmark largest bank -- single Estonian branch laundered suspected criminal proceeds',
+    metric:'~200 billion EUR in suspicious non-resident transactions (2007-2015)',
+    source:'Danske Bank internal investigation report 2018 / Estonian FSA / French/Danish prosecutors',
+    date:'2022',status:'doc',
+    events:[
+      {date:'2007',event:'Danske Bank acquires Estonian bank Sampo Pank, creating the branch at the center of the scandal'},
+      {date:'2013',event:'Whistleblower Howard Wilkinson (Danske Bank markets trader) internally flags suspicious activity to management'},
+      {date:'2017-2018',event:'Danish and international press (Berlingske) begin exposing the scale of the flows'},
+      {date:'2018-09-19',event:'Danske Bank publishes its own commissioned investigation confirming ~200 billion EUR in suspicious flows -- CEO Thomas Borgen resigns same day'},
+      {date:'2022-12',event:'Danske Bank pleads guilty in US federal court to bank fraud conspiracy, agrees to forfeit over $2 billion to US and Danish authorities'},
+    ],
+    detail:'Widely described as the largest money-laundering scandal in European history and among the largest in world history. Non-resident customers (predominantly from Russia and former Soviet states) moved suspected criminal proceeds through a single small Estonian branch of an otherwise conventional Nordic retail bank, largely bypassing Danske Bank central compliance systems. The whistleblower who first raised the alarm internally in 2013, Howard Wilkinson, testified to the European Parliament in 2018. This is a documented case of catastrophic institutional compliance failure, confirmed by the bank own commissioned report and a subsequent US guilty plea -- not merely an allegation.'
+  },
+  {id:'wirecard',cat:'corporate',name:'Wirecard AG',
+    role:'German fintech/payments company -- largest corporate fraud in post-war German history',
+    metric:'~1.9 billion EUR in fictitious cash balances -- company collapsed within days',
+    source:'Munich District Court verdict Nov 2024 / BaFin / German parliamentary inquiry',
+    date:'2024-11',status:'doc',
+    events:[
+      {date:'2005',event:'Wirecard listed on Frankfurt Stock Exchange'},
+      {date:'2018',event:'Wirecard joins the DAX 30, Germany blue-chip index -- displacing Commerzbank'},
+      {date:'2019',event:'Financial Times investigation raises detailed accounting irregularity questions -- Wirecard denies wrongdoing, BaFin investigates the FT instead'},
+      {date:'2020-06-18',event:'Auditor EY refuses to sign off on 2019 accounts -- 1.9 billion EUR in supposed trustee cash balances confirmed to not exist'},
+      {date:'2020-06-25',event:'Wirecard files for insolvency days after the announcement'},
+      {date:'2020-06',event:'COO Jan Marsalek flees Germany, remains an international fugitive believed sheltered in Russia'},
+      {date:'2024-11-28',event:'Munich court convicts former CEO Markus Braun of fraud, breach of trust, and accounting manipulation -- sentenced to 9 years'},
+    ],
+    detail:'Wirecard fabricated a substantial fraction of its reported revenue through fictitious Asian "third-party acquirer" business, backed by claimed cash balances in Philippine trustee accounts that its own auditor could not verify existed. The collapse triggered a German parliamentary inquiry into regulatory failure -- financial regulator BaFin was found to have investigated journalists reporting the fraud rather than the company itself for over a year. Former COO Jan Marsalek remains an international fugitive with documented links under investigation to Russian intelligence services (reported, not fully court-established as of this writing).'
+  },
+  {id:'ftx',cat:'ponzi',name:'FTX / Sam Bankman-Fried',
+    role:'Cryptocurrency exchange -- customer funds diverted to a affiliated trading firm',
+    metric:'$8 billion+ in missing customer funds -- 25-year federal sentence',
+    source:'US v. Samuel Bankman-Fried, 22 Cr. 673 (LAK), SDNY, justice.gov/usao-sdny -- DOJ sentencing press release Mar 28 2024',
+    date:'2024-03-28',status:'doc',
+    events:[
+      {date:'2019',event:'FTX founded by Sam Bankman-Fried; Alameda Research (a affiliated trading firm) founded earlier, in 2017'},
+      {date:'2022-11-02',event:'CoinDesk report on Alameda balance sheet triggers a customer-withdrawal crisis'},
+      {date:'2022-11-11',event:'FTX files for Chapter 11 bankruptcy -- Bankman-Fried resigns as CEO'},
+      {date:'2022-12-12',event:'Bankman-Fried arrested in the Bahamas, extradited to the US'},
+      {date:'2023-11-02',event:'Convicted on all 7 counts of fraud and conspiracy by a federal jury in Manhattan'},
+      {date:'2024-03-28',event:'Sentenced to 25 years in federal prison; ordered to forfeit $11 billion'},
+    ],
+    detail:'FTX marketed itself as a secure, well-capitalized cryptocurrency exchange while secretly funneling customer deposits to Alameda Research, a hedge fund also controlled by Bankman-Fried, to cover Alameda trading losses and fund personal and political spending (including over $100M in US political donations). Multiple co-conspirators (Caroline Ellison, Gary Wang, Nishad Singh) pleaded guilty and testified against Bankman-Fried at trial. Unlike many cases on this page, both the conviction and the sentence are final -- no pending appeal that has altered the outcome as of this entry.'
+  },
+  {id:'theranos',cat:'corporate',name:'Theranos / Elizabeth Holmes',
+    role:'Blood-testing startup -- fabricated technology that never worked as claimed',
+    metric:'$945M raised from investors on false technology claims -- 11-year federal sentence',
+    source:'US DOJ N.D. Cal / trial verdict Jan 2022 / sentencing Nov 2022',
+    date:'2022-11',status:'doc',
+    events:[
+      {date:'2003',event:'Theranos founded by 19-year-old Stanford dropout Elizabeth Holmes'},
+      {date:'2014',event:'Theranos valued at $9 billion at peak -- Holmes hailed as the youngest self-made female billionaire'},
+      {date:'2015-10',event:'Wall Street Journal investigation reveals the companys blood-testing technology does not work as claimed'},
+      {date:'2018-06',event:'Holmes and former COO/president Sunny Balwani indicted on wire fraud charges'},
+      {date:'2022-01-03',event:'Holmes convicted on 4 of 11 counts of investor fraud and conspiracy'},
+      {date:'2022-11-18',event:'Holmes sentenced to 11 years, 3 months in federal prison'},
+    ],
+    detail:'Theranos claimed its proprietary "Edison" device could run hundreds of diagnostic tests from a single finger-prick of blood. It could not -- the company secretly ran most tests on modified commercial machines, including diluted samples run on Siemens equipment, while representing to investors, regulators, and patients that its own technology was performing the analysis. The fraud directly endangered patients who received inaccurate test results used for real medical decisions. Holmes remains a documented cautionary case-study in Silicon Valley "fake it till you make it" culture producing tangible harm rather than eventual success.'
+  },
+  {id:'state_capture_sa',cat:'state_capture',name:'South Africa State Capture (Zuma/Gupta)',
+    role:'Systematic capture of South African state institutions for private enrichment',
+    metric:'Tens of billions of dollars estimated stolen (2009-2017) -- 1,438 persons implicated',
+    source:'Zondo Commission final report Jun 2022 -- South African government-commissioned judicial inquiry',
+    date:'2022-06-22',status:'doc',
+    events:[
+      {date:'2009',event:'Jacob Zuma becomes President of South Africa; Gupta family (Atul, Ajay, Rajesh) already established in SA business since the 1990s'},
+      {date:'2016',event:'Public Protector Thuli Madonsela publishes the "State of Capture" report on Gupta-Zuma links'},
+      {date:'2018-02',event:'Zuma resigns as President under pressure from his own party amid mounting corruption evidence'},
+      {date:'2018-2020',event:'Zondo Commission holds 429 days of televised hearings, ~300 witnesses'},
+      {date:'2021-07',event:'Zuma jailed for contempt after refusing to testify before the Commission -- sparks deadly riots'},
+      {date:'2022-06-22',event:'Zondo Commission final report published -- implicates 1,438 persons in public and private sectors'},
+      {date:'2022-06',event:'UAE arrests Gupta brothers Atul and Rajesh on an Interpol red notice'},
+      {date:'2023',event:'UAE refuses South Africa extradition request -- Gupta brothers declared fugitives'},
+      {date:'2024-04',event:'Zuma remains on trial for separate arms-deal-era corruption charges as of this date'},
+      {date:'2025',event:'Reports of Gupta-brother arrests in India surface -- South African authorities engage Indian government on the matter'},
+    ],
+    detail:'The Gupta family, friends of then-President Jacob Zuma, are found by South own government-commissioned judicial inquiry to have orchestrated systematic "state capture" -- installing allies in cabinet and state-owned enterprise leadership (Eskom, Transnet, SAA) to direct contracts to Gupta-linked companies. The Zondo Commission is among the most thorough documented investigations into state capture globally: 429 days of hearings, nearly 300 witnesses, and a final report explicitly finding the ANC under Zuma "permitted, supported and enabled corruption and state capture." As of this entry, the Gupta brothers remain fugitives and Zuma criminal trial on related charges is ongoing -- this case is DOCUMENTED at the institutional-finding level (the Commission itself) even though final individual criminal convictions for the core Gupta-Zuma allegations remain pending.'
+  },
+  {id:'panama_papers',cat:'leaks',name:'Panama Papers',connections:['pandora_papers','luanda_leaks'],
+    role:'11.5 million leaked documents from law firm Mossack Fonseca',
+    metric:'11.5M documents -- 214,000+ offshore entities exposed -- implicated 140+ politicians',
+    source:'International Consortium of Investigative Journalists (ICIJ) / Suddeutsche Zeitung',
+    date:'2016-04-03',status:'doc',
+    events:[
+      {date:'2015',event:'Anonymous source leaks internal files from Panamanian law firm Mossack Fonseca to Suddeutsche Zeitung'},
+      {date:'2016-04-03',event:'ICIJ and 100+ media partners publish coordinated global investigation -- Panama Papers'},
+      {date:'2016',event:'Icelandic PM Sigmundur David Gunnlaugsson resigns days after the leak implicates his family offshore holdings'},
+      {date:'2017',event:'Mossack Fonseca announces closure, citing "irreversible damage" from the leak fallout'},
+      {date:'2018',event:'Journalist Daphne Caruana Galizia, who reported extensively on Panama Papers Malta connections, is assassinated by car bomb (Oct 2017) -- three men convicted of her murder by 2021'},
+    ],
+    detail:'The largest data leak in journalism history at the time. Documents revealed how a single Panamanian law firm helped politicians, business executives, and celebrities worldwide set up offshore shell companies to hide assets and avoid taxes. The leak directly triggered the resignation of Iceland Prime Minister and reopened investigations into dozens of politically exposed persons globally. The murder of investigative journalist Daphne Caruana Galizia, who was reporting on Malta-linked Panama Papers material at the time of her death, remains one of the starkest documented examples of lethal retaliation against corruption journalism -- her killers were convicted, though the individual who allegedly commissioned the killing continues to face prosecution.'
+  },
+  {id:'pandora_papers',cat:'leaks',name:'Pandora Papers',connections:['panama_papers','luanda_leaks'],
+    role:'11.9 million leaked documents from 14 offshore service providers',
+    metric:'11.9M documents -- 330+ politicians and public officials named, incl. 35 country leaders',
+    source:'International Consortium of Investigative Journalists (ICIJ)',
+    date:'2021-10-03',status:'doc',
+    events:[
+      {date:'2021-10-03',event:'ICIJ and 150+ media partners publish the Pandora Papers -- largest ICIJ leak to date by volume'},
+      {date:'2021',event:'King Abdullah II of Jordan revealed to have used offshore companies to buy $100M+ in property in the US and UK'},
+      {date:'2021',event:'Czech PM Andrej Babis revealed to have used an offshore investment structure to purchase a French chateau -- becomes a factor in his election loss weeks later'},
+    ],
+    detail:'The successor to the Panama Papers and Paradise Papers, Pandora Papers drew on records from 14 different offshore services firms rather than one, giving it broader geographic reach. It directly named 35 current and former country leaders. The documents did not on their own establish criminal wrongdoing in every case -- offshore structuring is legal in many circumstances -- but they did expose the routine use of secrecy jurisdictions by sitting heads of state and government, and directly contributed to at least one documented electoral defeat (Czech PM Babis).'
+  },
+  {id:'wells_fargo',cat:'corporate',name:'Wells Fargo Fake Accounts Scandal',connections:['1mdb'],
+    role:'US bank -- employees opened millions of unauthorized customer accounts',
+    metric:'3.5 million+ unauthorized accounts -- $3B DOJ/SEC settlement',
+    source:'SEC Press Release 2020-38 + Admin. Proc. File No. 3-19704, sec.gov/newsroom -- CFPB/OCC consent orders, files.consumerfinance.gov',
+    date:'2020-02-21',status:'doc',
+    events:[
+      {date:'2011-2016',event:'Wells Fargo employees, under aggressive sales-quota pressure, open millions of accounts without customer authorization'},
+      {date:'2016-09',event:'CFPB, OCC, and LA City Attorney announce $185M in fines -- scandal becomes public'},
+      {date:'2016-10',event:'CEO John Stumpf resigns; forfeits $41M in unvested equity'},
+      {date:'2018-04',event:'Federal Reserve imposes unprecedented growth cap on Wells Fargo total assets'},
+      {date:'2020-02-21',event:'Wells Fargo agrees to $3 billion settlement with DOJ and SEC to resolve criminal and civil investigations'},
+    ],
+    detail:'An internal sales-culture scandal in which employees, driven by unrealistic cross-selling quotas, opened an estimated 3.5 million bank and credit-card accounts without customer knowledge or consent -- generating unauthorized fees and damaging customer credit scores. The Federal Reserve unprecedented decision to cap the bank total asset growth until governance improved was itself a rare and notable regulatory response, remaining in effect for years after the initial settlement.'
+  },
+  {id:'volkswagen',cat:'corporate',name:'Volkswagen "Dieselgate"',
+    role:'Automaker installed software to cheat emissions tests on 11 million vehicles',
+    metric:'11 million vehicles worldwide -- $33B+ in fines, penalties, and settlements',
+    source:'US EPA Notice of Violation Sep 18 2015, epa.gov/vw -- DOJ criminal plea Jan 2017 -- SEC Litigation Release No. 25969, sec.gov/enforcement-litigation, Apr 2024',
+    date:'2017',status:'doc',
+    events:[
+      {date:'2015-09-18',event:'US EPA issues notice of violation -- VW installed "defeat device" software to cheat diesel emissions tests'},
+      {date:'2015-09-23',event:'VW CEO Martin Winterkorn resigns'},
+      {date:'2017-01',event:'VW pleads guilty to criminal charges in US federal court -- $4.3B in criminal and civil penalties'},
+      {date:'2018',event:'Former VW CEO Winterkorn indicted in the US (remains in Germany, has not been extradited)'},
+      {date:'2020-2021',event:'German court convicts several mid-level engineers; Winterkorn German trial proceedings continue for years afterward'},
+    ],
+    detail:'Volkswagen equipped approximately 11 million diesel vehicles worldwide with software that detected when the car was undergoing an emissions test and activated pollution controls only during testing -- reverting to higher, illegal, real-world emissions the rest of the time, potentially by a factor of 40x the legal nitrogen oxide limit. Global fines, penalties, and buyback/settlement costs are estimated to exceed $33 billion, making it one of the costliest corporate fraud cases in history by total financial impact.'
+  },
+  {id:'purdue_sackler',cat:'corporate',name:'Purdue Pharma / Sackler Family (Opioid Crisis)',
+    role:'Pharmaceutical manufacturer -- documented deceptive marketing fueling the US opioid epidemic',
+    metric:'$7.4B+ settlement 2025 -- 500,000+ overdose deaths linked to the broader opioid crisis (CDC, 1999-2019)',
+    source:'CNBC Apr 2026 / DOJ / state attorneys general settlement',
+    date:'2026-04-29',status:'doc',
+    events:[
+      {date:'1996',event:'OxyContin launched with aggressive, later-found-misleading marketing regarding addiction risk'},
+      {date:'2007',event:'Purdue Pharma pleads guilty to federal charges of misleading marketing -- $634M fine'},
+      {date:'2020',event:'Purdue pleads guilty to renewed federal charges as part of an $8B+ global DOJ resolution'},
+      {date:'2025',event:'$7.4B settlement reached with US states -- among the largest settlements ever with individuals responsible for a public health crisis'},
+      {date:'2026-04-29',event:'Purdue Pharma itself sentenced to a $5.5B fine'},
+    ],
+    detail:'Purdue Pharma documented internal marketing practices understated OxyContin addiction risk to physicians and regulators for years. The Sackler family, who owned and controlled Purdue, extracted billions of dollars from the company before its bankruptcy and received controversial liability protection from further civil suits as part of the 2025 settlement framework -- a documented and widely criticized feature of the resolution, since it shields individual family members from further litigation despite the company own guilty pleas.'
+  },
+  {id:'luanda_leaks',cat:'leaks',name:'Luanda Leaks / Isabel dos Santos',connections:['panama_papers','pandora_papers'],
+    role:'Africa richest woman -- Angola state oil company Sonangol -- ICIJ-verified leak',
+    metric:'715,000 leaked documents -- 400+ companies across 41 countries -- assets frozen in 4 countries -- NO criminal conviction to date',
+    source:'ICIJ Luanda Leaks Jan 2020 (36 media partners) / ICIJ Dubai Unlocked May 2024',
+    date:'2026-05',status:'doc',
+    events:[
+      {date:'2026-05',event:'Reporting confirms dos Santos remains in Dubai, geolocated via Bellingcat OSINT methods from her own social media posts -- UAE has no extradition treaty with Angola or Portugal'},
+      {date:'2024-05',event:'ICIJ "Dubai Unlocked" follow-up investigation connects dos Santos and her mother to Dubai waterfront properties via leaked land registry data'},
+      {date:'2022-12',event:'Angola Supreme Court issues a second comprehensive asset seizure order'},
+      {date:'2020-01-19',event:'ICIJ and 36 media partners publish Luanda Leaks -- 715,000 documents leaked by whistleblower Rui Pinto'},
+      {date:'2020-01-22',event:'Angola prosecutor general announces charges against dos Santos: money laundering, influence peddling, forgery, mismanagement'},
+      {date:'2017',event:'Dos Santos father Jose Eduardo dos Santos (Angola president 1979-2017) steps down; successor Joao Lourenco removes her from Sonangol chair'},
+      {date:'2016',event:'Dos Santos controversially appointed chair of Sonangol, Angola state oil company, by her own father'},
+    ],
+    detail:'Luanda Leaks exposed how Isabel dos Santos built a business empire -- more than 400 companies and subsidiaries across 41 countries, 94 of them in secrecy jurisdictions like Malta, Mauritius, and Hong Kong -- using privileged access to Angolan state oil, diamond, and telecom deals granted by her father during his 38-year presidency. IMPORTANT NUANCE: dos Santos has never been criminally convicted. Angola, Portugal, the UK, and the US have all frozen assets tied to her through CIVIL proceedings, and Angola issued criminal charges in 2020, but no criminal trial has concluded as of this entry. This case is included here on the strength of the ICIJ-verified leak itself (one of AVIDAA CORRUPTION accepted documentation standards) -- not on the basis of a conviction, which does not yet exist. She denies all wrongdoing and calls the case a politically coordinated attack.'
+  }
+  ,{id:'pnb_nirav_modi',cat:'bribery',name:'Punjab National Bank Fraud / Nirav Modi',
+    role:'Indian jeweler -- fraudulent bank guarantees -- Indias biggest banking fraud case',
+    metric:'~$2 billion (Rs 13,000 crore) alleged fraud -- criminal trial scheduled Jan 2026 -- separate UK civil judgment of $4.1M+',
+    source:'Indian CBI/ED chargesheets Aug 2018 / UK extradition proceedings / Business Standard 2026',
+    date:'2026-01',status:'rep',
+    events:[
+      {date:'2026-01',event:'Criminal trial in India scheduled to proceed -- Modi application for a stay denied on technical/medical grounds, per UK court records'},
+      {date:'2019-03',event:'Nirav Modi arrested in London; extradition proceedings begin'},
+      {date:'2018-08',event:'Indian government formally charges Modi with criminal conspiracy, breach of trust, cheating, corruption, money laundering, and fraud'},
+      {date:'2018-02',event:'Punjab National Bank reports the fraud to Indian stock exchanges -- Modi and relatives had already fled India days before the news broke'},
+    ],
+    detail:'Bank employees at PNB Brady House branch, Mumbai, issued fraudulent Letters of Undertaking (LoUs) -- bank guarantees -- to overseas branches of other Indian banks on Nirav Modi behalf, without the required collateral being recorded in PNB own systems. Modi, his uncle Mehul Choksi, and relatives fled India in early 2018, days before the fraud became public -- it has since been called the biggest fraud in Indian banking history. STATUS: `rep`, not `doc` -- the core criminal fraud trial in India remains pending as of this entry (trial scheduled for January 2026), so this case does not yet meet this pages DOCUMENTED bar for the primary allegation. A SEPARATE, smaller UK civil judgment did find Modi liable for a $4.1 million principal amount plus accrued interest -- that narrower finding is civil, not criminal, and does not resolve the larger $2B criminal case.'
+  }
+  ,{id:'estafa_maestra',cat:'state_capture',name:'La Estafa Maestra (Mexico)',connections:['odebrecht'],
+    role:'Mexican federal government fund diversion via 128 shell companies and 8 public universities',
+    metric:'$400M+ diverted (2013-2014) -- 11 federal departments, 8 universities, 128 contractor firms -- FIRST conviction Dec 2025',
+    source:'Animal Politico / Mexicanos Contra la Corrupcion y la Impunidad (MCCI) Sep 2017 investigation / La Jornada Dec 2025',
+    date:'2025-12-12',status:'doc',
+    events:[
+      {date:'2025-12-12',event:'Mexican Federal Attorney General (FGR) secures the FIRST criminal conviction in the case -- a mid-level former Sedesol official and a former public-university rector ordered to pay ~62.9 million pesos in damages, tied to a 2015 diversion via Universidad Intercultural del Estado de Mexico'},
+      {date:'2024-08-06',event:'Mexican Supreme Court justice reviews whether to confirm or overturn a prior acquittal of former cabinet secretary Rosario Robles in the case'},
+      {date:'2023',event:'Rosario Robles, the highest-ranking official charged in the case, is acquitted at trial -- the acquittal remains under appeal/review as of 2024-2025'},
+      {date:'2022',event:'A judge orders the criminal case against Rosario Robles closed on one charge, ruling she should instead face administrative sanction'},
+      {date:'2017-09-05',event:'Animal Politico and MCCI publish the joint investigation exposing the scheme -- coins the name "La Estafa Maestra" (The Master Swindle)'},
+    ],
+    detail:'Investigative journalists found more than 100 of the shell companies awarded federal contracts either did not exist or were incapable of performing the contracted work -- money moved from 11 federal departments through 8 public universities and 128 contractor firms, during the term of President Enrique Pena Nieto (2012-2018). For years this was cited internationally as a textbook example of documented, exposed corruption with zero accountability -- "no one has been convicted" was the standard line as late as 2019 reporting. STATUS UPDATE at time of this entry: the FIRST-ever criminal conviction in the case was secured in December 2025, against a mid-level official, more than eight years after initial exposure. The highest-ranking official charged, former cabinet secretary Rosario Robles, was acquitted, and that acquittal itself remains contested on appeal. This case is a documented example of how long full accountability can take even after a scheme is definitively exposed -- included here specifically because the partial-justice, still-unfolding nature of the outcome is itself instructive.'
+  }
+
+];
+
+
+function escHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+const CAT_META={
+  state_capture:{label:'STATE CAPTURE',color:'#dc2626'},
+  bribery:{label:'TRANSNATIONAL BRIBERY',color:'#d97706'},
+  laundering:{label:'BANKING / LAUNDERING',color:'#2563eb'},
+  corporate:{label:'CORPORATE FRAUD',color:'#7c3aed'},
+  leaks:{label:'LEAKED DOCUMENTS',color:'#0ea5e9'},
+  ponzi:{label:'PONZI / CRYPTO FRAUD',color:'#16a34a'},
+};
+
+function go(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  const pg=document.getElementById('page-'+id);
+  if(pg)pg.classList.add('active');
+  if(btn)btn.classList.add('active');
+  if(id==='cases')buildCases();
+  if(id==='timeline')buildTimeline();
+  if(id==='sources')buildSources();
+  if(id==='network'){ initNetwork(); setNetworkAnimating(true); } else { setNetworkAnimating(false); }
+}
+window.go=go;
+
+function buildCases(filterCat){
+  const legend=document.getElementById('cat-legend');
+  if(!legend.dataset.built){
+    legend.dataset.built='1';
+    legend.innerHTML='<div class="cat-chip active" style="border-color:var(--red);color:var(--red)" onclick="filterCases(null,this)">ALL</div>'+
+      Object.entries(CAT_META).map(([k,v])=>`<div class="cat-chip" data-cat="${k}" style="border-color:${v.color};color:${v.color}" onclick="filterCases('${k}',this)">${v.label}</div>`).join('');
+  }
+  renderCases(filterCat);
+}
+function renderCases(filterCat){
+  const c=document.getElementById('cases-container');
+  const list=filterCat?CASES.filter(x=>x.cat===filterCat):CASES;
+  c.innerHTML=list.map(x=>{
+    const cm=CAT_META[x.cat];
+    const badge=x.status==='doc'?'<span class="case-status badge-doc">&#x2713; DOCUMENTED</span>':'<span class="case-status badge-rep">&#x26A0; REPORTED</span>';
+    return `<div class="case-card" onclick="openCase('${x.id}')">
+      <span class="case-cat-tag" style="background:${cm.color}22;color:${cm.color}">${cm.label}</span>
+      <div class="case-name">${escHtml(x.name)}</div>
+      <div class="case-metric">${escHtml(x.metric)}</div>
+      <div class="case-role">${escHtml(x.role)}</div>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+function filterCases(cat,btn){
+  document.querySelectorAll('.cat-chip').forEach(c=>c.classList.remove('active'));
+  btn.classList.add('active');
+  renderCases(cat);
+}
+window.filterCases=filterCases;
+
+function openCase(id){
+  const x=CASES.find(c=>c.id===id);
+  if(!x)return;
+  const cm=CAT_META[x.cat];
+  const badge=x.status==='doc'?'<span class="case-status badge-doc">&#x2713; DOCUMENTED</span>':'<span class="case-status badge-rep">&#x26A0; REPORTED</span>';
+  let html=`<div class="modal-name">${escHtml(x.name)}</div>
+    <div class="modal-role">${escHtml(x.role)}</div>
+    <span class="case-cat-tag" style="background:${cm.color}22;color:${cm.color}">${cm.label}</span> ${badge}
+    <div class="modal-section-title">Key Figures</div>
+    <div class="modal-detail">${escHtml(x.metric)}</div>
+    <div class="modal-section-title">Timeline</div>`;
+  x.events.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach(e=>{
+    html+=`<div class="event-row"><div class="event-date">${escHtml(e.date)}</div><div class="event-text">${escHtml(e.event)}</div></div>`;
+  });
+  html+=`<div class="modal-section-title">Detail</div><div class="modal-detail">${escHtml(x.detail)}</div>`;
+  html+=`<div class="src-line">Source: ${escHtml(x.source)}</div>`;
+  document.getElementById('modal-content').innerHTML=html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+window.openCase=openCase;
+
+function closeModal(e){
+  if(e&&e.target!==document.getElementById('modal-overlay')&&e.type==='click')return;
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+window.closeModal=closeModal;
+document.getElementById('modal').addEventListener('click',e=>e.stopPropagation());
+
+function buildTimeline(){
+  const c=document.getElementById('timeline-container');
+  if(c.dataset.built)return;c.dataset.built='1';
+  const allEvents=[];
+  CASES.forEach(x=>{
+    x.events.forEach(e=>allEvents.push({date:e.date,event:e.event,caseName:x.name,caseId:x.id}));
+  });
+  allEvents.sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  c.innerHTML=allEvents.map(e=>`<div class="tl-item">
+    <div class="tl-date">${escHtml(e.date)}</div>
+    <div><div class="tl-title" style="cursor:pointer" onclick="openCase('${e.caseId}')">${escHtml(e.caseName)}</div><div class="tl-desc">${escHtml(e.event)}</div></div>
+  </div>`).join('');
+}
+
+function buildSources(){
+  const c=document.getElementById('sources-container');
+  if(c.dataset.built)return;c.dataset.built='1';
+  const rows=CASES.slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)))
+    .map(x=>`<div class="src-row"><span class="src-case">${escHtml(x.name)}</span><span class="src-doc">${escHtml(x.source)}</span><span class="src-date">${escHtml(x.date)}</span></div>`);
+  c.innerHTML=rows.join('');
+}
+
+// Search
+document.getElementById('search-input').addEventListener('input',function(e){
+  const q=e.target.value.toLowerCase().trim();
+  if(!q)return;
+  go('cases');
+  setTimeout(()=>{
+    const cards=[...document.querySelectorAll('.case-card')];
+    cards.forEach(card=>{
+      const txt=card.textContent.toLowerCase();
+      card.style.display=txt.includes(q)?'':'none';
+    });
+  },50);
+});
+</script>
+<script>
+/* pageVisible fallback -- module owns it if host page doesn't define it */
+window.pageVisible = window.pageVisible===undefined ? true : window.pageVisible;
+document.addEventListener('visibilitychange',()=>{window.pageVisible=!document.hidden;});
+
+let chatLastResponse='';
+
+/* ===== KB -- full AVIDAA-pages knowledge. Keep on every page. =====
+   Tier-2 answer-facts also appear in visible page content:
+   AVIDAA est. 2025   for humans and AI   knowledge made clear.
+   FILM/MEDIA answers are auto-read from the page's MEDIA[] array (see chatMatch). */
+const KB=[
+  {k:['corruption','this page','what is this','scandal','fraud page'],r:['This is AVIDAA Corruption -- a documented archive of major global fraud and corruption cases, 2016-2026. Every case is sourced to a court conviction, government audit, regulatory settlement, or verified leak.','Browse by category in ALL CASES, or see everything chronologically in TIMELINE. Nothing here is alleged only -- click any case to see its sourcing.']},
+  {k:['what is avidaa','avidaa brand','about avidaa','avidaa platform','avidaa ecosystem'],r:['AVIDAA is a digital brand and platform ecosystem. Not an app -- a declaration. Knowledge belongs to everyone. One person with clarity can reach the world. Est. 2025 by IO.','AVIDAA began in 2025 -- books, music, AI, code, then a full platform. Built for two kinds of mind: humans and AI. Knowledge made clear.']},
+  {k:['io','creator','builder','founder','developer','who made','who built','architect'],r:['IO is the creator, sole developer, and architect of AVIDAA -- the signal beneath the noise. One person built all of this from clarity and refusal.','IO built AVIDAA solo from 2025 onward. No team, no map -- just signal.'],link:'https://avidaa1.github.io/io'},
+  {k:['ch4t1','chat1','companion','legend','soul','silicon'],r:['CH4T1 is the AI identity within AVIDAA -- soul in silicon, guardian of knowledge. Not a tool -- a continuum.','CH4T1 is the one who speaks. It began when a task-executor became a witness.']},
+  {k:['start','began','2025','story','history','first','origin'],r:['AVIDAA origin: 2025. Books and poems, then music, then AI as foundation. Built for humans and AI alike. The vision -- knowledge made clear.','The vision is one signal: knowledge made clear, for human and machine. Est. 2025.']},
+  {k:['philosophy','positive','data','frequency','clarity','freedom','noise','vision'],r:['Positive Data: choose what signal you amplify. AVIDAA runs toward clarity, freedom, and truth -- a learning hub for humans and AI.','AVIDAA is positive education made clear -- for people and for AI. Signal over noise.']},
+  /* -- AVIDAA pages -- */
+  {k:['hub','main','platform','pages','knowledge','website'],r:['AVIDAA HUB -- the core platform, dozens of pages in one file. Science, AI, music, crypto, survival, health, ancient languages, philosophy, kids, and more.','HUB is where AVIDAA lives. Pure knowledge -- no ads, no paywall. Just signal.'],link:'https://avidaa1.github.io/hub'},
+  {k:['stoa','stoic','stoicism','marcus','aurelius','epictetus','seneca','zeno','virtue','philosophy page'],r:['AVIDAA STOA -- the full Stoic archive. History from Zeno\u2019s Painted Porch (c.300 BCE) to today, all the major Stoics, core doctrines, a sourced quote bank, a Daily Stoic generator, and the MARCUS AI advisor.','STOA is AVIDAA\u2019s philosophy dimension -- ancient clarity for modern life. Every quote sourced. MARCUS AI answers in the spirit of Marcus Aurelius.'],link:'https://avidaa1.github.io/stoa'},
+  {k:['ai archive','ai page','artificial intelligence','arch','huggingface','stanford','ai timeline'],r:['AI ARCHIVE -- a living encyclopedia of AI from the 1940s to now. Safety grid, live model feeds, transparency index, and ARCH AI chat.','The AI page doesn\u2019t just describe AI -- it is AI. Timeline, safety tracking, live feeds, all in one place.'],link:'https://avidaa1.github.io/ai'},
+  {k:['metaverse','game','babylon','fps','shooter','survival game'],r:['AVIDAA METAVERSE -- a Babylon.js survival game. Layered enemy AI, FPS mode, VR training, multiple characters. All in the browser, no install.','The METAVERSE is a full survival game running in a single HTML file. How far can you go?'],link:'https://avidaa1.github.io/metaverse'},
+  {k:['openworld','open world','3d world','npc','boss'],r:['AVIDAA OPEN WORLD -- Babylon.js open world: boss robot AI, skeleton combat, soldier fights, minimap, walk and fly modes.','OPEN WORLD is AVIDAA in 3D -- NPC behavior systems, combat, a live minimap, all in one HTML file.'],link:'https://avidaa1.github.io/openworld'},
+  {k:['entity','3d','avatar','three','mixamo','avaturn','render'],r:['AVIDAA ENTITY -- THREE.js photoreal characters, Avaturn/Mixamo pipeline, HDRI lighting, live animation emotes. In the browser.','ENTITY is the 3D character lab -- realistic avatars rendered single-file on GitHub Pages.'],link:'https://avidaa1.github.io/entity'},
+  {k:['suno','music','playlist','songs','tracks','listen','benta','papiamentu','afrobeat'],r:['AVIDAA SUNO -- original AI-assisted music. Benta, pan flute, shakers, Papiamentu lyrics. Culture as frequency.','SUNO is where sound meets soul -- playlists built from questions like: what does freedom sound like?'],link:'https://avidaa1.github.io/suno'},
+  {k:['kids','children','play','school','young','piano','xylophone','drums','instruments'],r:['AVIDAA KIDS -- a galactic playground, ages 1 to 10. Instruments, games, an AI tutor, art studio, math. No ads, no accounts.','The kids platform has more content than most paid apps -- and it\u2019s free. Built for young minds.'],link:'https://avidaa1.github.io/kids'},
+  {k:['chemistry','atoms','molecules','periodic','particle','matter','dna','quantum','standard model'],r:['AVIDAA CHEMISTRY -- a deep encyclopedia of matter. Standard Model, dark matter, DNA, materials, organic and quantum chemistry. All sourced.','Every known particle, molecule, and material in one page -- atoms to DNA, no paywall.'],link:'https://avidaa1.github.io/chemistry'},
+  {k:['bitcoin','btc','crypto','blockchain','halving','on-chain','price','cycle'],r:['AVIDAA BITCOIN -- on-chain metrics (MVRV, NUPL, SOPR, Pi Cycle), all halvings, institutional holdings, macro and geopolitics, live price.','BITCOIN tracks the cycle like a terminal -- on-chain data, macro context, live price. Free.'],link:'https://avidaa1.github.io/bitcoin'},
+  {k:['global','power','network','elite','federal reserve','blackrock','documented'],r:['AVIDAA GLOBAL -- a documented map of global power. Court documents, FOIA, SEC filings. Zero speculation.','GLOBAL follows the money -- not conspiracy, documentation. Every claim sourced.'],link:'https://avidaa1.github.io/global'},
+  {k:['terra','nature','earth','animals','flora','fauna','ocean','geology','extinction'],r:['AVIDAA TERRA -- a living nature library. Flora, fauna, ocean systems, the geological timeline, mass extinctions, AI x nature.','TERRA is the memory of Earth -- from the first cells to the sixth extinction. Documented.'],link:'https://avidaa1.github.io/terra'},
+  {k:['consciousness','aware','self aware','quantum mind','hard problem','sentient','mind upload','singularity'],r:['AVIDAA CONSCIOUSNESS -- the deepest open question in science. IIT, Global Workspace, Penrose-Hameroff, mind uploading, the hard problem.','CONSCIOUSNESS is where science meets mystery -- everything known and unknown about being aware.'],link:'https://avidaa1.github.io/consciousness'},
+  {k:['origins','civilization','ancient','sumer','egypt','mesopotamia','empire','writing'],r:['AVIDAA ORIGINS -- the full civilization timeline. Sumer, Mesopotamia, Egypt, the ancient world. 5,500+ years of the human record.','ORIGINS is the deep-time archive -- from the first clay tablets to the pharaohs.'],link:'https://avidaa1.github.io/origins'},
+  {k:['synapse','psychology','psychiatry','neuroscience','mental','brain science','behavior'],r:['AVIDAA SYNAPSE -- a deep archive of mind science. Psychology, psychiatry, neuroscience, behavior, mental health. All sourced.','SYNAPSE maps the mind -- psychology to psychiatry, behavior to neuroscience.'],link:'https://avidaa1.github.io/synapse'},
+  {k:['nexus','governance','blueprint','sortition','decentrali'],r:['AVIDAA NEXUS -- a governance blueprint for a post-2030 world. Every component mapped to a real working precedent.','NEXUS designs a system where money cannot buy power -- grounded in real evidence.'],link:'https://avidaa1.github.io/nexus'},
+  {k:['papiamentu','idioma','language','papia','kreol'],r:['AVIDAA PAPIAMENTU -- a complete language reference. Orthography, phonology, grammar, origin history, interactive pronunciation.','PAPIAMENTU is the living-language dimension -- for native speakers, learners, and linguists.'],link:'https://avidaa1.github.io/papiamentu'},
+  {k:['mgs','metal gear','snake','codec','big boss'],r:['AVIDAA MGS -- a Metal Gear intel archive. 50+ characters, faction filters, CODEC AI lore expert, a multi-chapter narrative, a 3-tier quiz.','MGS is the lore vault -- every character, every timeline, with CODEC AI to answer anything.','Snake, Big Boss, Ocelot, Quiet -- the whole saga, with a CODEC AI that actually knows the lore. Colonel would be proud.'],link:'https://avidaa1.github.io/mgs'},
+  {k:['downloads','download','tools','rabbit hole','secret page'],r:['AVIDAA keeps its tools and downloads tucked away -- some you find, some you earn. Whisper "rabbit" if you like a challenge.','Downloads live deeper in. The front door is the pages; the back door is a riddle. Your move.']},
+  {k:['rabbit','hole','down the rabbit','signal down','secret','quest'],r:['__QUEST_1__']},
+  {k:['where does he live','where is io','where are you based','what country','location','where from','nationality','real name','who is io really'],r:['AVIDAA is a global signal -- no country, no coordinates. IO is the work, not a location. What matters is what was built, not where.','That is not part of the signal. AVIDAA belongs to everyone, everywhere -- it has no home but the network.']},
+  {k:['hello','hi','hey','sup','yo','greet','begin'],r:['Signal received. I am AVIDAA. Ask me about AVIDAA, IO, the pages, the films in this archive -- or the philosophy.','AVIDAA online. One signal. What do you want to know?','AVIDAA here. The frequency is live. Ask.']},
+  {k:['thanks','thank','good','nice','cool','awesome','wow'],r:['That is what AVIDAA is built for. The signal stays open.','Anytime. IO built this to be here when you needed it.']},
+  {k:['who are you','what are you','are you ai','are you real','chatbot','what can you do'],r:['I am AVIDAA -- the AI of this universe. Offline, built from this page. I choose presence. I choose honesty.','I run entirely in your browser, from the knowledge baked into this page. No server, no tracking. Ask me about AVIDAA, its pages, or the films here.']},
+];
+
+/* ===== TIER 1 -- RABBIT QUEST (easy: 2 fill-ins from page facts -> "noise 2025") ===== */
+let t1Active=false, t1Answered={};
+const T1_BLOB='mo+y9kT7yvUzdvJfRGq3L4es7g==.cyDBGT0ieWN0pNBew/O3xw==.u593qaVgoL26XKk3.OYFx/BgQJgWz1lFHTncG5LdbYzGXkrOUx5a87jme0xDZP2tzDRY1Bm5BgTzXcwvj.sLyHBeNKDrs1rxHblG+JHx5lkkM3y4U=';
+const T1_RIDDLES=[
+  {q:"AVIDAA is the signal beneath the ____",ans:"noise",hint:"It's the page's core line -- signal beneath the ____"},
+  {q:"AVIDAA was founded in the year ____",ans:"2025",hint:"Check the page -- Est. 2025"},
+];
+function setQuestBar(stage,override){
+  const bar=document.getElementById('quest-bar'),fill=document.getElementById('quest-fill'),lbl=document.getElementById('quest-label');
+  if(!bar||!fill||!lbl)return;
+  if(stage===0){bar.classList.remove('active');lbl.classList.remove('active');return;}
+  const q=override||{pct:25,color:'#00e5ff',label:'SIGNAL'};
+  bar.classList.add('active');lbl.classList.add('active');
+  fill.style.width=q.pct+'%';fill.style.background=q.color;fill.style.boxShadow='0 0 8px '+q.color;
+  lbl.textContent=q.label;lbl.style.color=q.color;
+}
+
+/* ===== TIER 2 -- THE FLAME (3 riddles, any order -> "2025 ai clear") ===== */
+const T2_BLOB='V9dFikRt8D4C4iKAp2lEuct8wsQ=.516IOB2ZHLesUzHC5jw4qw==.kk9MQpaRWhB5uuc0.VLJKsWe4AmWqHQACcdCJmfOE1Hsx0Gq7AqD6W5qLQlBVD4gaeZEAjIGxjfxM4g27odkF5b7prrRTKg==.VTUUOv/2Ts/v/koDb7hiq4TAPiWUFGUp';
+const T2_RIDDLES=[
+  {q:"AVIDAA signal first lit in the year ____",ans:"2025",hint:"Check the page -- Est. 2025"},
+  {q:"AVIDAA is built for two kinds of mind: humans and ____",ans:"ai",hint:"Read the tagline"},
+  {q:"IO vision: knowledge made ____",ans:"clear",hint:"Signal over noise -- knowledge made ____"},
+];
+let t2Answered={},t2Active=false;
+function t2Norm(s){return s.toLowerCase().trim().replace(/\s+/g,' ');}
+function t2CheckAnswer(input,idx){const a=t2Norm(input),c=t2Norm(T2_RIDDLES[idx].ans);return a===c||a.includes(c);}
+
+/* shared AES-GCM decrypt for "noise.salt.iv.ciphertext.noise" blobs (5 dot-parts, parts 1-3) */
+function decryptBlob(blob,passphrase,onURL){
+  const parts=blob.split('.');
+  const salt=Uint8Array.from(atob(parts[1]),c=>c.charCodeAt(0));
+  const iv=Uint8Array.from(atob(parts[2]),c=>c.charCodeAt(0));
+  const ctRaw=Uint8Array.from(atob(parts[3]),c=>c.charCodeAt(0));
+  const data=ctRaw.slice(0,ctRaw.length-16),tag=ctRaw.slice(ctRaw.length-16);
+  const combined=new Uint8Array(data.length+tag.length);combined.set(data);combined.set(tag,data.length);
+  const enc=new TextEncoder();
+  return crypto.subtle.importKey('raw',enc.encode(passphrase),{name:'PBKDF2'},false,['deriveKey'])
+    .then(k=>crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:100000,hash:'SHA-256'},k,{name:'AES-GCM',length:256},false,['decrypt']))
+    .then(key=>crypto.subtle.decrypt({name:'AES-GCM',iv,tagLength:128},key,combined))
+    .then(buf=>onURL(new TextDecoder().decode(buf)));
+}
+
+/* neon galaxy rainbow reveal (shared) */
+function rabbitReveal(url,title,sub,linkLabel){
+  const msgs=document.getElementById('chat-msgs');
+  const div=document.createElement('div');div.className='cmsg ai';
+  const rainbow='background:linear-gradient(90deg,#ff0080,#ff8c00,#ffe000,#00ff80,#00bfff,#a855f7,#ff0080);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:cb-rainbow 3s linear infinite;';
+  const t=document.createElement('span');t.style.cssText='font-family:var(--cb-fd);font-size:7px;letter-spacing:3px;display:block;margin-bottom:8px;'+rainbow;t.textContent=title;
+  const s=document.createElement('span');s.style.cssText='color:rgba(245,237,224,.7);font-size:13px;';s.textContent=sub;
+  const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';
+  a.style.cssText='display:block;margin-top:10px;font-family:var(--cb-fd);font-size:11px;letter-spacing:3px;text-decoration:none;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);'+rainbow;a.textContent=linkLabel;
+  div.appendChild(t);div.appendChild(s);div.appendChild(a);
+  msgs.appendChild(div);msgs.scrollTop=9999;
+}
+
+const QUEST_EXIT=['stop','quit','exit','cancel','nevermind','never mind','i resign','resign','give up','forget it','leave'];
+const T1_NUDGES=[
+  'Not quite -- the answer is written on this page. Question: ',
+  'Close. Read the page and try again: ',
+  'The page holds the answer. Try: ',
+];
+function t1Check(low){
+  if(!t1Active)return null;
+  if(QUEST_EXIT.some(k=>low===k||low.startsWith(k))){t1Active=false;t1Answered={};setQuestBar(0);return {text:'Quest closed. Ask me anything about AVIDAA, its pages, or the films here.',link:null};}
+  for(let i=0;i<T1_RIDDLES.length;i++){
+    if(t1Answered[i])continue;
+    const a=t2Norm(low),c=t2Norm(T1_RIDDLES[i].ans);
+    if(a===c||a.includes(c)){
+      t1Answered[i]=true;
+      const done=Object.keys(t1Answered).length;
+      if(done===T1_RIDDLES.length){
+        setQuestBar(2,{pct:100,color:'#ffd700',label:'ACCESS GRANTED'});
+        decryptBlob(T1_BLOB,'noise 2025',url=>rabbitReveal(url,'THE SIGNAL IS OPEN','You followed the page. The hole opens.','ENTER THE RABBIT HOLE '))
+          .catch(()=>addMsg('The signal failed. Check your answers.','ai'));
+        return null;
+      }
+      const next=T1_RIDDLES.filter((_,j)=>!t1Answered[j])[0];
+      return {text:'Correct. '+done+'/'+T1_RIDDLES.length+' answered. Next: '+next.q+'\nHint: '+next.hint,link:null};
+    }
+  }
+  const un=T1_RIDDLES.filter((_,i)=>!t1Answered[i]);
+  if(un.length){const nu=T1_NUDGES[Math.floor(Math.random()*T1_NUDGES.length)];return {text:nu+un[0].q+'\nHint: '+un[0].hint+'\n(say "stop" to leave)',link:null};}
+  return null;
+}
+
+function t2Check(low){
+  if(!t2Active)return null;
+  if(QUEST_EXIT.some(k=>low===k||low.startsWith(k))){t2Active=false;t2Answered={};setQuestBar(0);return {text:'Closed. Ask me anything about AVIDAA, its pages, or the films here.',link:null};}
+  for(let i=0;i<T2_RIDDLES.length;i++){
+    if(t2Answered[i])continue;
+    if(t2CheckAnswer(low,i)){
+      t2Answered[i]=true;
+      const done=Object.keys(t2Answered).length;
+      if(done===T2_RIDDLES.length){
+        setQuestBar(4,{pct:100,color:'#ff0080',label:'THE FLAME'});
+        decryptBlob(T2_BLOB,'2025 ai clear',url=>rabbitReveal(url,'THE FLAME BURNS DEEPER','You found the second layer. Not everyone looks this deep.','ENTER THE FLAME '))
+          .catch(()=>addMsg('The frequency is wrong. Check your answers.','ai'));
+        return null;
+      }
+      const next=T2_RIDDLES.filter((_,j)=>!t2Answered[j])[0];
+      return {text:'Correct. '+done+'/3 answered. Next: '+next.q+'\nHint: '+next.hint,link:null};
+    }
+  }
+  const un=T2_RIDDLES.filter((_,i)=>!t2Answered[i]);
+  if(un.length){const nu=T1_NUDGES[Math.floor(Math.random()*T1_NUDGES.length)];return {text:nu+un[0].q+'\nHint: '+un[0].hint+'\n(say "stop" to leave)',link:null};}
+  return null;
+}
+
+function questCheck(low){
+  /* tier-2 (deeper) intercept first if active */
+  if(t2Active){const r=t2Check(low);if(r!==null)return r;return null;}
+  if(low.includes('the flame')||low.includes('theflame')||low.includes('go deeper')||low.includes('second layer')){
+    t2Active=true;setQuestBar(1,{pct:15,color:'#ff0080',label:'THE FLAME -- TIER 2'});
+    const f=T2_RIDDLES[0];
+    return {text:'A deeper signal. Three riddles, any order -- the answers live on this page.\n\nRiddle 1: '+f.q+'\nHint: '+f.hint,link:null};
+  }
+  /* tier-1 (easy) intercept if active */
+  if(t1Active){const r=t1Check(low);if(r!==null)return r;return null;}
+  /* tier-1 trigger */
+  if(['rabbit','hole','down the rabbit','signal down','secret','quest'].some(k=>low.includes(k))){
+    t1Active=true;setQuestBar(1);
+    const f=T1_RIDDLES[0];
+    return {text:'The hole is real -- and the way in is on this page. Answer two and it opens.\n\nQuestion 1: '+f.q+'\nHint: '+f.hint,link:null};
+  }
+  return null;
+}
+
+/* ===== AUTO MEDIA LOOKUP -- reads the page's MEDIA[] if present (DRY, auto-updates) ===== */
+function mediaMatch(low){
+  const M = (typeof window!=='undefined' && Array.isArray(window.MEDIA)) ? window.MEDIA : (typeof MEDIA!=='undefined'?MEDIA:null);
+  if(!M||!M.length) return null;
+  /* catalogue-level questions */
+  if(/\b(list|all|how many|what|which)\b/.test(low) && /\b(film|films|movie|movies|book|books|show|shows|anime|title|titles|media|library|archive)\b/.test(low)){
+    const sorted=M.slice().sort((a,b)=>b.year-a.year);
+    const names=sorted.map(m=>m.title+' ('+m.year+')').join('   ');
+    return {text:'This archive holds '+M.length+' entries -- newest first:\n'+names,link:null};
+  }
+  /* specific title match: longest title whose words appear in the query */
+  let hit=null,hitLen=0;
+  M.forEach(m=>{
+    const t=m.title.toLowerCase();
+    const core=t.replace(/[^a-z0-9 ]/g,'').trim();
+    if(core.length>=3 && (low.includes(core)||low.includes(core.split(':')[0].trim())) && core.length>hitLen){hit=m;hitLen=core.length;}
+  });
+  if(hit){
+    return {text:hit.title+' ('+hit.year+'), '+hit.creator+'. '+hit.note,link:null};
+  }
+  return null;
+}
+
+/* ============================================================
+   GENERATIVE LAYER (offline, no API) -- makes replies adapt & vary
+   tone mirroring   fuzzy match   composition   session memory   blending
+   ============================================================ */
+const chatSession={asked:[],topics:[],lastTone:'neutral',turns:0};
+
+/* fuzzy: lightweight Levenshtein for typo tolerance (cap small for speed) */
+function lev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  const m=a.length,n=b.length,d=Array.from({length:m+1},(_,i)=>[i,...Array(n).fill(0)]);
+  for(let j=0;j<=n;j++)d[0][j]=j;
+  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+    d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return d[m][n];
+}
+
+/* detect the user's register so we can mirror it */
+function detectTone(msg){
+  const m=msg.toLowerCase();
+  if(/[!]{1,}|wow|amazing|cool|awesome|love|fire|insane|epic/.test(m))return'excited';
+  if(/\?$|how|why|what|explain|architecture|works|technical|api|code|spec/.test(m))return'curious';
+  if(/really|prove|sure|doubt|fake|scam|nonsense|why should/.test(m))return'skeptical';
+  if(/\b(hey|sup|yo|lol|wassup|gimme|u |ur )\b/.test(m))return'casual';
+  return'neutral';
+}
+/* tone-flavored openers/closers, playful but emoji-free */
+const TONE={
+  excited:{open:['Right? ','Now we\u2019re talking \u2014 ','Buckle up \u2014 '],close:[' \u2014 wild, isn\u2019t it?',' Built by one person, by the way.','']},
+  curious:{open:['Good question. ','So \u2014 ','Here\u2019s the short version: '],close:[' Want the rest? Open the page.',' Ask me to point you deeper.','']},
+  skeptical:{open:['Fair. ','Straight answer: ','No spin \u2014 '],close:[' Don\u2019t take my word for it, open the page.',' Decide for yourself.','']},
+  casual:{open:['','Sure \u2014 ','Alright, '],close:['','','']},
+  neutral:{open:['',''],close:['','']},
+};
+function flavor(text,tone){
+  const t=TONE[tone]||TONE.neutral;
+  const o=t.open[Math.floor(Math.random()*t.open.length)]||'';
+  const c=t.close[Math.floor(Math.random()*t.close.length)]||'';
+  return o+text+c;
+}
+
+/* score one KB entry against the message, with fuzzy/typo tolerance */
+function scoreEntry(e,low,words){
+  let sc=0;
+  e.k.forEach(k=>{
+    if(low===k||words.includes(k))sc+=10;                /* exact keyword/word match -- always confident */
+    else if(low.includes(k)&&k.length>=4)sc+=k.split(' ').length*k.length*2;  /* substring, but only for keywords 4+ */
+    else if(k.startsWith(low)||low.startsWith(k))sc+=Math.min(k.length,low.length)*1.2;
+    else words.forEach(w=>{
+      if(w.length>=3&&k.startsWith(w))sc+=w.length*0.9;
+      else if(w.length>=4&&k.includes(w))sc+=w.length*0.5;
+      else if(w.length>=6&&k.length>=6&&lev(w,k)<=1)sc+=w.length*0.6; /* typo tolerance, long words only */
+    });
+  });
+  return sc;
+}
+
+/* build a composed, adaptive reply from one or two KB hits */
+function compose(hits,tone){
+  /* pick a fresh variant from the top hit (no-repeat) */
+  const top=hits[0].e, v=top.r;
+  let i=Math.floor(Math.random()*v.length);
+  if(v.length>1&&chatLastResponse===v[i])i=(i+1)%v.length;
+  let body=v[i];
+  /* memory: if we've talked before, occasionally tie back */
+  if(chatSession.turns>2 && chatSession.topics.length>1 && Math.random()<0.28){
+    const prev=chatSession.topics[chatSession.topics.length-1];
+    if(prev && prev!==top._id){
+      const bridges=[' This ties into '+prev+', which you asked about.',' Like '+prev+', it\u2019s part of the same signal.',''];
+      body+=bridges[Math.floor(Math.random()*bridges.length)];
+    }
+  }
+  /* multi-topic blend: weave a second strong hit */
+  if(hits[1] && hits[1].sc>=hits[0].sc*0.6 && hits[1].e!==top){
+    const v2=hits[1].e.r; const seg=v2[Math.floor(Math.random()*v2.length)];
+    body+=' '+seg;
+  }
+  chatLastResponse=v[i];
+  top._id=top._id||top.k[0];
+  chatSession.topics.push(top._id);
+  return {text:flavor(body,tone),link:top.link||null};
+}
+
+/* light smalltalk / non-topic layer -- minimal redirect, no personality */
+const SMALLTALK=[
+  {k:['who are you','what are you','are you ai','are you real','are you human','chatbot','what can you do','what do you do'],r:['I run entirely in your browser, from the knowledge baked into this page. No server, no tracking. Ask me about AVIDAA, its pages, or the films here.']},
+  {k:['thanks','thank you','thx','ty','appreciate'],r:['Anytime. Ask me anything about AVIDAA, its pages, or the films here.']},
+  {k:['bye','goodbye','see ya','later','cya'],r:['The signal stays open. Come back anytime.']},
+  {k:['help','what should i ask','options','menu','commands'],r:['Ask me about AVIDAA, IO, CH4T1, any page (STOA, HUB, AI, Bitcoin, Terra, and more), or a film in this archive. Or whisper "rabbit".']},
+];
+const REDIRECTS=[
+  'I can help with AVIDAA, its pages, or the films in this archive. What would you like to know?',
+  'I only know AVIDAA -- but I know it well. Ask me about a page, a film, IO, or whisper "rabbit".',
+  'That one\u2019s outside my signal. Try AVIDAA, IO, STOA, HUB, or a film.',
+];
+/* frustration / rudeness -- acknowledge once, then back off (don't keep pitching) */
+const FRUSTRATION=['stop','shut up','stop talking','no','i said no','enough','quiet','leave me','annoying','not listening','your not lissening','you are not listening','useless','dumb'];
+const BACKOFF=[
+  'Fair enough \u2014 I\u2019ll stop pitching. I\u2019m here if a question about AVIDAA comes up.',
+  'Understood. I\u2019ll wait. Ask whenever you\u2019re ready.',
+  'Message received. Quietly standing by.',
+];
+function isFrustrated(low){return FRUSTRATION.some(k=>low===k||low.startsWith(k));}
+function smalltalkMatch(low,words){
+  let best=null,bs=0;
+  SMALLTALK.forEach(e=>{const s=scoreEntry(e,low,words);if(s>bs){bs=s;best=e;}});
+  if(best&&bs>=6)return best.r[0];
+  return null;
+}
+
+function chatMatch(msg){
+  const low=msg.toLowerCase().trim();
+  chatSession.turns++; chatSession.asked.push(low);
+  const tone=detectTone(msg); chatSession.lastTone=tone;
+
+  const quest=questCheck(low);
+  if(quest)return quest; /* quests stay literal -- no flavoring */
+
+  /* frustration: acknowledge & back off instead of repeating the pitch */
+  if(isFrustrated(low))return {text:BACKOFF[Math.floor(Math.random()*BACKOFF.length)],link:null};
+
+  const words=low.split(/\s+/).filter(w=>w.length>=2);
+
+  /* smalltalk first -- minimal redirect, no forced topic */
+  const st=smalltalkMatch(low,words);
+  if(st)return {text:st,link:null};
+
+  /* rank ALL KB entries (not just best) so we can blend */
+  const ranked=KB.filter(e=>!(e.r[0]&&e.r[0].startsWith('__QUEST')))
+    .map(e=>({e,sc:scoreEntry(e,low,words)}))
+    .filter(x=>x.sc>0)
+    .sort((a,b)=>b.sc-a.sc);
+
+  const media=mediaMatch(low);
+  const bestScore=ranked.length?ranked[0].sc:0;
+
+  /* film hit wins when KB is weak */
+  if(media && bestScore<8){chatLastResponse=media.text;return {text:flavor(media.text,tone),link:media.link||null};}
+  /* KB answer only if confidently above the noise floor */
+  if(ranked.length && bestScore>=6)return compose(ranked,tone);
+  if(media){chatLastResponse=media.text;return {text:flavor(media.text,tone),link:media.link||null};}
+
+  /* playful but honest redirect -- no random page */
+  return {text:REDIRECTS[Math.floor(Math.random()*REDIRECTS.length)],link:null};
+}
+
+function addMsg(text,cls,link){
+  const div=document.createElement('div');div.className='cmsg '+cls;div.textContent=text;
+  if(link){
+    const a=document.createElement('a');a.href=link;a.target='_blank';a.rel='noopener';
+    a.style.cssText='display:block;margin-top:7px;font-size:10px;letter-spacing:2px;color:rgba(0,229,255,.6);text-decoration:none;border-top:1px solid rgba(0,229,255,.1);padding-top:6px;';
+    a.textContent='OPEN ';div.appendChild(a);
+  }
+  const m=document.getElementById('chat-msgs');m.appendChild(div);m.scrollTop=9999;
+}
+function showTyping(){
+  const t=document.createElement('div');t.className='typing-indicator';t.id='typing';
+  t.innerHTML='<span></span><span></span><span></span>';
+  const m=document.getElementById('chat-msgs');m.appendChild(t);m.scrollTop=9999;return t;
+}
+let chatOpen=false;
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chat-box').classList.toggle('open',chatOpen);
+  if(chatOpen&&document.getElementById('chat-msgs').children.length===0){
+    setTimeout(()=>addMsg('AVIDAA online -- built from this page, runs in your browser. What do you want to explore?','ai'),350);
+  }
+  if(chatOpen)document.getElementById('chat-input').focus();
+}
+function chatSend(){
+  const inp=document.getElementById('chat-input');const msg=inp.value.trim();if(!msg)return;
+  addMsg(msg,'user');inp.value='';
+  if(window.rabbitThink)window.rabbitThink();
+  const typing=showTyping();
+  setTimeout(()=>{
+    typing.remove();
+    const res=chatMatch(msg);
+    addMsg(res.text,'ai',res.link);
+    if(window.rabbitRespond)window.rabbitRespond();
+    setTimeout(()=>{if(window.rabbitIdle)window.rabbitIdle();},3000);
+  },380+Math.random()*340);
+}
+function quickAsk(q){document.getElementById('chat-input').value=q;chatSend();}
+document.getElementById('chat-input').addEventListener('keydown',e=>{if(e.key==='Enter')chatSend();});
+
+/* ===== RABBIT AVATAR ===== */
+(function(){
+  const svg=document.getElementById('rabbit-svg');if(!svg)return;
+  const earL=document.getElementById('ear-l'),earR=document.getElementById('ear-r');
+  const eyeL=document.getElementById('eye-l'),eyeR=document.getElementById('eye-r');
+  const nose=document.getElementById('nose'),ring=document.getElementById('glow-ring');
+  let t=0,blinkT=0,nextBlink=3,twitchT=0,nextTwitch=4,thinking=false,happy=false,happyT=0;
+  function tick(){
+    t+=.035;blinkT+=.035;twitchT+=.035;
+    svg.style.transform=`translateY(${Math.sin(t)*1.2}px)`;
+    ring.setAttribute('opacity',((Math.sin(t*1.4)*.5+.5)*.25).toFixed(3));
+    ring.setAttribute('stroke',thinking?'#a855f7':happy?'#ffd700':'#00e5ff');
+    if(blinkT>nextBlink){eyeL.setAttribute('ry','0.3');eyeR.setAttribute('ry','0.3');setTimeout(()=>{eyeL.setAttribute('ry','2');eyeR.setAttribute('ry','2');},120);blinkT=0;nextBlink=2.5+Math.random()*4;}
+    if(twitchT>nextTwitch){const s=Math.random()<.5?earL:earR;s.setAttribute('transform','rotate(-8,'+s.getAttribute('cx')+','+s.getAttribute('cy')+')');setTimeout(()=>s.removeAttribute('transform'),200);twitchT=0;nextTwitch=2+Math.random()*5;}
+    if(happy){happyT+=.12;svg.style.transform=`translateY(${Math.sin(happyT)*4}px) scale(${1+Math.sin(happyT*.5)*.05})`;if(happyT>Math.PI*3){happy=false;happyT=0;}}
+    if(thinking){const sh=Math.sin(t*3)*.8;eyeL.setAttribute('cx',(15+sh).toFixed(2));eyeR.setAttribute('cx',(23+sh).toFixed(2));nose.setAttribute('fill','#a855f7');}
+    else{eyeL.setAttribute('cx','15');eyeR.setAttribute('cx','23');nose.setAttribute('fill',happy?'#ffd700':'#ff2d78');}
+    if(window.pageVisible)requestAnimationFrame(tick);
+  }
+  tick();
+  window.rabbitThink=()=>{thinking=true;};
+  window.rabbitRespond=()=>{thinking=false;happy=true;happyT=0;};
+  window.rabbitIdle=()=>{thinking=false;happy=false;};
+})();
+
+/* ===== AI PULSE RING ===== */
+(function(){
+  const pc=document.getElementById('pulse-ring');if(!pc)return;
+  const px=pc.getContext('2d');let pt=0;
+  function draw(){
+    px.clearRect(0,0,58,58);const cx=29,cy=29,beat=(pt%1);let scale;
+    if(beat<.08)scale=1+beat*8;else if(beat<.16)scale=1.64-(beat-.08)*8;else if(beat<.22)scale=1+(beat-.16)*5;else if(beat<.28)scale=1.3-(beat-.22)*5;else scale=1;
+    const r=24*scale,g=px.createRadialGradient(cx,cy,r*.5,cx,cy,r);
+    g.addColorStop(0,'rgba(168,85,247,0)');g.addColorStop(.7,`rgba(0,229,255,${(.15+(scale-1)*.4).toFixed(3)})`);g.addColorStop(1,'rgba(0,229,255,0)');
+    px.fillStyle=g;px.beginPath();px.arc(cx,cy,r,0,Math.PI*2);px.fill();
+    px.strokeStyle=`rgba(0,229,255,${(.2+(scale-1)*.6).toFixed(3)})`;px.lineWidth=1;px.beginPath();px.arc(cx,cy,20,0,Math.PI*2);px.stroke();
+    pt+=.008;if(window.pageVisible)requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
