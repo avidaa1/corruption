@@ -39,6 +39,7 @@ a{color:inherit}
 
 #nav{background:var(--bg2);border-bottom:1px solid var(--border);display:flex;flex-wrap:wrap;gap:1px;padding:2px 4px;height:auto}
 .tab{background:none;border:none;color:var(--muted);font-family:var(--fm);font-size:clamp(10px,1.1vw,12px);letter-spacing:.05em;padding:6px 10px;cursor:pointer;border-radius:3px;transition:all .15s;flex:0 0 auto}
+.tab-ext{border-left:1px solid rgba(245,158,11,.35);margin-left:4px;padding-left:12px}
 .tab:hover,.tab.active{color:var(--red);background:rgba(220,38,38,.1)}
 
 #main{flex:1;overflow:hidden;position:relative}
@@ -80,20 +81,20 @@ a{color:inherit}
 .modal-role{font-size:12px;color:var(--muted);margin-bottom:.8rem}
 .modal-section-title{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--red);margin:1rem 0 .4rem;text-transform:uppercase}
 .event-row{display:flex;gap:.7rem;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:12px}
-.event-date{color:var(--amber);font-weight:700;width:75px;flex-shrink:0}
+.event-date{color:var(--amber);font-weight:700;width:82px;flex-shrink:0;white-space:nowrap}
 .event-text{color:var(--muted);line-height:1.5}
 .modal-detail{font-size:12px;color:var(--muted);line-height:1.7;background:var(--bg3);border-radius:8px;padding:.85rem}
 .src-line{font-size:11px;color:var(--muted2);margin-top:.6rem}
 
 .tl-item{display:flex;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
-.tl-date{color:var(--amber);font-weight:700;font-size:12px;width:70px;flex-shrink:0}
+.tl-date{color:var(--amber);font-weight:700;font-size:12px;width:82px;flex-shrink:0;white-space:nowrap}
 .tl-title{font-size:12px;color:var(--text);font-weight:700}
 .tl-desc{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.5}
 
 .src-row{display:flex;gap:.7rem;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:11px}
 .src-case{color:var(--red);font-weight:700;width:130px;flex-shrink:0}
 .src-doc{color:var(--muted);flex:1}
-.src-date{color:var(--muted2);width:70px;flex-shrink:0;text-align:right}
+.src-date{color:var(--muted2);width:82px;flex-shrink:0;text-align:right;white-space:nowrap}
 
 .page-footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:10px;color:var(--muted2);text-align:center}
 
@@ -144,7 +145,44 @@ a{color:inherit}
 #pulse-ring{position:absolute;bottom:-6px;right:-6px;width:58px;height:58px;border-radius:50%;pointer-events:none;z-index:-1;}
 @media (max-width:600px){#chatbot{bottom:14px;right:10px;}#chat-msgs{height:50vh;}}
 @media (prefers-reduced-motion:reduce){#chat-toggle{animation:none;}.ch-dot{animation:none;}}
-#network-wrap{position:relative;height:calc(100vh - 220px);min-height:420px;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--border)}
+#network-wrap{position:relative;height:calc(100vh - 190px);min-height:600px;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--border)}
+#network-search-wrap{position:absolute;top:10px;left:10px;z-index:6;display:flex;align-items:center;gap:8px}
+#network-search{background:rgba(10,6,5,.92);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:7px 11px;font-family:var(--fm);font-size:11px;width:min(300px,60vw);outline:none}
+#network-search:focus{border-color:var(--red)}
+#network-search-count{font-size:10px;color:var(--muted2);white-space:nowrap}
+#network-hint{position:absolute;top:10px;right:10px;font-size:9px;color:rgba(255,255,255,.4);z-index:5;text-align:right;line-height:1.5;pointer-events:none}
+#hdr,#nav{position:relative;z-index:50}
+#wall-summary{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 .8rem}
+.ws-pill{font-family:var(--ff);font-size:13px;letter-spacing:.06em;padding:6px 12px;border-radius:8px;border:1px solid;background:rgba(0,0,0,.4)}
+.ws-pill b{font-size:18px;margin-right:6px}
+#wall-filters{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1rem}
+.wf-chip{font-size:9px;padding:3px 9px;border-radius:10px;border:1px solid rgba(255,255,255,.18);color:var(--muted);background:rgba(0,0,0,.5);cursor:pointer;letter-spacing:.06em;white-space:nowrap}
+.wf-chip.active{color:var(--text);border-color:var(--text)}
+#wall-grid,#honor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.6rem}
+.wall-card{background:var(--bg2);border:1px solid var(--border);border-left:4px solid;border-radius:10px;padding:.85rem .9rem;cursor:pointer;transition:transform .15s,border-color .15s;position:relative}
+.wall-card:hover{transform:translateY(-2px);border-color:var(--red)}
+.wall-name{font-family:var(--ff);font-size:16px;font-weight:700;color:var(--text);line-height:1.15}
+.wall-status{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;padding:3px 8px;border-radius:10px;margin:.45rem 0 .4rem;border:1px solid}
+.wall-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.wall-cases{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:4px}
+.wall-case{font-size:9px;padding:2px 7px;border-radius:8px;border:1px solid;background:rgba(0,0,0,.35);white-space:nowrap}
+.wall-rank{position:absolute;top:8px;right:10px;font-family:var(--fm);font-size:9px;color:var(--muted2)}
+@media(max-width:600px){#wall-grid,#honor-grid{grid-template-columns:1fr}}
+
+#network-labels{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.nbtn{background:rgba(10,6,5,.92);border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:6px 10px;font-family:var(--fm);font-size:10px;letter-spacing:.08em;cursor:pointer}
+.nbtn:hover,.nbtn.active{color:var(--red);border-color:var(--red)}
+#network-filters{position:absolute;top:44px;left:10px;z-index:6;display:flex;flex-wrap:wrap;gap:5px;max-width:calc(100% - 20px)}
+.nf-chip{font-size:9px;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.18);color:var(--muted);background:rgba(0,0,0,.6);cursor:pointer;letter-spacing:.06em;white-space:nowrap}
+.nf-chip:hover{color:var(--text)} .nf-chip.active{color:var(--red);border-color:var(--red)}
+@media(max-width:600px){#network-filters{top:80px}#network-search-wrap{flex-wrap:wrap}}
+.nlabel{position:absolute;left:0;top:0;font-family:var(--fm);font-size:10px;letter-spacing:.04em;white-space:nowrap;pointer-events:auto;cursor:pointer;text-shadow:0 0 6px #000,0 0 2px #000;transition:opacity .25s;will-change:transform}
+.nlabel-en{font-size:9px;opacity:.8;font-style:italic}
+#network-stats{position:absolute;top:44px;right:10px;z-index:5;font-size:9px;color:rgba(255,255,255,.45);letter-spacing:.05em;white-space:nowrap;text-align:right}
+@media(max-width:900px){#network-stats{display:none}}
+.nl-sep{margin-left:8px;font-style:italic;cursor:default!important}
+@media(max-width:600px){.nlabel{font-size:8px}.nlabel-en{display:none!important}#network-stats{display:none}}
+@media(max-width:600px){#network-hint{display:none}#network-wrap{min-height:480px}}
 #network-canvas-wrap{position:absolute;inset:0}
 #network-canvas-wrap canvas{display:block;width:100%;height:100%}
 #network-tooltip{position:absolute;pointer-events:none;background:rgba(10,6,5,.95);border:1px solid var(--red);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--text);display:none;z-index:5;max-width:220px;line-height:1.4}
@@ -170,6 +208,21 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 let networkInited = false;
 let networkAnimating = false;
 
+// ============================================================
+// ENABLERS -- the shared infrastructure every case ran through.
+// Every edge here is stated in the linked case's own text on this page.
+// type: enforcer | bank | firm | jurisdiction | state | investigator | platform
+// ============================================================
+const ENABLERS = window.ENABLERS;
+
+const ENABLER_TYPE_LABEL = window.ENABLER_TYPE_LABEL;
+
+function shortName(n){
+  let s = n.split(' / ')[0].split(' -- ')[0].split(' (')[0].trim();
+  if(s.length>22) s = s.slice(0,21).replace(/\s+\S*$/,'')+'...';
+  return s;
+}
+
 function initNetwork(){
   if(networkInited) return;
   networkInited = true;
@@ -179,10 +232,10 @@ function initNetwork(){
 
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.FogExp2(0x000000, 0.018);
+  scene.fog = new THREE.FogExp2(0x000000, 0.012);
 
-  const camera = new THREE.PerspectiveCamera(50, W/H, 0.1, 200);
-  camera.position.set(0, 4, 26);
+  const camera = new THREE.PerspectiveCamera(50, W/H, 0.1, 300);
+  camera.position.set(0, 3, 46);
 
   const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:false });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -190,220 +243,349 @@ function initNetwork(){
   wrap.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.06;
-  controls.minDistance = 6;
-  controls.maxDistance = 60;
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.4;
+  controls.enableDamping = true; controls.dampingFactor = 0.06;
+  controls.minDistance = 8; controls.maxDistance = 140;
+  controls.autoRotate = true; controls.autoRotateSpeed = 0.25;
 
-  scene.add(new THREE.AmbientLight(0x332222, 0.7));
-  const pl = new THREE.PointLight(0xff4444, 1.6, 60);
-  pl.position.set(0,10,10);
-  scene.add(pl);
+  scene.add(new THREE.AmbientLight(0x332222, 0.8));
+  const pl = new THREE.PointLight(0xff5555, 1.4, 90); pl.position.set(0,12,14); scene.add(pl);
+  const pl2 = new THREE.PointLight(0x5555ff, 0.6, 90); pl2.position.set(-14,-8,-10); scene.add(pl2);
 
-  // ---------- Category cluster centers (rough brain-lobe layout) ----------
   const CLUSTER_POS = {
-    state_capture: new THREE.Vector3(-8, 4, 2),
-    bribery:       new THREE.Vector3(8, 4, 2),
-    laundering:    new THREE.Vector3(0, 8, -6),
-    corporate:     new THREE.Vector3(0, -5, 4),
-    leaks:         new THREE.Vector3(-8, -3, -4),
-    ponzi:         new THREE.Vector3(9, -4, -4),
+    state_capture: new THREE.Vector3(-8, 4, 1),  bribery: new THREE.Vector3(8, 4, 1),
+    laundering:    new THREE.Vector3(0, 8, -5),  corporate: new THREE.Vector3(0, -5, 4),
+    leaks:         new THREE.Vector3(-8, -3, -4), ponzi: new THREE.Vector3(8.5, -4, -4),
+    whistleblowers:new THREE.Vector3(0, 11, 4),  cyber: new THREE.Vector3(-10, 0.5, -8),
+    government:    new THREE.Vector3(10, 0.5, -8),
+    atrocity:      new THREE.Vector3(0, -10, -3),
+    abuse:         new THREE.Vector3(-6, -8, 4),
   };
 
-  // ---------- Build nodes from CASES ----------
-  const nodeMeshes = {};
-  const nodeGroup = new THREE.Group();
-  scene.add(nodeGroup);
+  // ---------- Unified node registry ----------
+  // node: {id, kind:'case'|'enabler', name, label, color, cat?, type?, mesh, ...}
+  const NODES = {};
+  const nodeGroup = new THREE.Group(); scene.add(nodeGroup);
+  const caseGeo = new THREE.SphereGeometry(1, 28, 28);
+  const enGeo   = new THREE.OctahedronGeometry(1, 0);
+  const personGeo  = new THREE.IcosahedronGeometry(1, 0);
+  const companyGeo = new THREE.BoxGeometry(1.5,1.5,1.5);
+  const geoFor = t => t==='person' ? personGeo : (t==='company' ? companyGeo : enGeo);
 
-  const glowGeo = new THREE.SphereGeometry(0.42, 24, 24);
-
-  CASES.forEach((c, i) => {
-    const center = CLUSTER_POS[c.cat] || new THREE.Vector3(0,0,0);
-    const jitter = new THREE.Vector3(
-      (Math.random()-0.5)*3.4,
-      (Math.random()-0.5)*3.4,
-      (Math.random()-0.5)*3.4
-    );
-    const pos = center.clone().add(jitter);
-    const col = new THREE.Color(CAT_META[c.cat] ? CAT_META[c.cat].color : '#888888');
-
-    const mat = new THREE.MeshPhysicalMaterial({
-      color: col, emissive: col, emissiveIntensity: 0.55,
-      metalness: 0.3, roughness: 0.35, clearcoat: 0.6,
-    });
-    const mesh = new THREE.Mesh(glowGeo, mat);
-    mesh.position.copy(pos);
-    mesh.userData = { id: c.id, baseEmissive: 0.55, phase: Math.random()*Math.PI*2 };
+  CASES.forEach(c=>{
+    const center = CLUSTER_POS[c.cat] || new THREE.Vector3();
+    const pos = center.clone().add(new THREE.Vector3((Math.random()-.5)*3,(Math.random()-.5)*3,(Math.random()-.5)*3));
+    const col = new THREE.Color(CAT_META[c.cat]?.color || '#888');
+    const mat = new THREE.MeshPhysicalMaterial({color:col, emissive:col, emissiveIntensity:0.6, metalness:.3, roughness:.35, clearcoat:.6});
+    const mesh = new THREE.Mesh(caseGeo, mat); mesh.position.copy(pos);
+    NODES[c.id] = {id:c.id, kind:'case', name:c.name, label:shortName(c.name), color:col.getStyle(), cat:c.cat, mesh, baseEmissive:.6, deg:0};
     nodeGroup.add(mesh);
-    nodeMeshes[c.id] = mesh;
+  });
+  ENABLERS.forEach(e=>{
+    const pos = new THREE.Vector3((Math.random()-.5)*16,(Math.random()-.5)*12,(Math.random()-.5)*16);
+    const col = new THREE.Color(e.color);
+    const mat = new THREE.MeshPhysicalMaterial({color:col, emissive:col, emissiveIntensity:0.35, metalness:.6, roughness:.3});
+    const mesh = new THREE.Mesh(geoFor(e.type), mat); mesh.position.copy(pos);
+    NODES[e.id] = {id:e.id, kind:'enabler', name:e.name, label:shortName(e.name), color:e.color, type:e.type, desc:e.desc, mesh, baseEmissive:.35, deg:0};
+    nodeGroup.add(mesh);
   });
 
-  // ---------- Edges (only real documented connections) ----------
-  const edgeGroup = new THREE.Group();
-  scene.add(edgeGroup);
-  const edgeMeshes = [];
-  const seenPairs = new Set();
-
-  CASES.forEach(c => {
-    (c.connections||[]).forEach(otherId => {
-      const pairKey = [c.id, otherId].sort().join('|');
-      if(seenPairs.has(pairKey)) return;
-      seenPairs.add(pairKey);
-      const a = nodeMeshes[c.id], b = nodeMeshes[otherId];
-      if(!a || !b) return;
-
-      const points = [a.position, b.position];
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      const colA = new THREE.Color(CAT_META[c.cat]?.color || '#888');
-      const mat = new THREE.LineBasicMaterial({ color: colA, transparent:true, opacity:0.35 });
-      const line = new THREE.Line(geo, mat);
-      line.userData = { from: c.id, to: otherId };
-      edgeGroup.add(line);
-      edgeMeshes.push(line);
-    });
-  });
-
-  // ---------- Ambient synapse particles ----------
-  const particleCount = 220;
-  const particlePos = new Float32Array(particleCount*3);
-  for(let i=0;i<particleCount;i++){
-    particlePos[i*3]   = (Math.random()-0.5)*40;
-    particlePos[i*3+1] = (Math.random()-0.5)*30;
-    particlePos[i*3+2] = (Math.random()-0.5)*40;
+  // ---------- Edges (3 tiers) ----------
+  // 1 documented case<->case   2 same-mechanism kinship   3 case<->enabler (documented)
+  const edgeGroup = new THREE.Group(); scene.add(edgeGroup);
+  const EDGES = []; const seen = new Set(); const ADJ = {};
+  function link(a,b){ (ADJ[a]=ADJ[a]||new Set()).add(b); (ADJ[b]=ADJ[b]||new Set()).add(a); }
+  function addEdge(a,b,colorHex,opacity,tier){
+    const key=[a,b].sort().join('|'); if(seen.has(key)||!NODES[a]||!NODES[b]) return; seen.add(key);
+    const geo=new THREE.BufferGeometry().setFromPoints([NODES[a].mesh.position.clone(),NODES[b].mesh.position.clone()]);
+    const mat=new THREE.LineBasicMaterial({color:new THREE.Color(colorHex),transparent:true,opacity});
+    const line=new THREE.Line(geo,mat); line.userData={from:a,to:b,tier,baseOpacity:opacity};
+    edgeGroup.add(line); EDGES.push(line); link(a,b);
+    if(tier!==2){ NODES[a].deg++; NODES[b].deg++; }
   }
-  const particleGeo = new THREE.BufferGeometry();
-  particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos,3));
-  const particleMat = new THREE.PointsMaterial({ color:0x662222, size:0.08, transparent:true, opacity:0.5 });
-  const particles = new THREE.Points(particleGeo, particleMat);
-  scene.add(particles);
+  CASES.forEach(c=>(c.connections||[]).forEach(o=>addEdge(c.id,o,CAT_META[c.cat]?.color||'#888',0.6,1)));
+  const byCat={}; CASES.forEach(c=>(byCat[c.cat]=byCat[c.cat]||[]).push(c.id));
+  Object.entries(byCat).forEach(([cat,ids])=>{ for(let i=0;i<ids.length;i++) for(let j=i+1;j<ids.length;j++) addEdge(ids[i],ids[j],CAT_META[cat]?.color||'#888',0.08,2); });
+  ENABLERS.forEach(e=>e.links.forEach(cid=>addEdge(e.id,cid,e.color,0.28,3)));
 
-  // ---------- Postprocessing (bloom for the glow) ----------
-  const composer = new EffectComposer(renderer);
-  composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(W,H), 0.9, 0.7, 0.12);
-  composer.addPass(bloom);
+  // Hub sizing by degree
+  Object.values(NODES).forEach(n=>{
+    const base = n.kind==='case' ? 0.55 : (n.type==='person' ? 0.24 : (n.type==='company' ? 0.26 : 0.32));
+    const s = base * (1 + Math.min(n.deg,12)*0.07);
+    n.mesh.scale.setScalar(s); n.baseScale = s;
+  });
+
+  // ---------- Force-directed relaxation (once, at init) ----------
+  {
+    const ids=Object.keys(NODES); const P={}; ids.forEach(id=>P[id]=NODES[id].mesh.position.clone());
+    const V={}; ids.forEach(id=>V[id]=new THREE.Vector3());
+    const tmp=new THREE.Vector3();
+    for(let it=0;it<220;it++){
+      const k = 1 - it/220;
+      // repulsion
+      for(let i=0;i<ids.length;i++) for(let j=i+1;j<ids.length;j++){
+        tmp.subVectors(P[ids[i]],P[ids[j]]); let d=tmp.length()+0.01; if(d>18) continue;
+        const f=(2.2/(d*d))*k; tmp.normalize().multiplyScalar(f); V[ids[i]].add(tmp); V[ids[j]].sub(tmp);
+      }
+      // springs along edges (kinship weaker)
+      EDGES.forEach(e=>{
+        const a=e.userData.from,b=e.userData.to; tmp.subVectors(P[b],P[a]); const d=tmp.length();
+        const rest = e.userData.tier===2 ? 4.5 : (e.userData.tier===3 ? 3.2 : 3.6);
+        const kk = e.userData.tier===2 ? 0.006 : 0.02;
+        const f=(d-rest)*kk*k; tmp.normalize().multiplyScalar(f); V[a].add(tmp); V[b].sub(tmp);
+      });
+      // cases gently pulled toward category lobe; enablers toward center
+      ids.forEach(id=>{
+        const n=NODES[id]; const target = n.kind==='case' ? CLUSTER_POS[n.cat] : new THREE.Vector3(0,1,-2);
+        tmp.subVectors(target,P[id]).multiplyScalar((n.kind==='case'?0.012:0.004)*k); V[id].add(tmp);
+        V[id].multiplyScalar(0.85); P[id].add(V[id]);
+      });
+    }
+    ids.forEach(id=>{ NODES[id].mesh.position.copy(P[id]); });
+  }
+
+  // Drift params after layout
+  Object.values(NODES).forEach(n=>{
+    n.basePos=n.mesh.position.clone(); n.phase=Math.random()*6.28;
+    n.driftA=(n.kind==='case'?0.28:0.18)+Math.random()*0.18;
+    n.fx=.16+Math.random()*.2; n.fy=.14+Math.random()*.2; n.fz=.12+Math.random()*.18;
+    n.px=Math.random()*6.28; n.py=Math.random()*6.28; n.pz=Math.random()*6.28;
+  });
+
+  // ---------- Auto-fit camera so every node is comfortably in view ----------
+  function fitAll(animateMs){
+    const pts=Object.values(NODES).map(n=>n.basePos);
+    const c=new THREE.Vector3(); pts.forEach(p=>c.add(p)); c.divideScalar(pts.length);
+    let r=0; pts.forEach(p=>{ r=Math.max(r, p.distanceTo(c)); }); r+=2.5;
+    const fov=camera.fov*Math.PI/180, aspect=camera.aspect;
+    const dist = (r / Math.sin(Math.min(fov, fov*aspect)/2)) * 1.0;
+    controls.target.copy(c);
+    const dir=camera.position.clone().sub(controls.target).normalize(); if(dir.lengthSq()<1e-6) dir.set(0,0.15,1).normalize();
+    const goal=c.clone().add(dir.multiplyScalar(dist));
+    if(!animateMs){ camera.position.copy(goal); return; }
+    const from=camera.position.clone(), t0=performance.now();
+    (function step(){ const k=Math.min(1,(performance.now()-t0)/animateMs); const e=1-Math.pow(1-k,3); camera.position.lerpVectors(from,goal,e); if(k<1) requestAnimationFrame(step); })();
+  }
+  fitAll(0);
+  document.getElementById('network-fit').addEventListener('click',()=>fitAll(900));
+
+  // ---------- Particles ----------
+  const pc=800, pp=new Float32Array(pc*3);
+  for(let i=0;i<pc;i++){ pp[i*3]=(Math.random()-.5)*44; pp[i*3+1]=(Math.random()-.5)*32; pp[i*3+2]=(Math.random()-.5)*44; }
+  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pp,3));
+  const particles=new THREE.Points(pg,new THREE.PointsMaterial({color:0x7a2a2a,size:.07,transparent:true,opacity:.5})); scene.add(particles);
+
+  // ---------- Labels (HTML overlay, projected each frame) ----------
+  const labelLayer=document.getElementById('network-labels');
+  Object.values(NODES).forEach(n=>{
+    const el=document.createElement('div'); el.className='nlabel '+(n.kind==='enabler'?'nlabel-en':''); el.textContent=n.label; el.style.color=n.color;
+    el.dataset.id=n.id; labelLayer.appendChild(el); n.labelEl=el;
+    el.addEventListener('click',()=>openNode(n.id));
+  });
+  const v=new THREE.Vector3();
+  function updateLabels(){
+    const rect=renderer.domElement.getBoundingClientRect();
+    Object.values(NODES).forEach(n=>{
+      v.copy(n.mesh.position).project(camera);
+      const behind = v.z>1;
+      const x=(v.x*.5+.5)*rect.width, y=(-v.y*.5+.5)*rect.height;
+      const el=n.labelEl;
+      if(behind||x<-40||x>rect.width+40||y<-20||y>rect.height+20){ el.style.display='none'; return; }
+      const camDist=camera.position.distanceTo(controls.target);
+      const showEn = n.deg>=3 || camDist<34 || (activeSet&&activeSet.has(n.id)) || hoveredId===n.id;
+      if(n.kind==='enabler' && !showEn){ el.style.display='none'; return; }
+      el.style.display='block';
+      el.style.transform=`translate(${x.toFixed(1)}px,${(y+n.baseScale*22+6).toFixed(1)}px) translate(-50%,0)`;
+      const dist=camera.position.distanceTo(n.mesh.position);
+      let op = THREE.MathUtils.clamp(1.4 - dist/40, .25, 1);
+      if(activeSet) op = activeSet.has(n.id) ? 1 : 0.08;
+      el.style.opacity=op;
+    });
+  }
+
+  // ---------- Post ----------
+  const composer=new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene,camera));
+  const bloom=new UnrealBloomPass(new THREE.Vector2(W,H),0.75,0.6,0.15); composer.addPass(bloom);
   composer.addPass(new OutputPass());
 
-  // ---------- Raycaster: hover + click ----------
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2();
-  const tooltip = document.getElementById('network-tooltip');
-  let hoveredId = null;
-
-  function getConnectedSet(id){
-    const c = CASES.find(x=>x.id===id);
-    const set = new Set([id]);
-    (c?.connections||[]).forEach(o=>set.add(o));
-    // also reverse -- anyone who lists `id` in their own connections
-    CASES.forEach(x=>{ if((x.connections||[]).includes(id)) set.add(x.id); });
-    return set;
-  }
-
-  function applyHighlight(id){
-    if(!id){
-      Object.values(nodeMeshes).forEach(m=>{ m.material.emissiveIntensity = m.userData.baseEmissive; m.scale.setScalar(1); });
-      edgeMeshes.forEach(e=>{ e.material.opacity = 0.35; });
-      return;
-    }
-    const linked = getConnectedSet(id);
-    Object.entries(nodeMeshes).forEach(([nid,m])=>{
-      const isLinked = linked.has(nid);
-      m.material.emissiveIntensity = isLinked ? 1.4 : 0.12;
-      m.scale.setScalar(isLinked ? 1.25 : 0.85);
+  // ---------- Highlight state ----------
+  let activeSet=null, hoveredId=null, legendCat=null, searchMatches=[];
+  function neighborsOf(id){ const s=new Set([id]); (ADJ[id]||[]).forEach(x=>s.add(x)); return s; }
+  function renderHighlight(){
+    Object.values(NODES).forEach(n=>{
+      if(!activeSet){ n.mesh.material.emissiveIntensity=n.baseEmissive; n.mesh.scale.setScalar(n.baseScale); return; }
+      const on=activeSet.has(n.id);
+      n.mesh.material.emissiveIntensity=on?1.5:0.08; n.mesh.scale.setScalar(on?n.baseScale*1.3:n.baseScale*0.75);
     });
-    edgeMeshes.forEach(e=>{
-      const isLinked = e.userData.from===id || e.userData.to===id;
-      e.material.opacity = isLinked ? 0.95 : 0.05;
+    EDGES.forEach(e=>{
+      if(!activeSet){ e.material.opacity=e.userData.baseOpacity; return; }
+      const on=activeSet.has(e.userData.from)&&activeSet.has(e.userData.to);
+      e.material.opacity = on ? (e.userData.tier===2?0.3:0.95) : 0.02;
     });
   }
+  let restoreFilter=function(){
+    if(searchEl.value.trim()) activeSet=new Set(searchMatches);
+    else if(legendCat) activeSet=new Set([...Object.values(NODES).filter(n=>n.kind==='case'&&n.cat===legendCat).map(n=>n.id)]);
+    else activeSet=null;
+    renderHighlight();
+  };
 
-  function onPointerMove(e){
-    const rect = renderer.domElement.getBoundingClientRect();
-    mouse.x = ((e.clientX-rect.left)/rect.width)*2-1;
-    mouse.y = -((e.clientY-rect.top)/rect.height)*2+1;
-    raycaster.setFromCamera(mouse, camera);
-    const hits = raycaster.intersectObjects(Object.values(nodeMeshes));
+  // ---------- Open node (case -> case modal, enabler -> enabler panel) ----------
+  function openNode(id){
+    const n=NODES[id]; if(!n) return;
+    if(n.kind==='case'){ openCase(id); return; }
+    const en=ENABLERS.find(e=>e.id===id);
+    const cases=en.links.map(cid=>CASES.find(c=>c.id===cid)).filter(Boolean);
+    let html=`<div class="modal-name">${escHtml(en.name)}</div>
+      <div class="modal-role">${escHtml(ENABLER_TYPE_LABEL[en.type]||en.type)} &middot; appears in ${cases.length} documented case${cases.length>1?'s':''}</div>
+      <div class="modal-section-title">Role in the network</div>
+      <div class="modal-detail">${escHtml(en.desc)}</div>
+      <div class="modal-section-title">Connected cases (click to open)</div>`;
+    cases.forEach(c=>{ const cm=CAT_META[c.cat]; html+=`<div class="event-row" style="cursor:pointer" onclick="openCase('${c.id}')"><div class="event-date" style="color:${cm.color}">${escHtml(cm.label.split(' ')[0])}</div><div class="event-text" style="color:var(--text)">${escHtml(c.name)}<br><span style="color:var(--muted2)">${escHtml(c.metric)}</span></div></div>`; });
+    html+=`<div class="src-line">Each link above is stated in that case's own sourced entry on this page. This node is an aggregation, not a new claim.</div>`;
+    document.getElementById('modal-content').innerHTML=html;
+    document.getElementById('modal-overlay').classList.add('open');
+  }
+  window.openNode=openNode;
+
+  // ---------- Pointer ----------
+  const raycaster=new THREE.Raycaster(), mouse=new THREE.Vector2(), tooltip=document.getElementById('network-tooltip');
+  const pickables=Object.values(NODES).map(n=>n.mesh);
+  renderer.domElement.addEventListener('pointermove',e=>{
+    const rect=renderer.domElement.getBoundingClientRect();
+    mouse.x=((e.clientX-rect.left)/rect.width)*2-1; mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;
+    raycaster.setFromCamera(mouse,camera);
+    const hits=raycaster.intersectObjects(pickables);
     if(hits.length){
-      const id = hits[0].object.userData.id;
-      if(id !== hoveredId){
-        hoveredId = id;
-        applyHighlight(id);
+      const n=Object.values(NODES).find(x=>x.mesh===hits[0].object);
+      if(n.id!==hoveredId){ hoveredId=n.id; activeSet=neighborsOf(n.id); renderHighlight(); }
+      tooltip.style.display='block'; tooltip.style.left=(e.clientX-rect.left+14)+'px'; tooltip.style.top=(e.clientY-rect.top+14)+'px';
+      const deg=(ADJ[n.id]?ADJ[n.id].size:0);
+      if(n.kind==='case'){
+        const c=CASES.find(x=>x.id===n.id);
+        const doc=(c.connections||[]).length + CASES.filter(x=>(x.connections||[]).includes(n.id)).length;
+        const en=ENABLERS.filter(e=>e.links.includes(n.id)).length;
+        const kin=CASES.filter(x=>x.cat===c.cat&&x.id!==n.id).length;
+        tooltip.innerHTML=`<strong>${escHtml(c.name)}</strong><br><span style="color:${n.color}">${CAT_META[c.cat].label}</span><br>${doc} documented case link${doc===1?'':'s'} &middot; ${en} enabler${en===1?'':'s'} &middot; ${kin} same-mechanism<br><span style="color:var(--muted2)">Click to open</span>`;
+      } else {
+        tooltip.innerHTML=`<strong>${escHtml(n.name)}</strong><br><span style="color:${n.color}">${ENABLER_TYPE_LABEL[n.type]}</span><br>Appears in ${deg} documented case${deg===1?'':'s'}<br><span style="color:var(--muted2)">Click to open</span>`;
       }
-      const c = CASES.find(x=>x.id===id);
-      tooltip.style.display = 'block';
-      tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
-      tooltip.style.top = (e.clientY - rect.top + 14) + 'px';
-      const connCount = (c.connections||[]).length;
-      tooltip.innerHTML = '<strong>'+escHtml(c.name)+'</strong><br>'+
-        (connCount ? connCount+' documented connection'+(connCount>1?'s':'') : 'No documented connections -- standalone case') +
-        '<br><span style="color:var(--muted2)">Click to open</span>';
-      renderer.domElement.style.cursor = 'pointer';
-    } else {
-      if(hoveredId !== null){ hoveredId = null; applyHighlight(null); }
-      tooltip.style.display = 'none';
-      renderer.domElement.style.cursor = 'grab';
-    }
-  }
-
-  function onClick(){
-    if(hoveredId) openCase(hoveredId);
-  }
-
-  renderer.domElement.addEventListener('pointermove', onPointerMove);
-  renderer.domElement.addEventListener('click', onClick);
-  renderer.domElement.addEventListener('pointerleave', ()=>{ tooltip.style.display='none'; hoveredId=null; applyHighlight(null); });
+      renderer.domElement.style.cursor='pointer';
+    } else { if(hoveredId!==null){hoveredId=null;restoreFilter();} tooltip.style.display='none'; renderer.domElement.style.cursor='grab'; }
+  });
+  renderer.domElement.addEventListener('click',()=>{ if(hoveredId) openNode(hoveredId); });
+  renderer.domElement.addEventListener('pointerleave',()=>{ tooltip.style.display='none'; hoveredId=null; restoreFilter(); });
 
   // ---------- Legend ----------
-  const legend = document.getElementById('network-legend');
-  legend.innerHTML = Object.entries(CAT_META).map(([k,v])=>
-    `<div class="nl-chip" style="border-color:${v.color};color:${v.color}">${v.label}</div>`
-  ).join('');
+  const legend=document.getElementById('network-legend');
+  legend.innerHTML = Object.entries(CAT_META).map(([k,v])=>`<div class="nl-chip" data-cat="${k}" style="border-color:${v.color};color:${v.color};cursor:pointer">${v.label}</div>`).join('')
+    + `<div class="nl-chip nl-sep" style="border-color:#9ca3af;color:#9ca3af">&#x25C7; agencies &middot; &#x25A1; companies/banks &middot; &#x2B22; people</div>`;
+  legend.addEventListener('click',e=>{
+    const chip=e.target.closest('.nl-chip[data-cat]'); if(!chip) return;
+    const cat=chip.dataset.cat; legendCat=(legendCat===cat)?null:cat;
+    [...legend.querySelectorAll('.nl-chip[data-cat]')].forEach(c=>c.style.background=(c.dataset.cat===legendCat)?'rgba(255,255,255,.12)':'rgba(0,0,0,.6)');
+    searchEl.value=''; searchMatches=[]; countEl.textContent=''; restoreFilter();
+  });
+
+  // ---------- Search (cases + enablers) ----------
+  const searchEl=document.getElementById('network-search'), countEl=document.getElementById('network-search-count');
+  function runSearch(){
+    const q=searchEl.value.trim().toLowerCase();
+    if(!q){ searchMatches=[]; countEl.textContent=''; restoreFilter(); return; }
+    // Rank: name match first (so Enter opens the thing you typed), then body-text matches
+    const nameHits=[], bodyHits=[];
+    CASES.forEach(c=>{ if(c.name.toLowerCase().includes(q)) return nameHits.push(c.id);
+      const hay=[c.role,c.metric,c.detail,CAT_META[c.cat]?.label||'',...(c.events||[]).map(e=>e.event)].join(' ').toLowerCase(); if(hay.includes(q)) bodyHits.push(c.id); });
+    ENABLERS.forEach(e=>{ if(e.name.toLowerCase().includes(q)) return nameHits.push(e.id);
+      const hay=[e.desc,ENABLER_TYPE_LABEL[e.type]||''].join(' ').toLowerCase(); if(hay.includes(q)) bodyHits.push(e.id); });
+    const hits=[...nameHits,...bodyHits];
+    searchMatches=hits; countEl.textContent=hits.length?hits.length+' match'+(hits.length>1?'es':''):'no matches';
+    activeSet=new Set(hits); renderHighlight();
+  }
+  searchEl.addEventListener('input',runSearch);
+  searchEl.addEventListener('keydown',e=>{ if(e.key==='Enter'&&searchMatches.length) openNode(searchMatches[0]); if(e.key==='Escape'){searchEl.value='';runSearch();searchEl.blur();} });
+
+  // ---------- Type filters (cases / people / companies / banks / regulators / state / jurisdictions / investigators) ----------
+  let typeFilter=null;
+  const TYPE_GROUPS={ cases:n=>n.kind==='case', people:n=>n.type==='person', companies:n=>['company','firm','platform'].includes(n.type),
+    banks:n=>n.type==='bank', regulators:n=>n.type==='enforcer', state:n=>n.type==='state', jurisdictions:n=>n.type==='jurisdiction', investigators:n=>n.type==='investigator' };
+  const filtersEl=document.getElementById('network-filters');
+  filtersEl.innerHTML = '<div class="nf-chip active" data-f="">ALL</div>' + Object.keys(TYPE_GROUPS).map(k=>`<div class="nf-chip" data-f="${k}">${k.toUpperCase()}</div>`).join('');
+  filtersEl.addEventListener('click',e=>{
+    const chip=e.target.closest('.nf-chip'); if(!chip) return;
+    typeFilter = chip.dataset.f || null;
+    [...filtersEl.children].forEach(c=>c.classList.toggle('active', c===chip));
+    legendCat=null; [...legend.querySelectorAll('.nl-chip[data-cat]')].forEach(c=>c.style.background='rgba(0,0,0,.6)');
+    searchEl.value=''; searchMatches=[]; countEl.textContent='';
+    restoreFilter();
+  });
+  // extend restoreFilter with type filter (filter shows matching nodes + their direct neighbors)
+  const _restore=restoreFilter;
+  restoreFilter=function(){
+    if(searchEl.value.trim()||legendCat){ _restore(); return; }
+    if(typeFilter){ const set=new Set(); Object.values(NODES).forEach(n=>{ if(TYPE_GROUPS[typeFilter](n)){ set.add(n.id); (ADJ[n.id]||[]).forEach(x=>set.add(x)); } }); activeSet=set; renderHighlight(); return; }
+    activeSet=null; renderHighlight();
+  };
+
+  // ---------- Auto-tour: every ~9s glide the camera target to a hub and spotlight it ----------
+  let tourOn=true, tourPausedUntil=0, tourTimer=0, tourSpot=null;
+  const tourBtn=document.getElementById('network-tour');
+  tourBtn.addEventListener('click',()=>{ tourOn=!tourOn; tourBtn.classList.toggle('active',tourOn); tourBtn.textContent = tourOn?'TOUR ON':'TOUR OFF'; if(!tourOn&&tourSpot){tourSpot=null;restoreFilter();} });
+  renderer.domElement.addEventListener('pointerdown',()=>{ tourPausedUntil=performance.now()+20000; if(tourSpot){tourSpot=null;restoreFilter();} });
+  function tourTick(t){
+    if(!tourOn || performance.now()<tourPausedUntil) return;
+    if(t-tourTimer<9){ return; } tourTimer=t;
+    const hubs=Object.values(NODES).filter(n=>n.deg>=4); if(!hubs.length) return;
+    const pick=hubs[Math.floor(Math.random()*hubs.length)];
+    tourSpot=pick.id; activeSet=neighborsOf(pick.id); renderHighlight();
+    const from=controls.target.clone(), to=pick.basePos.clone(), t0=performance.now();
+    (function glide(){ const k=Math.min(1,(performance.now()-t0)/1600); const e=1-Math.pow(1-k,3); controls.target.lerpVectors(from,to,e); if(k<1&&tourSpot===pick.id) requestAnimationFrame(glide); })();
+    setTimeout(()=>{ if(tourSpot===pick.id){ tourSpot=null; restoreFilter(); } }, 4200);
+  }
+
+  // ---------- Continuous evolution: weak force step every frame on basePos ----------
+  const EV_V={}; Object.keys(NODES).forEach(id=>EV_V[id]=new THREE.Vector3());
+  const evTmp=new THREE.Vector3(), evCenter=new THREE.Vector3(0,1,-2);
+  function evolveStep(){
+    const ids=Object.keys(NODES);
+    for(let i=0;i<ids.length;i++){ const a=NODES[ids[i]].basePos;
+      for(let j=i+1;j<ids.length;j++){ const b=NODES[ids[j]].basePos; evTmp.subVectors(a,b); const d=evTmp.length()+0.01; if(d>7) continue;
+        evTmp.normalize().multiplyScalar(0.0022/(d*d)); EV_V[ids[i]].add(evTmp); EV_V[ids[j]].sub(evTmp); } }
+    EDGES.forEach(e=>{ if(e.userData.tier===2) return; const a=NODES[e.userData.from].basePos,b=NODES[e.userData.to].basePos; evTmp.subVectors(b,a); const d=evTmp.length(); evTmp.normalize().multiplyScalar((d-3.4)*0.00045); EV_V[e.userData.from].add(evTmp); EV_V[e.userData.to].sub(evTmp); });
+    ids.forEach(id=>{ const n=NODES[id]; const tgt = n.kind==='case' ? CLUSTER_POS[n.cat] : evCenter; evTmp.subVectors(tgt,n.basePos).multiplyScalar(0.0004); EV_V[id].add(evTmp); EV_V[id].multiplyScalar(0.92); n.basePos.add(EV_V[id]); });
+  }
 
   // ---------- Resize ----------
-  function onResize(){
-    W = wrap.clientWidth; H = wrap.clientHeight;
-    if(W<10||H<10) return;
-    camera.aspect = W/H; camera.updateProjectionMatrix();
-    renderer.setSize(W,H);
-    composer.setSize(W,H);
-    bloom.resolution.set(W,H);
-  }
-  window.addEventListener('resize', onResize);
+  function onResize(){ W=wrap.clientWidth;H=wrap.clientHeight; if(W<10||H<10) return; camera.aspect=W/H; camera.updateProjectionMatrix(); renderer.setSize(W,H); composer.setSize(W,H); bloom.resolution.set(W,H); fitAll(0); }
+  window.addEventListener('resize',onResize);
 
   // ---------- Animate ----------
-  const clock = new THREE.Clock();
+  const clock=new THREE.Clock();
   function animate(){
     if(!networkAnimating) return;
     requestAnimationFrame(animate);
-    const t = clock.getElapsedTime();
-    Object.values(nodeMeshes).forEach(m=>{
-      const pulse = Math.sin(t*1.4 + m.userData.phase)*0.15;
-      if(m.userData.id !== hoveredId){
-        m.material.emissiveIntensity = m.userData.baseEmissive + pulse*0.3;
-      }
+    const t=clock.getElapsedTime();
+    Object.values(NODES).forEach(n=>{
+      n.mesh.position.set(n.basePos.x+Math.sin(t*n.fx+n.px)*n.driftA, n.basePos.y+Math.sin(t*n.fy+n.py)*n.driftA, n.basePos.z+Math.sin(t*n.fz+n.pz)*n.driftA);
+      if(n.kind==='enabler') n.mesh.rotation.y+=0.004;
+      if(!activeSet) n.mesh.material.emissiveIntensity=n.baseEmissive+Math.sin(t*1.4+n.phase)*0.12;
     });
-    particles.rotation.y += 0.0006;
-    controls.update();
-    composer.render();
+    EDGES.forEach(e=>{ const a=NODES[e.userData.from].mesh.position,b=NODES[e.userData.to].mesh.position; const arr=e.geometry.attributes.position.array; arr[0]=a.x;arr[1]=a.y;arr[2]=a.z;arr[3]=b.x;arr[4]=b.y;arr[5]=b.z; e.geometry.attributes.position.needsUpdate=true; });
+    evolveStep(); tourTick(t);
+    particles.rotation.y+=0.0004; particles.rotation.x=Math.sin(t*0.05)*0.08;
+    controls.update(); composer.render(); updateLabels();
   }
-  networkAnimating = true;
-  animate();
+  networkAnimating=true; animate();
+  document.addEventListener('visibilitychange',()=>{ networkAnimating=!document.hidden&&document.getElementById('page-network').classList.contains('active'); if(networkAnimating) animate(); });
+  setTimeout(onResize,100); setTimeout(onResize,500);
 
-  // Pause when tab not visible (perf)
-  document.addEventListener('visibilitychange', ()=>{
-    networkAnimating = !document.hidden && document.getElementById('page-network').classList.contains('active');
-    if(networkAnimating) animate();
-  });
-
-  // Initial resize fix (canvas sometimes measures 0 on first paint)
-  setTimeout(onResize, 100);
-  setTimeout(onResize, 500);
+  // Stats badge
+  const st=document.getElementById('network-stats');
+  if(st){ const ppl=ENABLERS.filter(e=>e.type==='person').length, cos=ENABLERS.filter(e=>['company','bank','firm','platform'].includes(e.type)).length; st.textContent=`${CASES.length} cases | ${ppl} people | ${cos} companies & banks | ${ENABLERS.length-ppl-cos} agencies & jurisdictions | ${EDGES.filter(e=>e.userData.tier!==2).length} documented links`; }
 }
 
-window.initNetwork = initNetwork;
-window.setNetworkAnimating = (v)=>{ networkAnimating = v; };
+window.initNetwork=initNetwork;
+window.setNetworkAnimating=(v)=>{ networkAnimating=v; };
 </script>
 </head>
 <body>
@@ -423,6 +605,8 @@ window.setNetworkAnimating = (v)=>{ networkAnimating = v; };
   <button class="tab" onclick="go('timeline',this)">TIMELINE</button>
   <button class="tab" onclick="go('sources',this)">SOURCES</button>
   <button class="tab" onclick="go('network',this)">NETWORK</button>
+  <button class="tab" onclick="go('wall',this)" style="color:#ef4444">WALL OF SHAME</button>
+  <a class="tab tab-ext" href="https://avidaa1.github.io/global/" style="color:#f59e0b;font-weight:700;text-decoration:none;display:inline-flex;align-items:center">GLOBAL POWER MAP &#x2197;</a>
 </div>
 
 <div id="main">
@@ -431,16 +615,16 @@ window.setNetworkAnimating = (v)=>{ networkAnimating = v; };
 <div class="page active" id="page-home">
   <div class="home-hero">
     <div class="home-title">DOCUMENTED GLOBAL CORRUPTION</div>
-    <div class="home-sub">Court convictions, government audits, and ICIJ-verified leaks only. 2016-2026. No unproven allegations presented as fact.</div>
+    <div class="home-sub">Fraud, state capture, cyber warfare, regulatory capture, state violence -- and the whistleblowers who exposed it. Court convictions, government audits, and ICIJ-verified leaks only. No unproven allegations presented as fact.</div>
     <div class="home-stats">
-      <div class="home-stat"><div class="home-stat-n">15</div><div class="home-stat-l">CASES DOCUMENTED</div></div>
-      <div class="home-stat"><div class="home-stat-n">30+</div><div class="home-stat-l">COUNTRIES SPANNED</div></div>
-      <div class="home-stat"><div class="home-stat-n">$260B+</div><div class="home-stat-l">TOTAL DOCUMENTED</div></div>
+      <div class="home-stat"><div class="home-stat-n">35</div><div class="home-stat-l">CASES DOCUMENTED</div></div>
+      <div class="home-stat"><div class="home-stat-n">50+</div><div class="home-stat-l">COUNTRIES SPANNED</div></div>
+      <div class="home-stat"><div class="home-stat-n">$270B+ / 1M+ dead</div><div class="home-stat-l">MONEY / LIVES DOCUMENTED</div></div>
       <div class="home-stat"><div class="home-stat-n">100%</div><div class="home-stat-l">COURT/AUDIT SOURCED</div></div>
     </div>
   </div>
   <div class="disclaimer">
-    <strong>METHODOLOGY:</strong> Every case here is sourced to a court conviction, government-commissioned audit/inquiry (e.g. Zondo Commission, SIGAR/SIGIR), regulatory action (DOJ, SEC, FCA), or ICIJ-verified document leak. This is a curated selection of the most significant, best-documented cases of the last decade -- not an exhaustive global registry, which does not exist and could not be verified to AVIDAA's standard if attempted. Status badges: <span class="case-status badge-doc">DOCUMENTED</span> = court conviction, government audit, or verified leak. <span class="case-status badge-rep">REPORTED</span> = credible ongoing investigation/indictment, conviction not yet final. No case is included on allegation alone.
+    <strong>COMPANION PAGE:</strong> <a href="https://avidaa1.github.io/global/" style="color:#f59e0b">AVIDAA GLOBAL</a> maps who holds power; this page documents what the record says they did. Same people appear on both; the pages are deliberately separate.<br><br><strong>METHODOLOGY:</strong> Every case here is sourced to a court conviction, government-commissioned audit/inquiry (e.g. Zondo Commission, SIGAR/SIGIR), regulatory action (DOJ, SEC, FCA), ICIJ-verified document leak, or -- for state violence -- an international court or treaty body (ICC warrant/custody, ICJ order, OPCW attribution, UN OHCHR or UN commission finding). This is a curated selection of the most significant, best-documented cases of the last decade -- not an exhaustive global registry, which does not exist and could not be verified to AVIDAA's standard if attempted. Status badges: <span class="case-status badge-doc">DOCUMENTED</span> = court conviction, government audit, or verified leak. <span class="case-status badge-rep">REPORTED</span> = credible ongoing investigation/indictment, conviction not yet final. No case is included on allegation alone. <strong>STATE VIOLENCE</strong> entries say plainly where accountability stops: a warrant that cannot be served, a finding with no tribunal, a conviction of the hands but not the head. <strong>WHISTLEBLOWERS</strong> are included as their own category: the entry documents what they exposed, what a court later ruled about it, and what happened to them -- including where courts vindicated the leak and punished the leaker anyway. A few entries (Snowden, Manning, Assange) originate before 2016 but are included because their decisive legal outcomes -- convictions, commutations, citizenship grants, plea deals, appellate rulings -- fall inside the 2016-2026 window.
   </div>
   <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
 </div>
@@ -475,13 +659,36 @@ window.setNetworkAnimating = (v)=>{ networkAnimating = v; };
 
 <div class="page" id="page-network">
   <div class="sec">3D Connection Network</div>
-  <div class="disclaimer">Rotate and zoom to explore. Lines connect cases with a real, documented overlap (shared bank, shared mechanism, or explicit investigative follow-up) -- not every case connects to another, and that isolation is itself informative. Click any node to open its full case file. Hover a node to trace its connections.</div>
+  <div class="disclaimer"><strong>Spheres</strong> are cases. <strong>Diamonds</strong> are enablers -- the regulators, banks, law firms, secrecy jurisdictions, and state agencies that the cases themselves name. Every enabler link is stated in the linked case's own sourced entry; the network aggregates, it does not add claims. Bright lines = documented links. Faint lines = same crime mechanism. Node size = how many documented links it carries. Search, hover, click.</div>
   <div id="network-wrap">
     <div id="network-canvas-wrap"></div>
+    <div id="network-labels"></div>
     <div id="network-tooltip"></div>
+    <div id="network-stats"></div>
+    <div id="network-search-wrap">
+      <input id="network-search" type="text" placeholder="Search the network... (Enter opens first match)" autocomplete="off">
+      <div id="network-search-count"></div>
+      <button id="network-fit" class="nbtn" title="Frame all nodes">FIT</button>
+      <button id="network-tour" class="nbtn active" title="Auto-tour hubs">TOUR ON</button>
+    </div>
+    <div id="network-filters"></div>
     <div id="network-legend"></div>
+    <div id="network-hint">drag to rotate &middot; scroll to zoom &middot; hover to trace &middot; click to open<br>bright line = documented link &middot; faint line = same mechanism</div>
   </div>
-</div><div id="chatbot">
+</div><!-- WALL -->
+<div class="page" id="page-wall">
+  <div class="sec">Wall of Shame</div>
+  <div class="disclaimer">Every named individual on this page, labelled with the exact word the record gives them and nothing stronger. <strong>Convicted</strong> means a court said so. <strong>Never charged</strong> means exactly that -- and is often the loudest word on the wall. Click a name for the case. Filter by status.</div>
+  <div id="wall-summary"></div>
+  <div id="wall-filters"></div>
+  <div id="wall-grid"></div>
+  <div class="sec" style="margin-top:2rem;color:#f59e0b">The Ones Who Paid for Telling the Truth</div>
+  <div class="disclaimer" style="border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.05)">Whistleblowers and journalists whose disclosures made the cases above provable -- and what it cost them. Kept separate from the wall above on purpose.</div>
+  <div id="honor-grid"></div>
+  <div class="page-footer">AVIDAA * IO &middot; Educational reference only &middot; Public record only &middot; No original claims</div>
+</div>
+
+<div id="chatbot">
   <div id="chat-box">
     <div id="chat-head">
       <div style="display:flex;align-items:center;gap:10px;">
@@ -549,7 +756,7 @@ const CASES=[
       {date:'2014',event:'Operation Lava Jato (Car Wash) begins as a money-laundering investigation into a Brasilia gas station'},
       {date:'2016-12-21',event:'Odebrecht pleads guilty in US federal court -- largest foreign bribery case in DOJ history at the time'},
       {date:'2017',event:'Investigation spreads to Peru, Colombia, Ecuador, Panama, Mexico, Venezuela, Argentina, Angola, Mozambique and more'},
-      {date:'2018',event:'Peruvian President Alan Garcia dies by suicide as police arrive to arrest him in connection with the case'},
+      {date:'2019-04-17',event:'Former Peruvian President Alan Garcia dies by suicide as police arrive to arrest him in connection with the case'},
       {date:'2019',event:'Brazilian Supreme Court rulings begin narrowing some convictions on procedural grounds'},
     ],
     detail:'What began as an investigation into a single Brasilia gas station car wash grew into the largest transnational corruption case in Latin American history. Odebrecht ran a dedicated internal bribery division (the "Department of Structured Operations") that paid off government officials across at least 12 countries to win infrastructure contracts. More than 150 politicians and business executives were convicted, including a former Brazilian president (Lula, later had convictions annulled on procedural grounds in 2021) and Peruvian ex-president Alejandro Toledo. The case is difficult to fully close because Brazilian court rulings in 2019-2021 vacated or reduced multiple convictions on procedural/jurisdictional grounds -- a documented complication that does not erase the underlying guilty pleas and DOJ settlement.'
@@ -761,10 +968,458 @@ const CASES=[
     detail:'Investigative journalists found more than 100 of the shell companies awarded federal contracts either did not exist or were incapable of performing the contracted work -- money moved from 11 federal departments through 8 public universities and 128 contractor firms, during the term of President Enrique Pena Nieto (2012-2018). For years this was cited internationally as a textbook example of documented, exposed corruption with zero accountability -- "no one has been convicted" was the standard line as late as 2019 reporting. STATUS UPDATE at time of this entry: the FIRST-ever criminal conviction in the case was secured in December 2025, against a mid-level official, more than eight years after initial exposure. The highest-ranking official charged, former cabinet secretary Rosario Robles, was acquitted, and that acquittal itself remains contested on appeal. This case is a documented example of how long full accountability can take even after a scheme is definitively exposed -- included here specifically because the partial-justice, still-unfolding nature of the outcome is itself instructive.'
   }
 
+  ,{id:'snowden',cat:'whistleblowers',name:'Edward Snowden / NSA Mass Surveillance',
+    role:'NSA contractor who exposed global bulk surveillance -- the leak a US court later ruled was exposing an UNLAWFUL program',
+    metric:'2013 leak -- US Appeals Court 2020: program was ILLEGAL and officials "not telling the truth" -- Russian citizen since Sep 2022 -- still charged under Espionage Act',
+    source:'US v. Moalin, 9th Cir. Sep 2 2020 -- DOJ indictment Jun 2013 -- Putin decree Sep 26 2022 -- RFE/RL May 2025',
+    date:'2026-05',status:'doc',connections:['manning','wikileaks_assange'],
+    events:[
+      {date:'2026-05',event:'Snowden legal team involved in challenging Madison Square Garden facial-recognition surveillance in US courts -- influence continues from exile'},
+      {date:'2025-05-30',event:'RFE/RL confirms Snowden is a registered Russian taxpayer, address in Lyubertsy, Moscow region'},
+      {date:'2022-09-26',event:'Putin decree grants Snowden Russian citizenship -- his name listed among 72 foreign-born individuals, no Kremlin comment'},
+      {date:'2020-09-02',event:'US 9th Circuit Court of Appeals rules the NSA bulk phone-metadata program Snowden exposed was UNLAWFUL -- and that intelligence leaders who publicly defended it "were not telling the truth"'},
+      {date:'2013-06',event:'DOJ indicts Snowden under the Espionage Act; State Dept revokes his passport while he is in transit; Russia grants asylum'},
+      {date:'2013-06-05',event:'The Guardian publishes first Snowden documents -- PRISM, bulk phone metadata collection, spying on allied leaders, tapping undersea cables'},
+    ],
+    detail:'The single most consequential fact in this entry is the one most often left out: seven years after Snowden fled, a US federal appeals court agreed with him. The 9th Circuit ruled the bulk metadata program was illegal, and stated that the officials who defended it publicly had not told the truth. James Clapper, then Director of National Intelligence, had testified to the Senate in March 2013 that the NSA did not collect data on millions of Americans -- Snowden documents proved it did. Clapper was never charged. Snowden still is. He cannot return to the US without facing Espionage Act charges that carry decades in prison and, critically, allow NO public-interest defense -- the jury would not be permitted to consider whether the leak served the public. His flight to Russia -- and now citizenship -- is the part critics cite most; his defenders note he was stranded in Moscow transit when his passport was revoked mid-journey. Both things are documented. Both are true.'
+  }
+  ,{id:'manning',cat:'whistleblowers',name:'Chelsea Manning / WikiLeaks Cables',
+    role:'US Army analyst who leaked 750,000 documents incl. the Collateral Murder video -- sentenced 35 years, commuted after 7',
+    metric:'750,000 documents to WikiLeaks 2010 -- 35-year sentence -- commuted by Obama Jan 2017 -- jailed AGAIN 2019-2020 for refusing to testify against Assange',
+    source:'US v. Manning, court-martial Jul 2013 -- Obama commutation Jan 17 2017 -- EDVA contempt orders Mar 2019-Mar 2020',
+    date:'2020-03',status:'doc',connections:['snowden','wikileaks_assange'],
+    events:[
+      {date:'2020-03-12',event:'Released from jail after grand jury term expires -- judge also imposes $256,000 in accrued fines for refusing to testify. Manning had attempted suicide in custody the day before'},
+      {date:'2019-03-08',event:'Jailed for civil contempt after refusing to testify to a federal grand jury investigating WikiLeaks/Assange -- states she has already given all relevant testimony at her court-martial'},
+      {date:'2017-05-17',event:'Released from Fort Leavenworth after 7 years'},
+      {date:'2017-01-17',event:'President Obama commutes sentence in one of his final acts -- one of the most controversial commutations of his presidency'},
+      {date:'2013-08-21',event:'Court-martial sentences Manning to 35 years -- the longest sentence ever imposed in a US leak case'},
+      {date:'2010-04-05',event:'WikiLeaks publishes "Collateral Murder" -- Apache helicopter gunsight video of a 2007 Baghdad airstrike killing 12 including two Reuters journalists'},
+    ],
+    detail:'Manning is the whistleblower who paid the most and won the least. The 35-year sentence was the harshest in US leak history. She served 7 years including periods of solitary confinement the UN special rapporteur on torture called cruel and inhuman. After release she was jailed a second time -- not for a new crime, but for refusing to testify against WikiLeaks -- and held 62 days plus a year, accruing over a quarter-million dollars in fines. The leak itself is the point of dispute: unlike Snowden, who curated documents around a specific abuse, Manning released 750,000 files indiscriminately including diplomatic cables with no connection to any wrongdoing -- which is exactly why courts treated her as a leaker, not a protected whistleblower. The Collateral Murder video, however, showed something no one disputes: US forces killing civilians and journalists and laughing about it.'
+  }
+  ,{id:'wikileaks_assange',cat:'whistleblowers',name:'Julian Assange / WikiLeaks',
+    role:'Founder of WikiLeaks -- 14 years of legal siege ending in a 2024 plea deal -- Espionage Act charges for publishing',
+    metric:'7 years in Ecuadorian embassy -- 5 years in Belmarsh prison -- 18 Espionage Act charges -- plea deal Jun 2024, freed',
+    source:'US v. Assange, EDVA indictment 2019 -- UK extradition proceedings 2019-2024 -- plea agreement, US District Court N. Mariana Islands, Jun 26 2024',
+    date:'2024-06-26',status:'doc',connections:['manning','snowden'],
+    events:[
+      {date:'2024-06-26',event:'Pleads guilty to a single Espionage Act count in a US courtroom on Saipan (chosen to avoid US mainland), sentenced to time served, flies home to Australia a free man'},
+      {date:'2024-05-20',event:'UK High Court grants Assange right to appeal extradition on grounds the US had not guaranteed First Amendment protections to a non-citizen'},
+      {date:'2019-04-11',event:'Arrested inside Ecuadorian embassy in London after Ecuador revokes asylum; US unseals indictment same day; later held in Belmarsh maximum-security prison for 5 years'},
+      {date:'2019-05-23',event:'US adds 17 Espionage Act charges -- first time in US history a publisher is charged under the Act for publishing classified material'},
+      {date:'2016-07-22',event:'WikiLeaks publishes 20,000 DNC emails days before Democratic convention; Mueller later attributes hack to Russian GRU'},
+      {date:'2012-06-19',event:'Enters Ecuadorian embassy in London to avoid extradition to Sweden on sexual-assault allegations (later dropped); remains 7 years'},
+    ],
+    detail:'The Assange case matters beyond Assange because of the precedent it nearly set: the 17 Espionage Act charges added in 2019 were the first time the US ever charged a publisher -- not a source, a publisher -- for publishing classified information. Every major press-freedom organization warned this same theory could be used against the New York Times or Washington Post. The 2024 plea deal to a single count avoided a ruling either way, leaving the question open. Documented and undisputed: WikiLeaks published material that was true, and material whose publication (the 2016 DNC emails, hacked by Russian intelligence) served a hostile state interest. Documented and undisputed: he spent 12 years confined without ever being convicted of the crimes he was originally accused of. Both facts sit in the same file.'
+  }
+  ,{id:'lazarus_bybit',cat:'cyber',name:'Lazarus Group / Bybit Heist -- North Korea',
+    role:'North Korean state hacking unit -- the largest theft in cryptocurrency history, funding a nuclear weapons program',
+    metric:'$1.5 BILLION stolen from Bybit Feb 21 2025 -- largest crypto theft ever -- attributed by FBI to DPRK Lazarus Group (TraderTraitor)',
+    source:'FBI public attribution Feb 26 2025 -- Chainalysis -- UN Panel of Experts reports on DPRK sanctions evasion',
+    date:'2025-02-26',status:'doc',connections:['ftx'],
+    events:[
+      {date:'2025-02-26',event:'FBI publicly attributes the Bybit theft to North Korea TraderTraitor (Lazarus) unit -- publishes wallet addresses, asks exchanges to block'},
+      {date:'2025-02-21',event:'During a routine cold-to-warm wallet transfer, attackers hijack the transaction via compromised Safe{Wallet} third-party infrastructure -- $1.5B in Ethereum rerouted in minutes'},
+      {date:'2022-03',event:'Ronin Network (Axie Infinity) -- $620M stolen, later attributed to Lazarus'},
+      {date:'2017-05',event:'WannaCry ransomware infects 230,000+ computers in 150 countries in one day, crippling UK NHS hospitals -- attributed to Lazarus by US, UK, and allies'},
+      {date:'2016-02',event:'Bangladesh Bank heist -- $81M stolen via fraudulent SWIFT transfers; $850M more blocked only because of a typo in a transfer order'},
+      {date:'2014-11',event:'Sony Pictures hack -- confidential data, unreleased films, executive emails dumped in retaliation for "The Interview"'},
+    ],
+    detail:'Lazarus is not a criminal gang. It is Bureau 121 of North Korea Reconnaissance General Bureau -- a state intelligence agency running cybercrime as national economic policy. UN sanctions monitors estimate DPRK stole over $3 billion in crypto between 2017 and 2023, and that the proceeds directly fund the nuclear and ballistic missile programs. The Bybit heist alone equals roughly a third of North Korea estimated annual export earnings. No one has been arrested. No one will be -- the perpetrators are salaried government employees in Pyongyang. The Bangladesh Bank case remains the most darkly absurd: $850 million in additional theft was blocked because an attacker misspelled "foundation" as "fandation" in a transfer order, triggering a bank query. This entry sits in a corruption archive because it documents a sovereign state operating a theft enterprise at nation-scale, with the SWIFT system and global exchanges as the pipes.'
+  }
+  ,{id:'solarwinds',cat:'cyber',name:'SolarWinds / SVR Supply-Chain Attack',
+    role:'Russian intelligence backdoored software used by 18,000 organizations including the US Treasury, State, Commerce, and Homeland Security',
+    metric:'18,000 organizations backdoored -- undetected 9 months -- attributed to Russia SVR -- SEC charged SolarWinds CISO 2023',
+    source:'CISA Emergency Directive 21-01 Dec 13 2020 -- White House attribution Apr 15 2021 -- SEC v. SolarWinds and Brown, SDNY Oct 30 2023',
+    date:'2023-10-30',status:'doc',connections:[],
+    events:[
+      {date:'2024-07',event:'Judge Engelmayer dismisses most SEC charges against SolarWinds and its CISO, allowing only a narrower securities-fraud claim to proceed'},
+      {date:'2023-10-30',event:'SEC charges SolarWinds and its Chief Information Security Officer Timothy Brown with fraud -- first time the SEC charges an individual CISO over a cyberattack'},
+      {date:'2021-04-15',event:'White House formally attributes attack to Russia SVR foreign intelligence service; expels 10 diplomats, sanctions 32 entities'},
+      {date:'2020-12-13',event:'CISA issues Emergency Directive 21-01 ordering all federal agencies to disconnect SolarWinds Orion immediately'},
+      {date:'2020-12-08',event:'FireEye discovers it has been breached, traces intrusion to a poisoned SolarWinds software update -- the SUNBURST backdoor'},
+      {date:'2020-03',event:'Malicious code inserted into SolarWinds Orion updates; downloaded by ~18,000 customers over following months'},
+    ],
+    detail:'The attackers did not break in. They were invited. By compromising the build system of a trusted software vendor, Russia SVR turned a routine security update into a backdoor delivered to 18,000 organizations at once -- including the very US agencies responsible for cybersecurity. It went undetected for nine months and was found not by any government but by a private security firm noticing its own systems were compromised. The Administrative Office of the US Courts warned that sealed court documents nationwide may have been exposed. The SEC follow-up broke new ground by charging the CISO personally for allegedly misleading investors about security -- a precedent partially walked back by the court in 2024. The full scope of what SVR accessed inside Treasury and State has never been publicly disclosed.'
+  }
+  ,{id:'equifax',cat:'cyber',name:'Equifax Breach -- 147 Million Americans',
+    role:'Credit bureau exposed the financial identity of nearly half the US population through an unpatched known flaw',
+    metric:'147 million people exposed -- SSNs, birthdates, addresses -- $425M+ settlement upheld -- CIO convicted of insider trading',
+    source:'FTC/CFPB settlement Jul 2019 -- 11th Cir. affirms $425M settlement Jun 3 2021 -- US v. Ying, N.D. Ga. (CIO insider trading conviction 2019) -- DOJ indictment of 4 PLA officers Feb 2020',
+    date:'2021-06-03',status:'doc',connections:[],
+    events:[
+      {date:'2021-06-03',event:'11th Circuit Court of Appeals upholds the $425 million class-action settlement'},
+      {date:'2020-02-10',event:'DOJ indicts four members of China People Liberation Army 54th Research Institute for the hack -- none will ever face trial'},
+      {date:'2019-07-22',event:'Equifax agrees to pay at least $575M, up to $700M, in FTC/CFPB/state settlement'},
+      {date:'2019-06',event:'Former Equifax CIO Jun Ying sentenced to 4 months prison for insider trading -- sold shares after learning of the breach, before public disclosure'},
+      {date:'2017-09-07',event:'Equifax publicly discloses breach -- 40 days after discovering it, 4 months after it began'},
+      {date:'2017-03',event:'Apache Struts vulnerability publicly disclosed and patched; Equifax fails to apply the patch for months'},
+    ],
+    detail:'You did not choose to be an Equifax customer. Credit bureaus collect data on nearly every adult American without consent, then sell it. When Equifax lost the identity data of 147 million people -- through a software flaw that had a public patch available for two months -- there was no way to opt out, no way to change your Social Security number, and no meaningful individual remedy: the settlement worked out to roughly $3 per person before lawyers. The attackers were Chinese military officers who will never see a courtroom. The only person imprisoned was the Equifax executive who dumped his stock before telling the public. This is what accountability looks like when the victim never signed up and the perpetrator is a foreign army.'
+  }
+  ,{id:'colonial_pipeline',cat:'cyber',name:'Colonial Pipeline Ransomware / DarkSide',
+    role:'Single stolen password shut down 45% of US East Coast fuel supply for six days',
+    metric:'$4.4M ransom paid -- 5,500 miles of pipeline shut -- $2.3M recovered by DOJ -- one compromised VPN password, no MFA',
+    source:'DOJ press release Jun 7 2021 (seizure of 63.7 BTC) -- Colonial CEO Senate testimony Jun 8 2021 -- FBI attribution to DarkSide',
+    date:'2021-06-07',status:'doc',connections:[],
+    events:[
+      {date:'2021-06-08',event:'Colonial CEO Joseph Blount testifies to Senate: the attack entered through a legacy VPN account with a single password and no multi-factor authentication'},
+      {date:'2021-06-07',event:'DOJ announces seizure of 63.7 bitcoin (~$2.3M) of the ransom -- first major recovery of a ransomware payment'},
+      {date:'2021-05-13',event:'Pipeline operations restart after 6 days; gas shortages and panic-buying across the Southeast US'},
+      {date:'2021-05-07',event:'DarkSide ransomware group encrypts Colonial Pipeline IT systems; company proactively shuts all pipeline operations; pays 75 BTC (~$4.4M) same day'},
+    ],
+    detail:'The largest fuel pipeline in the United States was taken offline not by a sophisticated exploit but by a password -- one old VPN account, no second factor, credentials likely bought from a leaked-password dump. DarkSide was a Russian-speaking criminal group operating "ransomware-as-a-service," and it publicly apologized for the disruption, claiming it only wanted money, not chaos. The FBI recovered about half the ransom by seizing the private key to a bitcoin wallet -- a rare and still poorly understood success. The attack forced the first federal cybersecurity mandates for pipeline operators, who had previously been governed by voluntary guidelines. No DarkSide member has been arrested; the group dissolved and reappeared under other names.'
+  }
+  ,{id:'boeing_737max',cat:'government',name:'Boeing 737 MAX / FAA Regulatory Capture',
+    role:'346 dead in two crashes -- Boeing hid a flawed flight system from regulators and pilots -- FAA had delegated its own oversight to Boeing',
+    metric:'346 killed (Lion Air 610, Ethiopian 302) -- $2.5B DOJ settlement 2021 -- guilty plea agreement 2024 later rejected by judge',
+    source:'DOJ Deferred Prosecution Agreement Jan 7 2021 -- House Transportation Committee final report Sep 2020 -- US v. Boeing, N.D. Tex. (Judge O Connor rulings 2024-2025)',
+    date:'2025',status:'doc',connections:[],
+    events:[
+      {date:'2025',event:'DOJ and Boeing reach a new non-prosecution agreement; victims families object; judge weighs whether to accept -- accountability for 346 deaths remains unresolved 6 years later'},
+      {date:'2024-12-05',event:'Judge Reed O Connor REJECTS the Boeing guilty plea deal, citing concerns over the independent-monitor selection process'},
+      {date:'2024-07',event:'Boeing agrees to plead guilty to conspiracy to defraud the FAA -- after DOJ finds it violated the 2021 deferred prosecution agreement'},
+      {date:'2024-01-05',event:'Door plug blows out of Alaska Airlines 737 MAX 9 at 16,000 feet -- reopens scrutiny, DOJ finds Boeing breached its 2021 agreement'},
+      {date:'2021-01-07',event:'DOJ charges Boeing with conspiracy to defraud the FAA; Boeing pays $2.5B in a deferred prosecution agreement -- only $243M is a criminal fine; $1.77B goes to airline customers'},
+      {date:'2020-09-16',event:'House Transportation Committee 238-page report: crashes were the "horrific culmination" of Boeing engineering failures, management pressure, and FAA oversight lapses'},
+      {date:'2019-03-10',event:'Ethiopian Airlines Flight 302 crashes 6 minutes after takeoff, 157 dead -- same MCAS failure. MAX grounded worldwide within days'},
+      {date:'2018-10-29',event:'Lion Air Flight 610 crashes into the Java Sea, 189 dead -- MCAS flight-control software repeatedly forced the nose down'},
+    ],
+    detail:'Boeing built a system called MCAS that could force the aircraft nose down based on a single sensor, did not tell pilots it existed, and persuaded the FAA it did not warrant additional training -- because additional training would have cost airlines money and hurt sales. The FAA agreed, in part because it had delegated much of its own certification work to Boeing employees under a program called ODA. 346 people died. The DOJ settlement gave Boeing a deferred prosecution -- a corporate probation -- and a $243M criminal fine that amounted to about 0.4% of one year of revenue. When Boeing violated that agreement, it was offered a guilty plea; when a judge rejected the plea, it was offered a non-prosecution agreement instead. No Boeing executive has been criminally charged. The one person prosecuted -- a mid-level test pilot -- was acquitted. This is the regulatory-capture case: the regulator let the regulated write its own safety rules.'
+  }
+  ,{id:'cambridge_analytica',cat:'government',name:'Cambridge Analytica / Facebook -- 87 Million Profiles',
+    role:'Political consultancy harvested Facebook data of 87 million users without consent for Trump 2016 and Brexit campaigns',
+    metric:'87 million profiles harvested -- Facebook fined $5 BILLION by FTC (largest privacy penalty in history) -- UK ICO fined 500,000 pounds (statutory maximum)',
+    source:'FTC v. Facebook, DDC Jul 24 2019 ($5B) -- UK Information Commissioner Office penalty Oct 25 2018 -- UK Parliament DCMS Committee report Feb 2019 -- SEC settlement $100M Jul 2019',
+    date:'2019-07-24',status:'doc',connections:['wikileaks_assange'],
+    events:[
+      {date:'2019-07-24',event:'FTC fines Facebook $5 billion -- the largest privacy penalty ever imposed on any company, 20x the previous record -- and imposes new board-level privacy oversight'},
+      {date:'2019-07-24',event:'SEC separately fines Facebook $100M for misleading investors about the risk of data misuse'},
+      {date:'2019-02-18',event:'UK Parliament committee report calls Facebook "digital gangsters" and finds it deliberately obstructed the inquiry'},
+      {date:'2018-10-25',event:'UK Information Commissioner fines Facebook 500,000 pounds -- the maximum possible under pre-GDPR law'},
+      {date:'2018-05-02',event:'Cambridge Analytica and parent SCL Group file for insolvency'},
+      {date:'2018-04-10',event:'Mark Zuckerberg testifies before US Senate for 5 hours'},
+      {date:'2018-03-17',event:'The Guardian, Observer, and New York Times publish whistleblower Christopher Wylie account: 87M profiles harvested via a personality-quiz app, used to build psychological voter-targeting for Trump 2016 and Brexit Leave campaigns'},
+    ],
+    detail:'A researcher built a Facebook personality quiz. 270,000 people took it. Because of how Facebook data-sharing worked, the app also harvested the profiles of every friend of every quiz-taker -- 87 million people who never consented to anything. Cambridge Analytica, funded by hedge-fund billionaire Robert Mercer and led on the board by Steve Bannon, used the data to build psychographic profiles for micro-targeted political advertising. Facebook knew about the harvesting in 2015 and did nothing beyond asking for a deletion promise it never verified. The whistleblower, Christopher Wylie, was a 28-year-old former Cambridge Analytica research director. The $5B FTC fine sounds enormous; Facebook stock ROSE the day it was announced, because investors had expected worse and the fine was less than a quarter of one year profit. Cambridge Analytica dissolved, its executives moved to new firms, and the same targeting techniques are now standard practice in every major political campaign on Earth.'
+  }
+
+  ,{id:'duterte_drug_war',cat:'atrocity',name:'Duterte Drug War -- ICC Crimes Against Humanity',
+    role:'Former Philippine president in ICC custody -- the first sitting-era head of state arrested on an ICC warrant by his own country',
+    metric:'6,000+ killed per Philippine police statistics -- 12,000-30,000 per ICC prosecutor estimate -- arrested Mar 11 2025 -- charges confirmed Apr 23 2026',
+    source:'ICC Pre-Trial Chamber I warrant 7 Mar 2025 (icc-cpi.int/philippines/duterte) -- ICC confirmation of charges 23 Apr 2026 -- ICC prosecutor filing Sep 2021',
+    date:'2026-04-23',status:'doc',connections:[],
+    events:[
+      {date:'2026-04-23',event:'ICC Pre-Trial judges unanimously confirm all crimes-against-humanity charges (murder, attempted murder) -- case sent to trial'},
+      {date:'2025-03-14',event:'Initial appearance before the ICC, via video link'},
+      {date:'2025-03-12',event:'Surrendered to ICC custody in The Hague'},
+      {date:'2025-03-11',event:'Arrested at Manila airport by Philippine police acting on the ICC warrant via Interpol; flown to The Hague the same night'},
+      {date:'2025-03-07',event:'ICC issues arrest warrant (under seal) for the crime against humanity of murder, Nov 2011 - Mar 2019'},
+      {date:'2021-09',event:'ICC prosecutor opens investigation; estimates 12,000-30,000 civilians killed Jul 2016 - Mar 2019; Philippine authorities themselves report 5,281 killed in police operations'},
+      {date:'2019-03-17',event:'Philippines withdrawal from the Rome Statute takes effect -- ICC retains jurisdiction over crimes committed while a member'},
+      {date:'2016-06-30',event:'Duterte inaugurated; nationwide "war on drugs" begins'},
+    ],
+    detail:'A former president who once said he would be happy to kill three million addicts is in a cell in The Hague. The mechanism that put him there is the point: the ICC cannot arrest anyone -- it depends on a national government choosing to act. Duterte was arrested because his political alliance with the Marcos family collapsed, not because the international system worked on its own. The warrant charges him as an indirect co-perpetrator for at least 43 specific murders; the underlying investigation covers between 12,000 and 30,000 deaths, mostly poor people in urban neighbourhoods. His trial date has not yet been set.'
+  }
+  ,{id:'putin_ukraine',cat:'atrocity',name:'Putin / Ukraine -- ICC Warrant, Bucha, Child Deportations',
+    role:'Sitting head of state under ICC arrest warrant for the war crime of deporting Ukrainian children',
+    metric:'ICC warrants Mar 17 2023 (Putin + Lvova-Belova) -- 458 civilian bodies documented in Bucha (UN OHCHR) -- 19,500+ children reported deported (Ukraine govt)',
+    source:'ICC Pre-Trial Chamber II press release 17 Mar 2023 (icc-cpi.int) -- UN OHCHR Bucha report Dec 2022 -- UN Independent Commission of Inquiry on Ukraine',
+    date:'2023-03-17',status:'doc',connections:['snowden'],
+    events:[
+      {date:'2026-07-24',event:'The prosecutor who signed this warrant, Karim Khan, is removed from office by ICC member states (82-13-15 vote) over sexual misconduct findings -- an independent 3-judge panel had cleared him in March 2026; the Bureau overruled that and pressed forward regardless. Khan lawyers call the process politically compromised, noting he was removed "while under sanctions" the US imposed over the Netanyahu warrant'},
+      {date:'2024-03-05',event:'ICC issues further warrants for Russian commanders Kobylash and Sokolov over strikes on Ukrainian power infrastructure'},
+      {date:'2023-03-17',event:'ICC Pre-Trial Chamber II issues arrest warrants for Vladimir Putin and Children Rights Commissioner Maria Lvova-Belova -- war crime of unlawful deportation and transfer of children from occupied Ukraine'},
+      {date:'2022-12',event:'UN OHCHR documents 458 civilian deaths in Bucha during the Russian occupation, incl. 73 women and 5 children; 419 with gunshot wounds'},
+      {date:'2022-04-01',event:'Russian forces withdraw from Bucha; mass graves and bodies in streets documented by journalists and UN monitors'},
+      {date:'2022-02-24',event:'Full-scale invasion of Ukraine begins'},
+    ],
+    detail:'The ICC chose the narrowest, most provable charge available: not the invasion itself, not Bucha, but the documented, state-organised transfer of Ukrainian children into Russia -- a crime Russia did not hide. Lvova-Belova described the adoptions on camera with Putin. The warrant makes Putin the first leader of a permanent UN Security Council member to be wanted by the court. It cannot be served while he stays in Russia or in states that refuse to cooperate; Mongolia hosted him in Sep 2024 and did not arrest him. The complication documented here: the prosecutor who signed this warrant, Karim Khan, was himself removed from office in Jul 2026 following sexual misconduct findings against him -- a fact that gives Russia and its allies a genuine, documented talking point against the warrant legitimacy, regardless of the warrant own merits. Bucha is documented separately by the UN: 458 civilians, most shot. The war is ongoing; a fuller casualty picture is on AVIDAA GLOBAL.'
+  }
+  ,{id:'khashoggi',cat:'atrocity',name:'Jamal Khashoggi Murder -- Saudi Consulate, Istanbul',
+    role:'Washington Post columnist killed and dismembered inside a Saudi diplomatic building',
+    metric:'Killed Oct 2 2018 -- 8 convicted in Saudi court -- US ODNI: Crown Prince Mohammed bin Salman "approved" the operation (Feb 26 2021) -- MBS not charged',
+    source:'ODNI declassified assessment 26 Feb 2021 -- Saudi Riyadh Criminal Court verdicts Dec 2019 / Sep 2020 -- UN Special Rapporteur Callamard report Jun 2019 -- Turkish prosecutors indictment',
+    date:'2021-02-26',status:'doc',connections:[],
+    events:[
+      {date:'2021-02-26',event:'US Office of the Director of National Intelligence declassifies assessment: MBS approved an operation in Istanbul to capture or kill Khashoggi. US imposes visa bans on 76 Saudis; MBS himself is not sanctioned'},
+      {date:'2020-09-07',event:'Saudi appeals court commutes five death sentences to 20 years after the family "forgives" the killers; three others get 7-10 years'},
+      {date:'2019-12-23',event:'Riyadh Criminal Court convicts 8 of 11 defendants; sentences five to death. Two senior officials (al-Qahtani, al-Asiri) are not convicted'},
+      {date:'2019-06-19',event:'UN Special Rapporteur Agnes Callamard finds "credible evidence" warranting investigation of MBS and other senior officials'},
+      {date:'2018-10-20',event:'Saudi Arabia admits Khashoggi died inside the consulate after 18 days of denial'},
+      {date:'2018-10-02',event:'Khashoggi enters the Saudi consulate in Istanbul to collect a document; never leaves. Turkish intelligence audio records the killing'},
+    ],
+    detail:'Eight men were convicted for the killing. The trial was closed, the names of the convicted were never officially released, and the two most senior figures named by Turkish and UN investigators walked. The US intelligence community stated in writing that the Crown Prince approved the operation -- then the US government declined to sanction him. Khashoggi body has never been found. This is the documented anatomy of a state killing with a scapegoat layer: real convictions at the bottom, a written intelligence finding pointing at the top, and nothing in between.'
+  }
+  ,{id:'syria_chemical',cat:'atrocity',name:'Syria Chemical Weapons -- OPCW Attributions',
+    role:'Only international body with legal mandate to attribute chemical attacks found the Assad government responsible',
+    metric:'OPCW IIT attributes Ltamenah (Mar 2017) and Douma (Apr 7 2018, 43 killed) attacks to the Syrian Arab Air Force -- Assad flees to Russia Dec 8 2024',
+    source:'OPCW Investigation and Identification Team reports: 1st report 8 Apr 2020 (Ltamenah), 3rd report 27 Jan 2023 (Douma) -- OPCW Conference of States Parties decision 21 Apr 2021 suspending Syria voting rights',
+    date:'2024-12-08',status:'doc',connections:[],
+    events:[
+      {date:'2024-12-08',event:'Assad government falls; Assad flees to Moscow and is granted asylum by Russia'},
+      {date:'2023-01-27',event:'OPCW IIT third report: reasonable grounds to believe the Syrian Arab Air Force dropped two cylinders of chlorine on Douma on 7 Apr 2018, killing 43'},
+      {date:'2021-04-21',event:'OPCW member states vote to suspend Syria rights and privileges in the organisation -- first such action in OPCW history'},
+      {date:'2020-04-08',event:'OPCW IIT first report attributes three 2017 Ltamenah attacks (sarin and chlorine) to the Syrian Arab Air Force'},
+      {date:'2018-04-07',event:'Douma chlorine attack; 43 killed'},
+      {date:'2013-09',event:'Syria joins the Chemical Weapons Convention after the Ghouta sarin attack; pledges to destroy its stockpile'},
+    ],
+    detail:'The OPCW is the treaty body every chemical-weapons state signed up to, including Syria in 2013. Its Investigation and Identification Team -- created specifically because Russia vetoed the earlier UN attribution mechanism -- named the Syrian air force in three attacks after Syria had promised its stockpile was gone. No one has been prosecuted. The head of the government the OPCW named lives in Moscow. This entry carries the OPCW findings as documented attribution; the death toll per attack is the OPCW figure, not an estimate.'
+  }
+  ,{id:'rohingya',cat:'atrocity',name:'Rohingya -- Myanmar Military Campaign, 2017',
+    role:'UN fact-finders found "genocidal intent"; ICJ ordered Myanmar to prevent genocide; ICC prosecutor seeks warrant for junta chief',
+    metric:'~730,000 fled to Bangladesh Aug-Dec 2017 -- UN FFM: at least 10,000 killed (conservative) -- ICJ provisional measures Jan 23 2020 -- ICC warrant requested Nov 27 2024',
+    source:'UN Independent International Fact-Finding Mission on Myanmar report 18 Sep 2018 (A/HRC/39/64) -- ICJ Order 23 Jan 2020, The Gambia v. Myanmar -- ICC Prosecutor application 27 Nov 2024',
+    date:'2024-11-27',status:'doc',connections:[],
+    events:[
+      {date:'2024-11-27',event:'ICC Prosecutor applies for an arrest warrant for Myanmar junta chief Min Aung Hlaing for crimes against humanity of deportation and persecution'},
+      {date:'2022-07-22',event:'ICJ rejects all of Myanmar preliminary objections; genocide case proceeds to the merits'},
+      {date:'2021-02-01',event:'Military coup; Min Aung Hlaing seizes power'},
+      {date:'2020-01-23',event:'ICJ unanimously orders Myanmar to take all measures to prevent genocide against the Rohingya (provisional measures, The Gambia v. Myanmar)'},
+      {date:'2018-09-18',event:'UN Fact-Finding Mission report: military conducted "clearance operations" with "genocidal intent"; names six generals incl. Min Aung Hlaing for investigation and prosecution'},
+      {date:'2017-08-25',event:'Military operations begin after ARSA attacks; mass flight to Bangladesh follows'},
+    ],
+    detail:'Three separate international bodies have now reached the same direction of travel: the UN Fact-Finding Mission (genocidal intent, six generals named), the ICJ (a binding order to prevent genocide, unanimous, all objections rejected), and the ICC (a warrant request against the man who now runs the country). None of the six generals has been arrested. The ICC case is possible only because Bangladesh -- where the victims fled -- is a member state, giving the court jurisdiction over the cross-border element. Around a million Rohingya remain in camps in Bangladesh.'
+  }
+  ,{id:'xinjiang',cat:'atrocity',name:'Xinjiang / Uyghurs -- UN OHCHR Findings',
+    role:'The UN human-rights office found China treatment of Uyghurs "may constitute international crimes, in particular crimes against humanity"',
+    metric:'UN OHCHR assessment Aug 31 2022 -- "serious human rights violations" -- large-scale arbitrary detention in "VETC" facilities -- US, Canada, UK, NL parliaments: genocide designations',
+    source:'UN OHCHR "Assessment of human rights concerns in the Xinjiang Uyghur Autonomous Region" 31 Aug 2022 -- US State Dept determination 19 Jan 2021 -- Xinjiang Police Files (BBC/ICIJ partners, May 2022)',
+    date:'2022-08-31',status:'doc',connections:[],
+    events:[
+      {date:'2022-08-31',event:'UN OHCHR publishes its assessment minutes before High Commissioner Bachelet term ends: violations "may constitute international crimes, in particular crimes against humanity"'},
+      {date:'2022-05-24',event:'Xinjiang Police Files: hacked internal police photographs and documents from Konasheher and Tekes counties published by a media consortium'},
+      {date:'2021-01-19',event:'US State Department formally determines China has committed genocide and crimes against humanity against Uyghurs'},
+      {date:'2019-11',event:'China Cables (ICIJ) and Xinjiang Papers (NYT) publish leaked internal directives on the camp system'},
+      {date:'2017',event:'Mass detention program expands; "Vocational Education and Training Centres" built at scale'},
+    ],
+    detail:'This is the one entry on the page where the strongest document is a UN human-rights assessment rather than a court -- because no court can reach a permanent Security Council member that has not joined the ICC. That limit is stated plainly here. What the OHCHR did find, over China objections and after a two-year delay, was serious violations including arbitrary detention on a large scale and credible allegations of torture and sexual violence. China calls the report illegal and the camps closed. No international proceeding exists.'
+  }
+  ,{id:'wagner_mali',cat:'atrocity',name:'Wagner Group / Moura Massacre, Mali',
+    role:'Russian private military company and Malian army killed 500+ civilians over five days in one village',
+    metric:'UN OHCHR: at least 500 killed in Moura, 27-31 Mar 2022, "the vast majority summarily executed" -- 58 women and girls raped -- Wagner and Malian forces named',
+    source:'UN OHCHR fact-finding report on Moura, 12 May 2023 -- UN Security Council Panel of Experts on Mali -- US Treasury sanctions on Wagner Mali operatives',
+    date:'2023-05-12',status:'doc',connections:[],
+    events:[
+      {date:'2023-08-23',event:'Wagner founder Yevgeny Prigozhin killed in plane crash in Russia two months after his mutiny; Wagner Africa operations continue under Russian MoD "Africa Corps"'},
+      {date:'2023-05-12',event:'UN OHCHR report: Malian armed forces and "armed white men" identified as Wagner killed at least 500 civilians in Moura over five days; UN finds war crimes and possibly crimes against humanity'},
+      {date:'2023-01-31',event:'Mali expels the UN mission human-rights chief; Mali later forces MINUSMA to leave entirely (Jun 2023)'},
+      {date:'2022-03-27',event:'Operation in Moura begins; helicopters land troops in the village market'},
+    ],
+    detail:'Moura is the single most documented Wagner atrocity: a UN team interviewed 157 people and concluded that the vast majority of the 500 dead were summarily executed after the initial fighting ended. Mali response was to expel the UN. No one has been charged. Wagner has since been folded into a Russian state structure, which means the perpetrators now formally belong to a government. The same organisation appears on AVIDAA GLOBAL under Russia state apparatus.'
+  }
+  ,{id:'tigray',cat:'atrocity',name:'Tigray War -- Ethiopia, 2020-2022',
+    role:'One of the deadliest wars of the decade, largely unreported; UN commission found crimes against humanity and use of starvation as a weapon',
+    metric:'Estimated 385,000-600,000 dead incl. famine (Ghent University) -- UN ICHREE: war crimes and crimes against humanity by all parties -- Pretoria ceasefire Nov 2 2022',
+    source:'UN International Commission of Human Rights Experts on Ethiopia reports 19 Sep 2022 and 14 Sep 2023 (A/HRC/54/55) -- African Union-brokered Pretoria Agreement 2 Nov 2022 -- Ghent University mortality study',
+    date:'2023-09-14',status:'doc',connections:[],
+    events:[
+      {date:'2023-10',event:'UN Human Rights Council allows the Ethiopia commission mandate to lapse -- no international investigation continues'},
+      {date:'2023-09-14',event:'UN ICHREE final report: reasonable grounds to believe crimes against humanity and war crimes were committed, incl. starvation as a method of warfare and mass rape; warns of ongoing risk'},
+      {date:'2022-11-02',event:'Pretoria Agreement: Ethiopian government and TPLF sign cessation of hostilities'},
+      {date:'2021-06',event:'Ethiopian government blockade of Tigray tightens; UN warns of famine conditions for 350,000+'},
+      {date:'2020-11-04',event:'War begins after TPLF attack on federal military bases and federal offensive on Mekelle'},
+    ],
+    detail:'A death toll in the hundreds of thousands -- comparable to Syria at its worst -- and almost no one outside East Africa knows the name of the war. The UN commission found that starvation was used deliberately, that Eritrean forces fighting alongside Ethiopia committed mass rape, and that the government was already committing new violations in Amhara as the report was published. The UN then let the commission expire. There is no tribunal, no ICC jurisdiction (Ethiopia is not a member), and no prosecutions. This entry exists so the number is written down somewhere alongside the others.'
+  }
+
+  ,{id:'trump_record',cat:'state_capture',name:'Donald Trump -- Documented Legal Record',
+    role:'First convicted felon to hold the US presidency -- 34 felony counts, corporate tax-fraud conviction, civil fraud and sexual-abuse liability findings',
+    metric:'CONVICTED: 34 felony counts (NY, May 30 2024) -- Trump Organization CONVICTED 17 counts tax fraud (Dec 2022) -- LIABLE: sexual abuse + defamation ($88M), civil fraud (liability upheld, penalty vacated) -- SETTLED: Trump University $25M -- DISSOLVED: Trump Foundation, $2M penalty',
+    source:'People v. Trump, NY Sup. Ct. Ind. No. 71543-23, jury verdict 30 May 2024 -- People v. Trump Corp., NY Sup. Ct. verdict 6 Dec 2022 -- Carroll v. Trump, SDNY verdicts 9 May 2023 and 26 Jan 2024 -- People v. Trump (NYAG), Sup. Ct. NY County judgment 16 Feb 2024; App. Div. 1st Dept Aug 2025 -- NYAG Trump Foundation stipulation 7 Nov 2019',
+    date:'2026-01-30',status:'doc',connections:['epstein_network'],
+    events:[
+      {date:'2026-08-31',event:'Rep. Massie states on the House floor that DOJ still withholds 3 million+ Epstein files a year after Trump signed the Transparency Act; launches Transparency Act II discharge petition'},
+      {date:'2026-01-30',event:'DOJ releases 3.5M pages under the Epstein Files Transparency Act, 6 weeks past the statutory deadline; earlier Dec 2025 release shows Trump flew on Epstein jet at least 8 times per flight logs'},
+      {date:'2025-11-19',event:'Signs the Epstein Files Transparency Act (passed House 427-1); his former personal defense lawyer Todd Blanche, now Deputy AG, oversees the release without recusing'},
+      {date:'2025-08',event:'NY Appellate Division upholds the civil fraud LIABILITY finding but vacates the ~$454M penalty as excessive'},
+      {date:'2025-01-10',event:'Sentenced to unconditional discharge on the 34 felony counts -- conviction stands, no jail, fine, or probation'},
+      {date:'2024-11-25',event:'Federal election-interference case dismissed after election win (DOJ policy on sitting presidents); classified-documents case had been dismissed by Judge Cannon Jul 15 2024. Neither reached a verdict'},
+      {date:'2024-05-30',event:'Manhattan jury CONVICTS on all 34 felony counts of falsifying business records to conceal hush-money payments before the 2016 election'},
+      {date:'2024-02-16',event:'Judge Engoron finds persistent fraud in Trump Organization asset valuations; orders ~$454M in disgorgement and interest'},
+      {date:'2024-01-26',event:'Second Carroll jury awards $83.3M for defamation (first jury, May 9 2023: liable for sexual abuse and defamation, $5M)'},
+      {date:'2022-12-06',event:'Trump Organization CONVICTED on 17 counts of tax fraud and falsifying records; CFO Weisselberg jailed'},
+      {date:'2019-11-07',event:'Trump Foundation dissolved by court order; Trump admits misuse of charity funds in stipulation; $2M penalty'},
+      {date:'2016-11-18',event:'Trump University fraud suits settled for $25M, no admission'},
+      {date:'1973-10',event:'DOJ sues Trump Management for racial discrimination under the Fair Housing Act; consent decree 1975'},
+    ],
+    detail:'The record is unusually long for any public figure and unusually consistent in type: misrepresenting money and records, across five decades, established by two criminal juries and multiple civil courts. The largest cases -- election interference and classified documents -- were dismissed for procedural and political reasons, not acquitted; they are filed here as exactly that. The Epstein thread is documented but not criminal: 8+ flights per DOJ-released logs, a 1990s friendship, a falling-out around 2007, unverified FBI tip-line allegations that DOJ itself flagged as suspect -- and a file release run by his own former defense attorney that keeps missing deadlines. The convictions are the apple. The dismissals are not.'
+  }
+  ,{id:'epstein_network',cat:'abuse',name:'Jeffrey Epstein -- Trafficking Network and the Illegal Plea Deal',
+    role:'Serial abuser of minors protected by a secret federal non-prosecution agreement a judge later ruled broke the law',
+    metric:'CONVICTED 2008 (state, 13 months, work release) -- federal NPA RULED ILLEGAL Feb 21 2019 -- INDICTED SDNY Jul 8 2019, died in custody Aug 10 2019 -- Maxwell CONVICTED Dec 2021, 20 years -- JPMorgan $290M, Deutsche $150M -- 3M+ files still withheld',
+    source:'Jane Doe 1 and 2 v. United States, No. 08-80736, S.D. Fla., Marra order 21 Feb 2019 -- US v. Epstein, 19 Cr. 490, SDNY indictment 8 Jul 2019 -- US v. Maxwell, SDNY verdict 29 Dec 2021 -- NYDFS consent order Deutsche Bank 7 Jul 2020 -- Jane Doe 1 v. JPMorgan, SDNY settlement Jun 2023 -- DOJ Epstein Files Transparency Act production 30 Jan 2026',
+    date:'2026-09-04',status:'doc',connections:['trump_record'],
+    events:[
+      {date:'2026-09-04',event:'Billionaire Leon Black skips a sworn House Oversight deposition and sues the committee to block subpoenas about NDAs; had paid Epstein $158M for "tax advice" (Apollo review). Democrats move for contempt'},
+      {date:'2026-08-31',event:'Rep. Massie names 14 people on the House floor as "co-conspirators" who should be prosecuted -- Wexner, Black, Staley, Dubin, Pritzker, Mountbatten-Windsor among them. His characterization, not a court finding'},
+      {date:'2026-01-30',event:'DOJ publishes 3.5M pages, 2,000 videos, 180,000 images under the Transparency Act. Massie: 3M+ files still withheld'},
+      {date:'2023-06-12',event:'JPMorgan settles with Epstein victims for $290M (no admission); had kept him as a client for years after his 2008 conviction'},
+      {date:'2021-12-29',event:'Ghislaine Maxwell CONVICTED on 5 of 6 counts incl. sex trafficking of a minor; sentenced to 20 years Jun 28 2022'},
+      {date:'2020-07-07',event:'NY Dept of Financial Services fines Deutsche Bank $150M for compliance failures in its Epstein relationship'},
+      {date:'2019-08-10',event:'Dies in his cell at MCC New York; NYC Medical Examiner rules suicide by hanging. Two guards charged with falsifying records; cameras malfunctioned; cellmate had been moved out'},
+      {date:'2019-07-12',event:'Labor Secretary Alexander Acosta -- the US Attorney who signed the 2008 deal -- resigns'},
+      {date:'2019-07-08',event:'SDNY unseals INDICTMENT: sex trafficking of minors and conspiracy, 2002-2005. Arrested Jul 6 at Teterboro'},
+      {date:'2019-02-21',event:'Judge Kenneth Marra RULES the 2008 non-prosecution agreement violated the Crime Victims Rights Act: prosecutors concealed the deal from 30+ victims and "misled" them. Deal not voided'},
+      {date:'2008-06-30',event:'Pleads guilty in Florida state court to two prostitution counts under a secret federal non-prosecution agreement; serves 13 months with daily work release; NPA grants immunity to unnamed "potential co-conspirators"'},
+      {date:'2000-2007',event:'Chairs Liquid Funding Ltd, a $6.7B Bermuda vehicle 40% owned by Bear Stearns -- documented in ICIJ Paradise Papers (Appleby)'},
+    ],
+    detail:'The documented scandal is not a hidden murder. It is a US Attorney office that secretly let a serial child abuser plead to a minor state charge, hid the deal from more than 30 victims, and granted blanket immunity to everyone who helped him -- and a federal judge who later ruled, in writing, that this broke the law. No prosecutor was ever punished. The men who paid him -- $158M from Leon Black, control of a fortune from Les Wexner -- have been deposed, subpoenaed, and named on the House floor, but not charged. Three million files remain sealed under a release process run by the president own former defense lawyer. The convictions on this page are Epstein and Maxwell. Everything else documented here is impunity, and it is documented.'
+  }
+  ,{id:'netanyahu_record',cat:'atrocity',name:'Benjamin Netanyahu -- ICC Warrant and Domestic Corruption Indictment',
+    role:'Sitting head of government under ICC arrest warrant AND on trial at home for bribery, fraud, and breach of trust',
+    metric:'ICC ARREST WARRANT Nov 21 2024 (war crimes, crimes against humanity incl. starvation as a method of warfare) -- INDICTED in Israel Nov 21 2019 (bribery, fraud, breach of trust; Cases 1000/2000/4000) -- trial testimony concluded Jun 2026 after 98 hearings, no verdict -- warrant-signing prosecutor Khan removed from ICC office Jul 2026 (unrelated misconduct findings)',
+    source:'ICC Pre-Trial Chamber I, 21 Nov 2024 (icc-cpi.int, Situation in the State of Palestine) -- Israel State Attorney indictment 21 Nov 2019 -- Jerusalem District Court trial record from 24 May 2020 -- Israel PMO / High Court of Justice orders Mar 2025',
+    date:'2025-03-20',status:'doc',connections:[],
+    events:[
+      {date:'2026-07-24',event:'Karim Khan, the ICC prosecutor who signed the Nov 2024 warrant against Netanyahu, is removed from office by ICC member states over unrelated sexual misconduct findings -- his legal team says the timing and process were political; an independent judicial panel had cleared him in March 2026 before the Bureau overruled that finding'},
+      {date:'2026-06',event:'Netanyahu corruption-trial testimony concludes after 98 hearings over 1.5 years; he calls the proceedings "10 years of hell." No verdict reached'},
+      {date:'2026-04-02',event:'Reported: Khan office secretly files a further arrest warrant application, for Israeli Finance Minister Bezalel Smotrich, alleging war crimes, crimes against humanity, and apartheid -- disclosed via leaked documents, not an official ICC announcement'},
+      {date:'2025-04-24',event:'ICC Appeals Chamber reverses an earlier ruling and remands Israel jurisdictional challenge to the Pre-Trial Chamber for a fresh decision -- the jurisdiction question is not fully settled even now'},
+      {date:'2025-03-20',event:'Cabinet votes unanimously to dismiss sitting Shin Bet chief Ronen Bar -- first such attempt in Israeli history -- while Shin Bet is investigating Netanyahu aides ("Qatargate"). High Court suspends the firing; Bar resigns effective Jun 15 2025'},
+      {date:'2024-12-10',event:'Netanyahu takes the stand in his own corruption trial -- first sitting Israeli PM to testify as a criminal defendant'},
+      {date:'2024-11-21',event:'ICC Pre-Trial Chamber I issues ARREST WARRANTS for Netanyahu and then-Defense Minister Yoav Gallant: war crimes and crimes against humanity including starvation as a method of warfare and intentionally directing attacks against civilians. Israel contests jurisdiction; not a Rome Statute party'},
+      {date:'2024-11-05',event:'Netanyahu fires Defense Minister Gallant, 16 days before both are named in the ICC warrants'},
+      {date:'2020-05-24',event:'Corruption trial opens, Jerusalem District Court'},
+      {date:'2019-11-21',event:'Attorney General Mandelblit files INDICTMENT: bribery (Case 4000, Bezeq-Walla), fraud and breach of trust (Cases 1000 gifts, 2000 Yedioth). First sitting Israeli PM indicted'},
+    ],
+    detail:'Two separate documented tracks, neither resolved. Domestically: indicted six years ago for bribery, fraud, and breach of trust; the trial has run since 2020 with him testifying in Dec 2024, and no verdict. Internationally: an ICC arrest warrant that cannot be served in Israel or in states that refuse to cooperate, and that the United States responded to by sanctioning ICC officials. Around both sits a documented pattern of moving on the institutions that investigate him -- the attempted firing of the Shin Bet chief in Mar 2025 was blocked by the High Court, then achieved by resignation. The word for his status on both tracks is the same: indicted, not convicted. That is the apple here, and it is a large one. A further documented complication: the ICC prosecutor who personally signed the warrant, Karim Khan, was removed from office in Jul 2026 over sexual misconduct findings unrelated to the Netanyahu case -- an independent judicial panel had actually cleared him in Mar 2026, before the ICC own oversight body overruled that and pushed the removal through by an 82-13-15 vote. Khan legal team calls this a politically compromised process, timed while he was already under US sanctions for the warrant itself. None of this affects the underlying jurisdictional or factual basis of the warrant -- it is a separate, documented fact about the person who issued it, stated here because leaving it out would be its own kind of distortion.'
+  }
+
 ];
 
 
 function escHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+window.ENABLER_TYPE_LABEL = {enforcer:'Regulator / Enforcer', bank:'Bank', firm:'Law / Services Firm', jurisdiction:'Jurisdiction / Haven', state:'State Actor', investigator:'Investigative Body', platform:'Platform / Network', company:'Company', person:'Named Individual'};
+window.ENABLERS = [
+  {id:'us_doj', name:'US Department of Justice', type:'enforcer', color:'#9ca3af',
+   desc:'Federal prosecutor and settlement counterparty in more cases on this page than any other single entity. Where DOJ appears, look at the RATIO of penalty to profit -- it is the recurring tell.',
+   links:['odebrecht','1mdb','danske_bank','ftx','theranos','wells_fargo','volkswagen','purdue_sackler','snowden','wikileaks_assange','equifax','colonial_pipeline','boeing_737max','trump_record','epstein_network']},
+  {id:'us_sec', name:'US Securities & Exchange Commission', type:'enforcer', color:'#9ca3af',
+   desc:'Securities regulator. Fines shareholders companies for lying to investors -- often after the harm to the public is already done.',
+   links:['wells_fargo','volkswagen','solarwinds','cambridge_analytica','theranos','ftx']},
+  {id:'fbi', name:'FBI', type:'enforcer', color:'#9ca3af',
+   desc:'Attribution and asset-recovery lead on the state-hacking cases; investigator of record on Snowden and SolarWinds.',
+   links:['lazarus_bybit','colonial_pipeline','snowden','solarwinds','equifax']},
+  {id:'bafin', name:'BaFin (German regulator)', type:'enforcer', color:'#9ca3af',
+   desc:'German financial regulator. In Wirecard, investigated the journalists reporting the fraud before it investigated the company.',
+   links:['wirecard']},
+  {id:'us_epa', name:'US EPA', type:'enforcer', color:'#9ca3af', desc:'Issued the 2015 Notice of Violation that exposed Dieselgate.', links:['volkswagen']},
+  {id:'us_ftc', name:'US FTC', type:'enforcer', color:'#9ca3af', desc:'Consumer-protection regulator. Levied the $5B Facebook fine and the Equifax settlement.', links:['cambridge_analytica','equifax']},
+  {id:'us_faa', name:'US FAA', type:'enforcer', color:'#9ca3af', desc:'Aviation regulator that had delegated its own certification work to Boeing under the ODA program.', links:['boeing_737max']},
+  {id:'zondo', name:'Zondo Commission (South Africa)', type:'investigator', color:'#e5e7eb', desc:'Judicial inquiry: 429 hearing days, ~300 witnesses, 1,438 persons implicated.', links:['state_capture_sa']},
+  {id:'icij', name:'ICIJ', type:'investigator', color:'#e5e7eb',
+   desc:'International Consortium of Investigative Journalists. The verifying body behind every leak on this page.',
+   links:['panama_papers','pandora_papers','luanda_leaks','epstein_network']},
+  {id:'wikileaks', name:'WikiLeaks', type:'platform', color:'#e5e7eb',
+   desc:'Publisher of the Manning cables; assisted Snowden in transit from Hong Kong; founded by Assange.',
+   links:['manning','wikileaks_assange','snowden']},
+  {id:'deutsche_bank', name:'Deutsche Bank', type:'bank', color:'#d4a373',
+   desc:'Correspondent bank for the Danske Estonia flows; handled 1MDB-linked accounts; its subsidiaries created ~1,000 offshore firms via Mossack Fonseca.',
+   links:['danske_bank','1mdb','panama_papers','epstein_network']},
+  {id:'goldman_sachs', name:'Goldman Sachs', type:'bank', color:'#d4a373',
+   desc:'Arranged the 1MDB bond deals. Malaysia unit pleaded guilty; group paid $2.9B globally.',
+   links:['1mdb']},
+  {id:'swift', name:'SWIFT network', type:'platform', color:'#d4a373',
+   desc:'Interbank messaging system. Lazarus used forged SWIFT orders in the Bangladesh Bank heist; Danske correspondent flows moved over it.',
+   links:['lazarus_bybit','danske_bank']},
+  {id:'mossack_fonseca', name:'Mossack Fonseca', type:'firm', color:'#e5e7eb',
+   desc:'Panamanian law firm whose 11.5M leaked files became the Panama Papers. Odebrecht-linked shells appear in the files.',
+   links:['panama_papers','odebrecht']},
+  {id:'bvi', name:'British Virgin Islands', type:'jurisdiction', color:'#6b7280',
+   desc:'Secrecy jurisdiction. ~113,000 of the Panama Papers entities were BVI; the 1MDB "Aabar-BVI" shell diverted $1.4B+.',
+   links:['panama_papers','1mdb','pandora_papers']},
+  {id:'malta', name:'Malta', type:'jurisdiction', color:'#6b7280',
+   desc:'EU secrecy jurisdiction used by dos Santos entities; where Panama Papers reporter Daphne Caruana Galizia was assassinated.',
+   links:['luanda_leaks','panama_papers']},
+  {id:'russia_svr_gru', name:'Russia SVR / GRU', type:'state', color:'#b91c1c',
+   desc:'Russian intelligence. SVR ran the SolarWinds supply-chain attack; GRU hacked the DNC emails WikiLeaks published.',
+   links:['solarwinds','wikileaks_assange']},
+  {id:'dprk_rgb', name:'North Korea RGB (Bureau 121)', type:'state', color:'#b91c1c',
+   desc:'Reconnaissance General Bureau -- the state agency behind Lazarus. Cybertheft as national economic policy.',
+   links:['lazarus_bybit']},
+  {id:'china_pla', name:'China PLA Unit 54th RI', type:'state', color:'#b91c1c',
+   desc:'Four officers indicted by DOJ for the Equifax breach. None will face trial.',
+   links:['equifax']},
+  {id:'nsa', name:'NSA', type:'state', color:'#b91c1c',
+   desc:'The agency whose bulk-collection program a US appeals court later ruled unlawful.',
+   links:['snowden']},
+  // ---- additional agencies / jurisdictions ----
+  {id:'fgr_mexico', name:'FGR (Mexico Attorney General)', type:'enforcer', color:'#9ca3af', desc:'Secured the first Estafa Maestra conviction in Dec 2025, eight years after exposure.', links:['estafa_maestra']},
+  {id:'sedesol', name:'SEDESOL (Mexico Social Development Ministry)', type:'state', color:'#b91c1c', desc:'One of 11 federal departments through which Estafa Maestra funds moved.', links:['estafa_maestra']},
+  {id:'uae', name:'United Arab Emirates', type:'jurisdiction', color:'#6b7280', desc:'Arrested the Gupta brothers 2022 then refused extradition 2023. Dubai residence of Isabel dos Santos; no extradition treaty with Angola or Portugal.', links:['state_capture_sa','luanda_leaks']},
+  {id:'russia_haven', name:'Russia (state haven)', type:'jurisdiction', color:'#6b7280', desc:'Granted Snowden asylum 2013, residency 2020, citizenship Sep 2022.', links:['snowden']},
+  // ---- companies ----
+  {id:'facebook_meta', name:'Facebook / Meta', type:'company', color:'#93c5fd', desc:'Fined $5B by FTC and $100M by SEC over the Cambridge Analytica harvesting. Stock rose the day the fine was announced.', links:['cambridge_analytica','us_ftc','us_sec']},
+  {id:'alameda_research', name:'Alameda Research', type:'company', color:'#93c5fd', desc:'Hedge fund also controlled by Bankman-Fried; destination of diverted FTX customer deposits.', links:['ftx']},
+  {id:'safe_wallet', name:'Safe{Wallet}', type:'company', color:'#93c5fd', desc:'Third-party multisig wallet infrastructure whose compromise enabled the $1.5B Bybit theft.', links:['lazarus_bybit']},
+  {id:'fireeye', name:'FireEye', type:'company', color:'#93c5fd', desc:'Private security firm that discovered the SolarWinds backdoor by noticing its own systems were compromised.', links:['solarwinds']},
+  {id:'sonangol', name:'Sonangol', type:'company', color:'#93c5fd', desc:'Angola state oil company; dos Santos was appointed chair by her father in 2016, removed 2017.', links:['luanda_leaks']},
+  {id:'punjab_national_bank', name:'Punjab National Bank', type:'bank', color:'#d4a373', desc:'Brady House branch, Mumbai -- issued the fraudulent Letters of Undertaking.', links:['pnb_nirav_modi']},
+  // ---- people (status words match the linked case entry exactly) ----
+  {id:'najib_razak', name:'Najib Razak', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Former Malaysian PM and 1MDB chairman. Convicted on 7 charges Jul 2020, 12 years; upheld on final appeal Aug 2022.', links:['1mdb']},
+  {id:'jho_low', name:'Jho Low', type:'person', status:'fugitive', wall:'shame', color:'#fde68a', desc:'Financier at the center of the 1MDB diversion. Fugitive, at large.', links:['1mdb']},
+  {id:'tim_leissner', name:'Tim Leissner', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Former Goldman Sachs partner; convicted in US federal court for his role arranging 1MDB bond deals.', links:['1mdb','goldman_sachs']},
+  {id:'markus_braun', name:'Markus Braun', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Wirecard CEO. Convicted Nov 2024 of fraud, breach of trust, accounting manipulation; 9 years.', links:['wirecard']},
+  {id:'jan_marsalek', name:'Jan Marsalek', type:'person', status:'fugitive', wall:'shame', color:'#fde68a', desc:'Wirecard COO. Fled Germany June 2020; international fugitive.', links:['wirecard']},
+  {id:'sam_bankman_fried', name:'Sam Bankman-Fried', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'FTX founder. Convicted on all 7 counts Nov 2023; 25 years; $11B forfeiture.', links:['ftx','alameda_research']},
+  {id:'caroline_ellison', name:'Caroline Ellison', type:'person', status:'pleaded_guilty', wall:'shame', color:'#fde68a', desc:'Alameda Research CEO. Pleaded guilty; testified against Bankman-Fried.', links:['ftx','alameda_research']},
+  {id:'elizabeth_holmes', name:'Elizabeth Holmes', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Theranos founder. Convicted on 4 of 11 counts Jan 2022; 11 years 3 months.', links:['theranos']},
+  {id:'sunny_balwani', name:'Sunny Balwani', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Theranos COO/president. Indicted with Holmes 2018; convicted on 12 counts Jul 2022.', links:['theranos']},
+  {id:'jacob_zuma', name:'Jacob Zuma', type:'person', status:'on_trial', wall:'shame', color:'#fde68a', desc:'South Africa president 2009-2018. Resigned Feb 2018; jailed for contempt Jul 2021; arms-deal trial ongoing.', links:['state_capture_sa','zondo']},
+  {id:'gupta_brothers', name:'Gupta brothers (Atul, Rajesh, Ajay)', type:'person', status:'fugitive', wall:'shame', color:'#fde68a', desc:'Arrested in UAE 2022 on Interpol notice; UAE refused extradition 2023; declared fugitives.', links:['state_capture_sa','uae']},
+  {id:'isabel_dos_santos', name:'Isabel dos Santos', type:'person', status:'charged', wall:'shame', color:'#fde68a', desc:'Assets frozen in 4 countries; charged in Angola 2020; never convicted; resides in Dubai.', links:['luanda_leaks','sonangol','uae']},
+  {id:'jose_eduardo_dos_santos', name:'Jose Eduardo dos Santos', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Angola president 1979-2017. Appointed his daughter chair of Sonangol in 2016.', links:['luanda_leaks','sonangol']},
+  {id:'rui_pinto', name:'Rui Pinto', type:'person', status:'whistleblower', wall:'honor', color:'#fde68a', desc:'Whistleblower who leaked the 715,000 Luanda Leaks documents to ICIJ.', links:['luanda_leaks','icij']},
+  {id:'nirav_modi', name:'Nirav Modi', type:'person', status:'charged', wall:'shame', color:'#fde68a', desc:'Jeweler. Charged Aug 2018; arrested London 2019; criminal trial pending -- REPORTED status, not convicted.', links:['pnb_nirav_modi','punjab_national_bank']},
+  {id:'rosario_robles', name:'Rosario Robles', type:'person', status:'acquitted', wall:'shame', color:'#fde68a', desc:'Former Mexican cabinet secretary. Acquitted; acquittal under appeal review.', links:['estafa_maestra','sedesol']},
+  {id:'christopher_wylie', name:'Christopher Wylie', type:'person', status:'whistleblower', wall:'honor', color:'#fde68a', desc:'Cambridge Analytica research director turned whistleblower, 2018.', links:['cambridge_analytica']},
+  {id:'steve_bannon', name:'Steve Bannon', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Cambridge Analytica board; later Trump chief strategist.', links:['cambridge_analytica']},
+  {id:'robert_mercer', name:'Robert Mercer', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Hedge-fund billionaire who funded Cambridge Analytica.', links:['cambridge_analytica']},
+  {id:'mark_zuckerberg', name:'Mark Zuckerberg', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Facebook CEO. Testified before the US Senate for 5 hours, Apr 2018.', links:['cambridge_analytica','facebook_meta']},
+  {id:'john_stumpf', name:'John Stumpf', type:'person', status:'banned', wall:'shame', color:'#fde68a', desc:'Wells Fargo CEO. Resigned Oct 2016; forfeited $41M in unvested equity; banned from banking and fined $17.5M by the OCC in Jan 2020.', links:['wells_fargo']},
+  {id:'martin_winterkorn', name:'Martin Winterkorn', type:'person', status:'indicted', wall:'shame', color:'#fde68a', desc:'VW CEO. Resigned Sep 2015; indicted in the US 2018; not extradited.', links:['volkswagen']},
+  {id:'thomas_borgen', name:'Thomas Borgen', type:'person', status:'resigned', wall:'shame', color:'#fde68a', desc:'Danske Bank CEO. Resigned the day the internal report was published, Sep 19 2018.', links:['danske_bank']},
+  {id:'howard_wilkinson', name:'Howard Wilkinson', type:'person', status:'whistleblower', wall:'honor', color:'#fde68a', desc:'Danske whistleblower. Flagged the Estonia flows internally in 2013; testified to the European Parliament 2018.', links:['danske_bank']},
+  {id:'sackler_family', name:'Sackler family', type:'person', status:'settled', wall:'shame', color:'#fde68a', desc:'Owners of Purdue Pharma. Extracted billions pre-bankruptcy; received civil liability protection in the 2025 settlement.', links:['purdue_sackler']},
+  {id:'daphne_caruana_galizia', name:'Daphne Caruana Galizia', type:'person', status:'killed_journalist', wall:'honor', color:'#fde68a', desc:'Maltese journalist reporting on Panama Papers links; assassinated by car bomb Oct 2017. Three men convicted of her murder.', links:['panama_papers','malta']},
+  {id:'james_clapper', name:'James Clapper', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Director of National Intelligence. Told the Senate in Mar 2013 the NSA did not collect data on millions of Americans; Snowden documents showed it did. Never charged.', links:['snowden','nsa']},
+  {id:'timothy_brown', name:'Timothy Brown', type:'person', status:'charges_dismissed', wall:'shame', color:'#fde68a', desc:'SolarWinds CISO. First individual CISO charged by the SEC over a cyberattack (2023); most charges dismissed 2024.', links:['solarwinds']},
+  {id:'jun_ying', name:'Jun Ying', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Equifax CIO. Sold shares after learning of the breach, before disclosure. 4 months prison for insider trading.', links:['equifax']},
+  {id:'joseph_blount', name:'Joseph Blount', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Colonial Pipeline CEO. Testified to the Senate that the attack entered via one password with no MFA.', links:['colonial_pipeline']},
+  {id:'mark_forkner', name:'Mark Forkner', type:'person', status:'acquitted', wall:'shame', color:'#fde68a', desc:'Boeing chief technical pilot -- the only individual prosecuted over the 737 MAX. Acquitted Mar 2022.', links:['boeing_737max']},
+  {id:'alejandro_toledo', name:'Alejandro Toledo', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Former Peruvian president. Convicted in connection with Odebrecht bribes.', links:['odebrecht']},
+  {id:'lula_da_silva', name:'Luiz Inacio Lula da Silva', type:'person', status:'annulled', wall:'shame', color:'#fde68a', desc:'Former and current Brazilian president. Convicted in Lava Jato; convictions annulled 2021 on procedural grounds.', links:['odebrecht']},
+  // ---- international courts and bodies (atrocity documentation) ----
+  {id:'icc', name:'International Criminal Court', type:'investigator', color:'#e5e7eb', desc:'The Hague. Issued the Duterte, Putin, and Netanyahu/Gallant warrants; holds Duterte in custody; prosecutor sought a warrant for Myanmar junta chief. Cannot arrest anyone itself -- depends on member states. Its own Chief Prosecutor, Karim Khan, was removed from office in Jul 2026 over misconduct findings.', links:['duterte_drug_war','putin_ukraine','rohingya','netanyahu_record']},
+  {id:'icj', name:'International Court of Justice', type:'investigator', color:'#e5e7eb', desc:'UN court for state-vs-state disputes. Ordered Myanmar to prevent genocide against the Rohingya (2020); rejected all its objections (2022).', links:['rohingya']},
+  {id:'opcw', name:'OPCW', type:'investigator', color:'#e5e7eb', desc:'Chemical Weapons Convention body. Its Investigation and Identification Team attributed the Ltamenah and Douma attacks to the Syrian Arab Air Force.', links:['syria_chemical']},
+  {id:'un_ohchr', name:'UN Human Rights Office (OHCHR)', type:'investigator', color:'#e5e7eb', desc:'Documented Bucha (458 civilians), Moura (500+), the Xinjiang assessment, and backed the Myanmar and Ethiopia commissions.', links:['putin_ukraine','wagner_mali','xinjiang','rohingya','tigray']},
+  {id:'odni', name:'US ODNI', type:'state', color:'#b91c1c', desc:'Office of the Director of National Intelligence. Declassified the assessment that MBS approved the Khashoggi operation.', links:['khashoggi']},
+  {id:'wagner_group', name:'Wagner Group / Africa Corps', type:'company', color:'#93c5fd', desc:'Russian private military company named by the UN in the Moura massacre; absorbed into Russian MoD structures after Prigozhin death.', links:['wagner_mali','russia_svr_gru']},
+  {id:'rodrigo_duterte', name:'Rodrigo Duterte', type:'person', status:'in_custody', wall:'shame', color:'#fde68a', desc:'Former Philippine president. In ICC custody since Mar 12 2025; charges of crimes against humanity confirmed Apr 23 2026; awaiting trial.', links:['duterte_drug_war','icc']},
+  {id:'vladimir_putin', name:'Vladimir Putin', type:'person', status:'icc_warrant', wall:'shame', color:'#fde68a', desc:'President of Russia. Under ICC arrest warrant since Mar 17 2023 for the war crime of unlawful deportation of children.', links:['putin_ukraine','icc','russia_haven']},
+  {id:'lvova_belova', name:'Maria Lvova-Belova', type:'person', status:'icc_warrant', wall:'shame', color:'#fde68a', desc:'Russian Children Rights Commissioner. Under ICC arrest warrant since Mar 17 2023 alongside Putin.', links:['putin_ukraine']},
+  {id:'mbs', name:'Mohammed bin Salman', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Saudi Crown Prince. US ODNI assessed he approved the Khashoggi operation (Feb 2021). Not charged; not sanctioned. Denies involvement.', links:['khashoggi','odni']},
+  {id:'bashar_assad', name:'Bashar al-Assad', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Former Syrian president. OPCW attributed chemical attacks to his air force. Fled to Russia Dec 8 2024; granted asylum.', links:['syria_chemical','russia_haven']},
+  {id:'min_aung_hlaing', name:'Min Aung Hlaing', type:'person', status:'warrant_requested', wall:'shame', color:'#fde68a', desc:'Myanmar military chief and coup leader. Named by UN fact-finders 2018; ICC prosecutor requested his arrest warrant Nov 27 2024.', links:['rohingya','icc']},
+  {id:'yevgeny_prigozhin', name:'Yevgeny Prigozhin', type:'person', status:'killed', wall:'shame', color:'#fde68a', desc:'Wagner founder. Killed in a plane crash Aug 23 2023, two months after mutinying against the Russian military.', links:['wagner_mali','wagner_group']},
+  // ---- Trump / Epstein / Netanyahu ----
+  {id:'donald_trump', name:'Donald Trump', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'US president. Convicted on 34 felony counts (2024); Trump Organization convicted (2022); liable for sexual abuse and civil fraud. Flew on Epstein jet 8+ times per DOJ-released logs; not charged in any Epstein matter.', links:['trump_record','epstein_network','us_doj']},
+  {id:'jeffrey_epstein', name:'Jeffrey Epstein', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Convicted 2008 (state); indicted federally 2019; died in custody Aug 10 2019, ruled suicide.', links:['epstein_network']},
+  {id:'ghislaine_maxwell', name:'Ghislaine Maxwell', type:'person', status:'convicted', wall:'shame', color:'#fde68a', desc:'Convicted Dec 2021 on 5 counts incl. sex trafficking of a minor; 20 years.', links:['epstein_network']},
+  {id:'alexander_acosta', name:'Alexander Acosta', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'US Attorney who signed the 2008 non-prosecution agreement a judge later ruled illegal. Resigned as Labor Secretary Jul 2019. Never charged.', links:['epstein_network','us_doj']},
+  {id:'todd_blanche', name:'Todd Blanche', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Trump former personal defense lawyer, now Deputy Attorney General overseeing the Epstein file release. Did not recuse. Referred to attorney disciplinary authorities by a federal judge in a separate matter.', links:['trump_record','epstein_network','us_doj']},
+  {id:'leon_black', name:'Leon Black', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Apollo co-founder. Paid Epstein $158M (Apollo independent review). Skipped House deposition Sep 2026, sued to block subpoenas. Not charged.', links:['epstein_network']},
+  {id:'les_wexner', name:'Les Wexner', type:'person', status:'never_charged', wall:'shame', color:'#fde68a', desc:'Victoria Secret founder; gave Epstein power of attorney over his fortune. Testified to House Oversight Feb 2026 he was deceived. Not charged.', links:['epstein_network']},
+  {id:'jes_staley', name:'Jes Staley', type:'person', status:'banned', wall:'shame', color:'#fde68a', desc:'Ex-JPMorgan exec, ex-Barclays CEO. Banned from senior UK finance for misleading the FCA about Epstein; tribunal found "no remorse" (2025). Not charged criminally.', links:['epstein_network','jpmorgan']},
+  {id:'jpmorgan', name:'JPMorgan Chase', type:'bank', color:'#d4a373', desc:'Kept Epstein as a private-bank client for years after his 2008 conviction; paid $290M to victims in 2023 (no admission).', links:['epstein_network']},
+  {id:'benjamin_netanyahu', name:'Benjamin Netanyahu', type:'person', status:'icc_warrant', wall:'shame', color:'#fde68a', desc:'Israeli PM. Indicted in Israel Nov 2019 (bribery, fraud, breach of trust), trial ongoing. Under ICC arrest warrant since Nov 21 2024. Not convicted on either.', links:['netanyahu_record','icc']},
+  {id:'yoav_gallant', name:'Yoav Gallant', type:'person', status:'icc_warrant', wall:'shame', color:'#fde68a', desc:'Former Israeli Defense Minister. Fired by Netanyahu Nov 5 2024; named in the ICC arrest warrants Nov 21 2024.', links:['netanyahu_record','icc']},
+  {id:'karim_khan', name:'Karim Khan', type:'person', status:'removed', wall:'shame', color:'#fde68a', desc:'Former ICC Chief Prosecutor. Signed the Putin (2023) and Netanyahu/Gallant (2024) arrest warrants. Removed from office Jul 24 2026 by an 82-13-15 ASP vote over sexual misconduct findings -- after an independent 3-judge panel had cleared him in Mar 2026. Disputes the findings; calls the process political.', links:['putin_ukraine','netanyahu_record','icc']},
+];
 
 const CAT_META={
   state_capture:{label:'STATE CAPTURE',color:'#dc2626'},
@@ -773,6 +1428,11 @@ const CAT_META={
   corporate:{label:'CORPORATE FRAUD',color:'#7c3aed'},
   leaks:{label:'LEAKED DOCUMENTS',color:'#0ea5e9'},
   ponzi:{label:'PONZI / CRYPTO FRAUD',color:'#16a34a'},
+  whistleblowers:{label:'WHISTLEBLOWERS',color:'#f59e0b'},
+  cyber:{label:'CYBER / STATE HACKING',color:'#06b6d4'},
+  government:{label:'GOVERNMENT / REGULATORY',color:'#ec4899'},
+  atrocity:{label:'STATE VIOLENCE / ATROCITIES',color:'#991b1b'},
+  abuse:{label:'TRAFFICKING / ABUSE NETWORKS',color:'#be185d'},
 };
 
 function go(id,btn){
@@ -784,7 +1444,8 @@ function go(id,btn){
   if(id==='cases')buildCases();
   if(id==='timeline')buildTimeline();
   if(id==='sources')buildSources();
-  if(id==='network'){ initNetwork(); setNetworkAnimating(true); } else { setNetworkAnimating(false); }
+  if(id==='wall')buildWall();
+  if(id==='network'){ if(typeof initNetwork==='function'){ initNetwork(); setNetworkAnimating(true); } } else if(typeof setNetworkAnimating==='function'){ setNetworkAnimating(false); }
 }
 window.go=go;
 
@@ -859,6 +1520,77 @@ function buildTimeline(){
     <div class="tl-date">${escHtml(e.date)}</div>
     <div><div class="tl-title" style="cursor:pointer" onclick="openCase('${e.caseId}')">${escHtml(e.caseName)}</div><div class="tl-desc">${escHtml(e.event)}</div></div>
   </div>`).join('');
+}
+
+
+// ============================================================
+// WALL OF SHAME
+// ============================================================
+const WALL_STATUS = {
+  in_custody:       {label:'IN CUSTODY',        color:'#ef4444', rank:0,  note:'Held by a court awaiting trial'},
+  convicted:        {label:'CONVICTED',         color:'#dc2626', rank:1,  note:'A criminal court found guilty'},
+  pleaded_guilty:   {label:'PLEADED GUILTY',    color:'#dc2626', rank:2,  note:'Admitted guilt in court'},
+  icc_warrant:      {label:'ICC ARREST WARRANT',color:'#b91c1c', rank:3,  note:'International Criminal Court warrant, not served'},
+  warrant_requested:{label:'ICC WARRANT SOUGHT',color:'#b91c1c', rank:4,  note:'Prosecutor has applied; judges have not yet ruled'},
+  indicted:         {label:'INDICTED',          color:'#d97706', rank:5,  note:'Formally charged; no verdict'},
+  charged:          {label:'CHARGED',           color:'#d97706', rank:6,  note:'Charges filed; trial pending or contested'},
+  on_trial:         {label:'ON TRIAL',          color:'#d97706', rank:7,  note:'Criminal trial in progress'},
+  fugitive:         {label:'FUGITIVE',          color:'#f97316', rank:8,  note:'Wanted; location unknown or beyond reach'},
+  banned:           {label:'BANNED / FINED',    color:'#a16207', rank:9,  note:'Regulator sanction; no criminal case'},
+  settled:          {label:'SETTLED (CIVIL)',   color:'#a16207', rank:10, note:'Paid to resolve; no admission'},
+  charges_dismissed:{label:'CHARGES DISMISSED', color:'#6b7280', rank:11, note:'Charged, then dropped or dismissed'},
+  annulled:         {label:'CONVICTION ANNULLED',color:'#6b7280',rank:12, note:'Convicted, later voided on procedural grounds'},
+  acquitted:        {label:'ACQUITTED',         color:'#6b7280', rank:13, note:'Tried and found not guilty'},
+  resigned:         {label:'RESIGNED',          color:'#6b7280', rank:14, note:'Left office; no legal finding'},
+  killed:           {label:'KILLED',            color:'#374151', rank:15, note:'Died before any accountability'},
+  never_charged:    {label:'NEVER CHARGED',     color:'#4b5563', rank:16, note:'Named in the record; no case ever brought'},
+  removed:          {label:'REMOVED FROM OFFICE',color:'#9333ea', rank:15.5, note:'Dismissed by an institutional vote, not a criminal court'},
+  whistleblower:    {label:'WHISTLEBLOWER',     color:'#f59e0b', rank:20, note:'Disclosed the wrongdoing'},
+  killed_journalist:{label:'KILLED FOR REPORTING',color:'#f59e0b',rank:21,note:'Murdered while investigating'},
+};
+let wallFilter=null;
+function buildWall(){
+  const grid=document.getElementById('wall-grid'), honor=document.getElementById('honor-grid');
+  const people=(window.ENABLERS||[]).filter(e=>e.type==='person'&&e.status);
+  const shame=people.filter(e=>e.wall==='shame'), hon=people.filter(e=>e.wall==='honor');
+  const byRank=(a,b)=>(WALL_STATUS[a.status].rank-WALL_STATUS[b.status].rank)||a.name.localeCompare(b.name);
+  shame.sort(byRank); hon.sort(byRank);
+
+  // summary pills
+  const counts={}; shame.forEach(e=>counts[e.status]=(counts[e.status]||0)+1);
+  const grp=(keys)=>keys.reduce((n,k)=>n+(counts[k]||0),0);
+  const pills=[
+    {n:grp(['in_custody','convicted','pleaded_guilty']),l:'convicted or in custody',c:'#dc2626'},
+    {n:grp(['icc_warrant','warrant_requested','indicted','charged','on_trial']),l:'charged, warranted, or on trial',c:'#d97706'},
+    {n:grp(['fugitive']),l:'fugitives',c:'#f97316'},
+    {n:grp(['never_charged','resigned','settled','banned','acquitted','annulled','charges_dismissed','killed']),l:'walked -- no criminal finding',c:'#6b7280'},
+  ];
+  document.getElementById('wall-summary').innerHTML=pills.map(p=>`<div class="ws-pill" style="border-color:${p.c};color:${p.c}"><b>${p.n}</b>${p.l}</div>`).join('');
+
+  // filters
+  const fEl=document.getElementById('wall-filters');
+  if(!fEl.dataset.built){ fEl.dataset.built='1';
+    const present=[...new Set(shame.map(e=>e.status))].sort((a,b)=>WALL_STATUS[a].rank-WALL_STATUS[b].rank);
+    fEl.innerHTML='<div class="wf-chip active" data-s="">ALL</div>'+present.map(s=>`<div class="wf-chip" data-s="${s}" style="border-color:${WALL_STATUS[s].color}55">${WALL_STATUS[s].label} (${counts[s]})</div>`).join('');
+    fEl.addEventListener('click',e=>{ const c=e.target.closest('.wf-chip'); if(!c) return; wallFilter=c.dataset.s||null; [...fEl.children].forEach(x=>x.classList.toggle('active',x===c)); renderWallGrid(shame); });
+  }
+  renderWallGrid(shame);
+  honor.innerHTML=hon.map(card).join('');
+}
+function card(e,i){
+  const st=WALL_STATUS[e.status]; const cases=(e.links||[]).map(id=>CASES.find(c=>c.id===id)).filter(Boolean);
+  const first=cases[0]?cases[0].id:null;
+  return `<div class="wall-card" style="border-left-color:${st.color}" onclick="${first?`openCase('${first}')`:''}" title="${escHtml(st.note)}">
+    ${typeof i==='number'?`<div class="wall-rank">#${String(i+1).padStart(2,'0')}</div>`:''}
+    <div class="wall-name">${escHtml(e.name)}</div>
+    <div class="wall-status" style="color:${st.color};border-color:${st.color}">${st.label}</div>
+    <div class="wall-desc">${escHtml(e.desc)}</div>
+    <div class="wall-cases">${cases.map(c=>`<span class="wall-case" style="color:${CAT_META[c.cat].color};border-color:${CAT_META[c.cat].color}66" onclick="event.stopPropagation();openCase('${c.id}')">${escHtml(c.name.split(' -- ')[0].split(' / ')[0].slice(0,26))}</span>`).join('')}</div>
+  </div>`;
+}
+function renderWallGrid(shame){
+  const list=wallFilter?shame.filter(e=>e.status===wallFilter):shame;
+  document.getElementById('wall-grid').innerHTML=list.map((e,i)=>card(e,i)).join('');
 }
 
 function buildSources(){
